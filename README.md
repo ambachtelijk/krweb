@@ -1,7 +1,7 @@
 # Detecting narrative perspectives
-_Research goal:_ News and events can be narrated according to different perspectives (e.g. “a coup” and “a revolution” are two faces of the same medal). The goal of this project is to extract narrations (in terms of set of triples/facts) from existing KGs such as DBpedia, Wikidata, EventKG, and reconstruct an event in its multiple facets. In order to collect these facts, we will use the narrative formal structure as presented in this paper Links to an external site..
+_Research goal:_ News and events can be narrated according to different perspectives (e.g. “a coup” and “a revolution” are two faces of the same medal). The goal of this project is to extract narrations (in terms of set of triples/facts) from existing KGs such as DBpedia, Wikidata, EventKG, and reconstruct an event in its multiple facets. In order to collect these facts, we will use the narrative formal structure as presented [in this paper](http://ceur-ws.org/Vol-2969/paper31-CAOS.pdf).
 
-_Background:_ also read this paper Links to an external site.and this paper Links to an external site..
+_Background:_ also read [this paper](https://ceur-ws.org/Vol-3257/paper11.pdf) and [this paper](https://link.springer.com/chapter/10.1007/978-3-031-11609-4_38).
 
 ## Build your infrastructure
 1. Build an ontology (classes + relationships) based on the formalisation presented [in this paper](http://ceur-ws.org/Vol-2969/paper31-CAOS.pdf).
