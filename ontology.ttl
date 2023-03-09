@@ -1,0 +1,23 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rel: <http://www.perceive.net/schemas/relationship/> .
+
+foaf:PoliticalParty a rdfs:Class .
+foaf:Group a rdfs:Class .
+foaf:Participant a rdfs:Class .
+foaf:Individual a rdfs:Class .
+
+foaf:Individual rdfs:subClassOf foaf:Participant .
+foaf:Group rdfs:subClassOf foaf:Participant .
+
+foaf:Group rdfs:domain foaf:Individual .
+foaf:Individual rdfs:range foaf:Group .
+foaf:Individual rel:memberOf foaf:Group .
+foaf:PoliticalParty rdfs:subPropertyOf rel:memberOf .
+
+ex:Action a rdfs:Class .
+ex:Statement a rdfs:Class .
+ex:Event a rdfs:Class .
+ex:Location a rdfs:Class .
