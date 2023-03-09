@@ -1,8 +1,8 @@
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rel: <http://www.perceive.net/schemas/relationship/> .
+@prefix ex: <http://example.com/> .
+
 
 foaf:PoliticalParty a rdfs:Class .
 foaf:Group a rdfs:Class .
@@ -12,12 +12,25 @@ foaf:Individual a rdfs:Class .
 foaf:Individual rdfs:subClassOf foaf:Participant .
 foaf:Group rdfs:subClassOf foaf:Participant .
 
-foaf:Group rdfs:domain foaf:Individual .
-foaf:Individual rdfs:range foaf:Group .
-foaf:Individual rel:memberOf foaf:Group .
-foaf:PoliticalParty rdfs:subPropertyOf rel:memberOf .
+ex:memberOf rdfs:domain foaf:Individual .
+ex:memberOf rdfs:range foaf:Group .
+foaf:Individual ex:memberOf foaf:Group .
+foaf:PoliticalParty rdfs:subPropertyOf ex:memberOf .
 
 ex:Action a rdfs:Class .
 ex:Statement a rdfs:Class .
 ex:Event a rdfs:Class .
 ex:Location a rdfs:Class .
+
+ex:tookPartIn a rdf:Property .
+
+foaf:Participant ex:tookPartIn ex:Event .
+ex:Event ex:occuredOn ex:Location .
+foaf:Participant ex:gaveStatement ex:Statement .
+foaf:Participant ex:performed ex:Action .
+
+ex:attacked rdfs:domain foaf:Participant .
+ex:attacked rdfs:range foaf:Participant .
+
+ex:communicatedWith rdfs:domain foaf:Participant .
+ex:communicatedWith rdfs:range foaf:Participant .
