@@ -11,3 +11,8 @@ _Background:_ also read [this paper](https://ceur-ws.org/Vol-3257/paper11.pdf) a
 ## Draw your research around 
 1. Method: starting from the model you created, draw a method to identify similar narratives which might represent the same event under different perspectives. You could use a rule-based approach (AnyBurl) or clustering methods such as KG embeddings. 
 2. Evaluation: define a minimal evaluation for your approach.
+
+## Resources
+* [Google Drive](https://drive.google.com/drive/folders/1S7KKOJi9HKVL7QMVbPaKUzzMc8E9Ksh2)
+* [Notion](https://www.notion.so/brainstorm-4047a9d66c60446d8ea4ad858aa68f7f)
+* [WebVOWL](http://vowl.visualdataweb.org/webvowl-old/webvowl-old.html)
