@@ -135,7 +135,7 @@ ex:E_BBC_5                  a                      ex:Event                     
                             ex:occuredOn           ex:theWestSteps              {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|}.
 ex:protesters               ex:attacked            ex:capitolPolice.
 ex:Statement_officer_1_BBC  a                      ex:Statement;
-                            rdfs:label              "We're going to give riot warnings, he says. We're going to try to get compliance but this is now effectively a riot.".
+                            rdfs:label             "We're going to give riot warnings, he says. We're going to try to get compliance but this is now effectively a riot.".
 ex:capitolOfficer_BBC_1     ex:gaveStatement       ex:Statement_officer_1_BBC. 
 
 
