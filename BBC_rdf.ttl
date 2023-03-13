@@ -4,46 +4,53 @@
 @prefix ex: <http://example.com/> .
 @prefix BBC: <https://www.bbc.com/news/world-us-canada-56004916>.
 
+################ Ontology Development ####################################
 
-foaf:Individual rdfs:subClassOf foaf:Participant .
+#Instanciating classes and suclass relations
+foaf:Individual            rdfs:subClassOf foaf:Participant .
 
-foaf:Group rdfs:subClassOf foaf:Participant .
+foaf:Group                 rdfs:subClassOf foaf:Participant .
 
-foaf:PoliticalParty a rdfs:Class .
+foaf:PoliticalParty        a rdfs:Class .
 
-ex:Statment a rdfs:Class .
+ex:Statment                a rdfs:Class .
 
-ex:News_Outlet a rdfs:Class.
+ex:News_Outlet             a rdfs:Class.
 
-ex:Describes rdfs:domain ex:News_Outlet;
-                        rdfs:range ex:Event .
+# Instanciating Perdicates 
+ex:Describes            rdfs:domain         ex:News_Outlet;
+                        rdfs:range          ex:Event .
 
-ex:attacked rdfs:domain foaf:Participant;
-            rdfs:range foaf:Participant .
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
 
-ex:communicatedWith rdfs:domain foaf:Participant;
-                    rdfs:range foaf:Participant .
+ex:communicatedWith     rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
 
-ex:memberOf rdfs:domain foaf:Individual;
-            rdfs:range foaf:Group .
+ex:memberOf             rdfs:domain         foaf:Individual;
+                        rdfs:range          foaf:Group .
 
-ex:memberOfParty rdfs:subPropertyOf ex:memberOf;
-                 rdfs:domain foaf:PoliticalParty;
-                 rdfs:range foaf:Group .
+ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
+                        rdfs:domain         foaf:PoliticalParty;
+                        rdfs:range          foaf:Group .
 
-ex:tookPartIn rdfs:domain foaf:Participant;
-              rdfs:range foaf:Event .
+ex:tookPartIn           rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Event .
 
-ex:occuredOn rdfs:domain foaf:Event;
-             rdfs:range foaf:Location .
+ex:occuredOn            rdfs:domain         foaf:Event;
+                        rdfs:range          foaf:Location .
 
-ex:performed rdfs:domain foaf:Participant;
-             rdfs:range foaf:Action .
+ex:performed            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Action .
 
-ex:gaveStatement rdfs:domain foaf:Participant;
-                 rdfs:range foaf:Statement .
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement .
 
+#############################################################################
 
+####################### Instanciating ontology ##############################
+
+#Individuals
 ex:markMeadows                 a        foaf:Individual.
 ex:jimJordan                   a        foaf:Individual.
 ex:donaldTrump                 a        foaf:Individual.
@@ -54,7 +61,7 @@ ex:davidGroseman               a        foaf:Individual.
 ex:correspondentBBC            a        foaf:Individual.
 ex:rudyGiuliani                a        foaf:Individual.
 
-
+#Groups
 ex:congress                    a        foaf:Group.
 ex:attendees                   a        foaf:Group.
 ex:proudBoys                   a        foaf:Group.
@@ -64,10 +71,9 @@ ex:proTrumpRioters             a        foaf:Group.
 ex:crowdOutsideTheCapitol      a        foaf:Group.
 ex:police                      a        foaf:Group.
 
+#############################################################################
 
-
-
-#BBC events
+####################### Building triples for BBC Outlet #####################
 
 #Event 1
 ex:E_BBC_1                  a                       ex:Event  {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.
@@ -108,3 +114,9 @@ ex:crowd_statement_BBC_1    a                      ex:Statement;
                             rdfs:label             "Fight for Trump.".                         
 ex:crowdOutsideTheCapitol   ex:attacked            ex:police {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
                             ex:gaveStatement       ex:crowd_statement_BBC_1 {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
+
+
+
+
+
+#############################################################################
