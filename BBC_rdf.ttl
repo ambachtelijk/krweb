@@ -159,5 +159,7 @@ ex:secretService            ex:evacuates            ex:nancyPelosi              
 ex:riotersStatement_1       a                       ex:Statement                {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|};
                             rdfs:label              "Where are you Nancy?".     
 ex:staffMember_1            a                       ex:Statement                {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|};
-                            rdfs:label              "They're pounding on doors trying to find her.".                            
+                            rdfs:label              "They're pounding on doors trying to find her.". 
+
+#Event 6                                                       
 #############################################################################
