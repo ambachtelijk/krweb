@@ -1,0 +1,67 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+ex:Individual rdfs:subClassOf ex:Participant .
+
+ex:Group rdfs:subClassOf ex:Participant .
+
+ex:PoliticalParty a rdfs:Class .
+
+ex:attacked rdfs:domain ex:Participant;
+            rdfs:range ex:Participant .
+
+ex:communicatedWith rdfs:domain ex:Participant;
+                    rdfs:range ex:Participant .
+
+ex:memberOf rdfs:domain ex:Individual;
+            rdfs:range ex:Group .
+
+
+
+ex:memberOfParty rdfs:subPropertyOf ex:memberOf;
+                 rdfs:domain ex:PoliticalParty;
+                 rdfs:range ex:Group .
+
+ex:tookPartIn rdfs:domain ex:Participant;
+              rdfs:range ex:Event .
+
+ex:occuredOn rdfs:domain ex:Event;
+             rdfs:range ex:Location .
+
+ex:performed rdfs:domain ex:Participant;
+             rdfs:range ex:Action .
+
+ex:gaveStatement rdfs:domain ex:Participant;
+                 rdfs:range ex:Statement .
+
+
+
+ex:CNN a ex:Group.
+ex:markMeadows a ex:Individual.
+ex:jimJordan a ex:Individual.
+ex:donaldTrump a ex:Individual.
+ex:mikePence a ex:Individual.
+ex:stevenMiller a ex:Individual.
+ex:tommyOrnato a ex:Individual.
+ex:davidGroseman a ex:Individual.
+ex:correspondentBBC a ex:Individual.
+ex:rudyGiuliani a ex:Individual.
+
+ex:congress a ex:Group.
+ex:attendees a ex:Group.
+ex:proudBoys a ex:Group.
+ex:republicans a ex:Group.
+ex:democrats a ex:Group.
+ex:proTrumpRioters a ex:Group.
+
+
+ex:E_CNN_event_2 a ex:Event  {| ex:occuredatTime "2021-01-06T09:24:00"^^xsd:datetime|}.
+ex:E_CNN_event_2 rdfs:label "Trump talks on the phone with Jordan for approximately 10 minutes, according to White House records that were obtained by the committee and released at a public hearing. After Trump’s conversation with Miller, Trump adjusts a draft of his upcoming speech to add more lines about Pence and the joint session of Congress, according to the committee, which reviewed the drafts.".
+
+
+
+

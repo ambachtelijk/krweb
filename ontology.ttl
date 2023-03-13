@@ -38,6 +38,7 @@ ex:gaveStatement rdfs:domain foaf:Participant;
 
 
 
+
 ex:markMeadows a foaf:Individual.
 ex:jimJordan a foaf:Individual.
 ex:donaldTrump a foaf:Individual.
@@ -54,3 +55,6 @@ ex:proudBoys a foaf:Group.
 ex:republicans a foaf:Group.
 ex:democrats a foaf:Group.
 ex:proTrumpRioters a foaf:Group.
+
+
+
