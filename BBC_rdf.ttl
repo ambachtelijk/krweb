@@ -46,6 +46,9 @@ ex:performed            rdfs:domain         foaf:Participant;
 ex:gaveStatement        rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Statement .
 
+ex:evacuates            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
 #############################################################################
 
 ####################### Instanciating ontology ##############################
@@ -61,6 +64,10 @@ ex:davidGroseman               a        foaf:Individual.
 ex:correspondentBBC            a        foaf:Individual.
 ex:rudyGiuliani                a        foaf:Individual.
 ex:capitolOfficer_BBC_1        a        foaf:Individual.
+ex:eugeneGoodman               a        foaf:Individual.
+ex:mittRomney                  a        foaf:Individual.
+ex:nancyPelosi                 a        foaf:Individual.
+ex:staffMember_1               a        foaf:Individual.
 
 #Groups
 ex:congress                    a        foaf:Group.
@@ -74,6 +81,7 @@ ex:police                      a        foaf:Group.
 ex:protesters                  a        foaf:Group.
 ex:capitolPolice               a        foaf:Group.
 ex:secretService               a        foaf:Group.
+ex:rioters                     a        foaf:Group.
 
 
 #############################################################################
@@ -81,56 +89,75 @@ ex:secretService               a        foaf:Group.
 ####################### Building triples for BBC Outlet #####################
 
 #Event 1
-ex:E_BBC_1                  a                       ex:Event  {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.
+ex:E_BBC_1                  a                       ex:Event                    {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.
 ex:StamentTrump_BBC_1       a                       ex:Statment;
                             rdfs:label              <https://ichef.bbci.co.uk/news/976/cpsprodpb/13E18/production/_116923418_21e80ad3-11f0-4fcf-a3f4-42c19ce312ab.jpg.webp>.
-ex:donaldTrump              ex:gaveStatement        ex:StamentTrump_BBC_1 {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.                     
+ex:donaldTrump              ex:gaveStatement        ex:StamentTrump_BBC_1       {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.                     
 BBC:bbc                     a                       ex:News_Outlet;
                             ex:Describes            ex:E_BBC_1.
 
 
 #Event 2
 ex:towardsTheCapitol        a                      foaf:Location.
-ex:E_BBC_2                  a                      ex:Event {| ex:occuredatTime "2021-01-06T09:10:00"^^xsd:datetime|};
-                            ex:occuredOn           ex:towardsTheCapitol {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
+ex:E_BBC_2                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T09:10:00"^^xsd:datetime|};
+                            ex:occuredOn           ex:towardsTheCapitol         {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
 ex:statementDG_BBC_1        a                      ex:Statment;
                             rdfs:label             "We're taking our country back.".              
 ex:davidGroseman            ex:memberOf            ex:proudBoys;
-                            ex:gaveStatement       ex:statementDG_BBC_1 {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.  
+                            ex:gaveStatement       ex:statementDG_BBC_1         {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.  
 ex:statementCBBC_BBC_1      a                      ex:Statement;
                             rdfs:label             "It was clear he was communicating - getting messages, sending messages to somebody" .
-ex:correspondentBBC         ex:gaveStatement       ex:statementCBBC_BBC_1 {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
+ex:correspondentBBC         ex:gaveStatement       ex:statementCBBC_BBC_1       {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
 BBC:bbc                     ex:Describes           ex:E_BBC_2.
 
 
 #Event 3
-ex:E_BBC_3                  a ex:Event             {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
+ex:E_BBC_3                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
 ex:StamentTrump_BBC_2       a                      ex:Statment;
                             rdfs:label             "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard".
-ex:donaldTrump              ex:gaveStatement       ex:StamentTrump_BBC_2 {| ex:occuredatTime "2021-01-06T12:00:00"^^xsd:datetime|}.
+ex:donaldTrump              ex:gaveStatement       ex:StamentTrump_BBC_2        {| ex:occuredatTime "2021-01-06T12:00:00"^^xsd:datetime|}.
 BBC:bbc                     ex:Describes           ex:E_BBC_3. 
 
 
 #Event 4
 ex:outsideTheCapitol        a                      foaf:Location.
-ex:E_BBC_4                  a                      ex:Event {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
-                            ex:occuredOn           ex:outsideTheCapitol {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
+ex:E_BBC_4                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
+                            ex:occuredOn           ex:outsideTheCapitol         {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
 ex:crowd_statement_BBC_1    a                      ex:Statement;
                             rdfs:label             "Fight for Trump.".                         
-ex:crowdOutsideTheCapitol   ex:attacked            ex:police {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
-                            ex:gaveStatement       ex:crowd_statement_BBC_1 {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
+ex:crowdOutsideTheCapitol   ex:attacked            ex:police                    {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
+                            ex:gaveStatement       ex:crowd_statement_BBC_1     {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
 
 
 #Event 5
 ex:theWestSteps             a                      foaf:Location.
-ex:E_BBC_5                  a                      ex:Event {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|};
-                            ex:occuredOn           ex:theWestSteps {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|}.
+ex:E_BBC_5                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|};
+                            ex:occuredOn           ex:theWestSteps              {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|}.
 ex:protesters               ex:attacked            ex:capitolPolice.
 ex:Statement_officer_1_BBC  a                      ex:Statement;
-                            rdfs:type              "We're going to give riot warnings," he says. "We're going to try to get compliance but this is now effectively a riot.".
+                            rdfs:type              "We're going to give riot warnings, he says. We're going to try to get compliance but this is now effectively a riot.".
 ex:capitolOfficer_BBC_1     ex:gaveStatement       ex:Statement_officer_1_BBC. 
 
+
 #Event 6
-
-
+ex:senateFloor              a                       foaf:Location.
+ex:within30mOfMrPence       a                       foaf:Location.
+ex:E_BBC_5                  a                       ex:Event                    {| ex:occuredatTime "2021-01-06T14:13:00"^^xsd:datetime|};
+                            ex:occuredOn            ex:senateFloor              {| ex:occuredatTime "2021-01-06T14:13:00"^^xsd:datetime|};
+                            ex:occuredOn            ex:within30mOfMrPence       {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|}.
+ex:secretService            ex:evacuates            ex:mikePence                {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|}.
+ex:protestors_statement_1   a                       ex:Statement;
+                            rdfs:label              "Mr Pence to be hanged.".
+ex:protesters               ex:attacked             ex:senateFloor              {| ex:occuredatTime "2021-01-06T14:13:00"^^xsd:datetime|}; # i now say that protestors attacka location
+                            rdfs:seeAlso            "The protesters break through the windows. They push inside, hopping through the broken glass. They then kick open the doors to let others in. Some wear hoods and helmets, some hold cameras or Confederate flags.";
+                            ex:gaveStatement        ex:protestors_statement_1. 
+ex:eugeneGoodman            ex:communicatedWith     ex:mittRomney,
+                                                    ex:protesters;
+                            rdfs:seeAlso            <https://ichef.bbci.co.uk/news/976/cpsprodpb/13CBB/production/_116438018_confrontation.png.webp>.                                     
+ex:within30mOfMrPence       rdfs:seeAlso            <https://ichef.bbci.co.uk/news/976/cpsprodpb/92B9/production/_116916573_capitol_floorplan_rioters_pence_info640_v2-nc.png.webp>.
+ex:secretService            ex:evacuates            ex:nancyPelosi              {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|}. 
+ex:riotersStatement_1       a                       ex:Statement                {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|};
+                            rdfs:label              "Where are you Nancy?".     
+ex:staffMember_1            a                       ex:Statement                {| ex:occuredatTime "2021-01-06T14:14:00"^^xsd:datetime|};
+                            rdfs:label              "They're pounding on doors trying to find her.".                            
 #############################################################################
