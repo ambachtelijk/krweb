@@ -36,7 +36,7 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Event .
-
+                        
 ex:occuredOn            rdfs:domain         foaf:Event;
                         rdfs:range          foaf:Location .
 
@@ -73,6 +73,7 @@ ex:crowdOutsideTheCapitol      a        foaf:Group.
 ex:police                      a        foaf:Group.
 ex:protesters                  a        foaf:Group.
 ex:capitolPolice               a        foaf:Group.
+ex:secretService               a        foaf:Group.
 
 
 #############################################################################
@@ -129,6 +130,7 @@ ex:Statement_officer_1_BBC  a                      ex:Statement;
                             rdfs:type              "We're going to give riot warnings," he says. "We're going to try to get compliance but this is now effectively a riot.".
 ex:capitolOfficer_BBC_1     ex:gaveStatement       ex:Statement_officer_1_BBC. 
 
+#Event 6
 
 
 #############################################################################
