@@ -4,33 +4,33 @@
 @prefix ex: <http://example.com/> .
 
 
-foaf:PoliticalParty a rdfs:Class .
-foaf:Group a rdfs:Class .
-foaf:Participant a rdfs:Class .
-foaf:Individual a rdfs:Class .
-
 foaf:Individual rdfs:subClassOf foaf:Participant .
+
 foaf:Group rdfs:subClassOf foaf:Participant .
 
-ex:memberOf rdfs:domain foaf:Individual .
-ex:memberOf rdfs:range foaf:Group .
-foaf:Individual ex:memberOf foaf:Group .
-foaf:PoliticalParty rdfs:subPropertyOf ex:memberOf .
+foaf:PoliticalParty a rdfs:Class .
 
-ex:Action a rdfs:Class .
-ex:Statement a rdfs:Class .
-ex:Event a rdfs:Class .
-ex:Location a rdfs:Class .
+ex:attacked rdfs:domain foaf:Participant;
+            rdfs:range foaf:Participant .
 
-ex:tookPartIn a rdf:Property .
+ex:communicatedWith rdfs:domain foaf:Participant;
+                    rdfs:range foaf:Participant .
 
-foaf:Participant ex:tookPartIn ex:Event .
-ex:Event ex:occuredOn ex:Location .
-foaf:Participant ex:gaveStatement ex:Statement .
-foaf:Participant ex:performed ex:Action .
+ex:memberOf rdfs:domain foaf:Individual;
+            rdfs:range foaf:Group .
 
-ex:attacked rdfs:domain foaf:Participant .
-ex:attacked rdfs:range foaf:Participant .
+ex:memberOfParty rdfs:subPropertyOf ex:memberOf;
+                 rdfs:domain foaf:PoliticalParty;
+                 rdfs:range foaf:Group .
 
-ex:communicatedWith rdfs:domain foaf:Participant .
-ex:communicatedWith rdfs:range foaf:Participant .
+ex:tookPartIn rdfs:domain foaf:Participant;
+              rdfs:range foaf:Event .
+
+ex:occuredOn rdfs:domain foaf:Event;
+             rdfs:range foaf:Location .
+
+ex:performed rdfs:domain foaf:Participant;
+             rdfs:range foaf:Action .
+
+ex:gaveStatement rdfs:domain foaf:Participant;
+                 rdfs:range foaf:Statement .
