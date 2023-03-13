@@ -60,6 +60,7 @@ ex:tommyOrnato                 a        foaf:Individual.
 ex:davidGroseman               a        foaf:Individual.
 ex:correspondentBBC            a        foaf:Individual.
 ex:rudyGiuliani                a        foaf:Individual.
+ex:capitolOfficer_BBC_1        a        foaf:Individual.
 
 #Groups
 ex:congress                    a        foaf:Group.
@@ -70,6 +71,9 @@ ex:democrats                   a        foaf:Group.
 ex:proTrumpRioters             a        foaf:Group.
 ex:crowdOutsideTheCapitol      a        foaf:Group.
 ex:police                      a        foaf:Group.
+ex:protesters                  a        foaf:Group.
+ex:capitolPolice               a        foaf:Group.
+
 
 #############################################################################
 
@@ -82,7 +86,6 @@ ex:StamentTrump_BBC_1       a                       ex:Statment;
 ex:donaldTrump              ex:gaveStatement        ex:StamentTrump_BBC_1 {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.                     
 BBC:bbc                     a                       ex:News_Outlet;
                             ex:Describes            ex:E_BBC_1.
-
 
 
 #Event 2
@@ -106,6 +109,7 @@ ex:StamentTrump_BBC_2       a                      ex:Statment;
 ex:donaldTrump              ex:gaveStatement       ex:StamentTrump_BBC_2 {| ex:occuredatTime "2021-01-06T12:00:00"^^xsd:datetime|}.
 BBC:bbc                     ex:Describes           ex:E_BBC_3. 
 
+
 #Event 4
 ex:outsideTheCapitol        a                      foaf:Location.
 ex:E_BBC_4                  a                      ex:Event {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|};
@@ -116,6 +120,14 @@ ex:crowdOutsideTheCapitol   ex:attacked            ex:police {| ex:occuredatTime
                             ex:gaveStatement       ex:crowd_statement_BBC_1 {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
 
 
+#Event 5
+ex:theWestSteps             a                      foaf:Location.
+ex:E_BBC_5                  a                      ex:Event {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|};
+                            ex:occuredOn           ex:theWestSteps {| ex:occuredatTime "2021-01-06T13:45:00"^^xsd:datetime|}.
+ex:protesters               ex:attacked            ex:capitolPolice.
+ex:Statement_officer_1_BBC  a                      ex:Statement;
+                            rdfs:type              "We're going to give riot warnings," he says. "We're going to try to get compliance but this is now effectively a riot.".
+ex:capitolOfficer_BBC_1     ex:gaveStatement       ex:Statement_officer_1_BBC. 
 
 
 
