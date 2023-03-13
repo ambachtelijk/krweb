@@ -1,0 +1,87 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix BBC: <https://www.bbc.com/news/world-us-canada-56004916>.
+
+
+foaf:Individual rdfs:subClassOf foaf:Participant .
+
+foaf:Group rdfs:subClassOf foaf:Participant .
+
+foaf:PoliticalParty a rdfs:Class .
+
+ex:Statment a rdfs:Class .
+
+ex:News_Outlet a rdfs:Class.
+
+ex:Describes rdfs:domain ex:News_Outlet;
+                        rdfs:range ex:Event .
+
+ex:attacked rdfs:domain foaf:Participant;
+            rdfs:range foaf:Participant .
+
+ex:communicatedWith rdfs:domain foaf:Participant;
+                    rdfs:range foaf:Participant .
+
+ex:memberOf rdfs:domain foaf:Individual;
+            rdfs:range foaf:Group .
+
+ex:memberOfParty rdfs:subPropertyOf ex:memberOf;
+                 rdfs:domain foaf:PoliticalParty;
+                 rdfs:range foaf:Group .
+
+ex:tookPartIn rdfs:domain foaf:Participant;
+              rdfs:range foaf:Event .
+
+ex:occuredOn rdfs:domain foaf:Event;
+             rdfs:range foaf:Location .
+
+ex:performed rdfs:domain foaf:Participant;
+             rdfs:range foaf:Action .
+
+ex:gaveStatement rdfs:domain foaf:Participant;
+                 rdfs:range foaf:Statement .
+
+
+ex:markMeadows a foaf:Individual.
+ex:jimJordan a foaf:Individual.
+ex:donaldTrump a foaf:Individual.
+ex:mikePence a foaf:Individual.
+ex:stevenMiller a foaf:Individual.
+ex:tommyOrnato a foaf:Individual.
+ex:davidGroseman a foaf:Individual.
+ex:correspondentBBC a foaf:Individual.
+ex:rudyGiuliani a foaf:Individual.
+
+ex:congress a foaf:Group.
+ex:attendees a foaf:Group.
+ex:proudBoys a foaf:Group.
+ex:republicans a foaf:Group.
+ex:democrats a foaf:Group.
+ex:proTrumpRioters a foaf:Group.
+
+#BBC events
+
+#event 1
+ex:E_BBC_1 a ex:Event  {| ex:occuredatTime "2021-01-06T09:08:17"^^xsd:datetime|}.
+ex:StamentTrump_BBC_1  a                       ex:Statment;
+                       rdfs:label              <https://ichef.bbci.co.uk/news/976/cpsprodpb/13E18/production/_116923418_21e80ad3-11f0-4fcf-a3f4-42c19ce312ab.jpg.webp>.
+ex:donaldTrump         ex:gaveStatement        ex:StamentTrump_BBC_1.                     
+BBC:bbc                a                       ex:News_Outlet;
+                       ex:Describes            ex:E_BBC_1.
+
+
+
+#event 2
+ex:towardsTheCapitol    a                      foaf:Location.
+ex:E_BBC_2              a                      ex:Event {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|};
+                        ex:occuredOn           ex:towardsTheCapitol {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
+ex:statementDG_BBC_1    a                      ex:Statment;
+                        rdfs:label             "We're taking our country back.".              
+ex:davidGroseman        ex:memberOf            ex:proudBoys;
+                        ex:gaveStatement       ex:statementDG_BBC_1 {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.  
+ex:statementCBBC_BBC_1  a                      ex:Statement;
+                        rdfs:label             "It was clear he was communicating - getting messages, sending messages to somebody" .
+ex:correspondentBBC     ex:gaveStatement       ex:statementCBBC_BBC_1 {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
+BBC:bbc                 ex:Describes           ex:E_BBC_1.
