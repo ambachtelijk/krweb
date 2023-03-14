@@ -19,7 +19,7 @@ ex:News_Outlet             a rdfs:Class.
 
 # Instanciating Perdicates 
 ex:Describes            rdfs:domain         ex:News_Outlet;
-                        rdfs:range          foaf:Event .
+                        rdfs:range          ex:Event .
 
 ex:attacked             rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
@@ -35,9 +35,9 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
                         rdfs:range          foaf:Group .
 
 ex:tookPartIn           rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Event .
+                        rdfs:range          ex:Event .
                         
-ex:occuredOn            rdfs:domain         foaf:Event;
+ex:occuredOn            rdfs:domain         ex:Event;
                         rdfs:range          foaf:Location .
 
 
@@ -47,7 +47,7 @@ ex:gaveStatement        rdfs:domain         foaf:Participant;
 ex:evacuates            rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
 ex:eventOfStatement     rdfs:domain         foaf:Statement;
-                        rdfs:range          foaf:Event.
+                        rdfs:range          ex:Event.
 
                        
 

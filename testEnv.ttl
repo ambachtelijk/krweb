@@ -37,7 +37,7 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          ex:Event .
                         
-ex:occuredOn            rdfs:domain         foaf:Event;
+ex:occuredOn            rdfs:domain         ex:Event;
                         rdfs:range          foaf:Location .
 
 
@@ -47,7 +47,7 @@ ex:gaveStatement        rdfs:domain         foaf:Participant;
 ex:evacuates            rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
 ex:eventOfStatement     rdfs:domain         ex:Statement;
-                        rdfs:range          foaf:Event.
+                        rdfs:range          ex:Event.
 
                        
 
