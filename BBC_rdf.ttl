@@ -42,11 +42,11 @@ ex:occuredOn            rdfs:domain         foaf:Event;
 
 
 ex:gaveStatement        rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Statement .
+                        rdfs:range          ex:Statement .
 
 ex:evacuates            rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
-ex:eventOfStatement     rdfs:domain         foaf:Statement;
+ex:eventOfStatement     rdfs:domain         ex:Statement;
                         rdfs:range          foaf:Event.
 
                        
@@ -96,7 +96,7 @@ ex:theHouse                    a        foaf:Group.
 
 #Event 1
 ex:E_BBC_1                  a                       ex:Event                    {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.
-ex:StamentTrump_BBC_1       a                       ex:Statment;
+ex:StamentTrump_BBC_1       a                       ex:Statement;
                             rdfs:label              <https://ichef.bbci.co.uk/news/976/cpsprodpb/13E18/production/_116923418_21e80ad3-11f0-4fcf-a3f4-42c19ce312ab.jpg.webp>;
                             ex:eventOfStatement     ex:E_BBC_1.  
 ex:donaldTrump              ex:gaveStatement        ex:StamentTrump_BBC_1       {| ex:occuredatTime "2021-01-06T08:17:00"^^xsd:datetime|}.                     
@@ -108,7 +108,7 @@ BBC:bbc                     a                       ex:News_Outlet;
 ex:towardsTheCapitol        a                      foaf:Location.
 ex:E_BBC_2                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T09:10:00"^^xsd:datetime|};
                             ex:occuredOn           ex:towardsTheCapitol         {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|}.
-ex:statementDG_BBC_1        a                      ex:Statment;
+ex:statementDG_BBC_1        a                      ex:Statement;
                             rdfs:label             "We're taking our country back.".              
 ex:davidGroseman            ex:memberOf            ex:proudBoys;
                             ex:gaveStatement       ex:statementDG_BBC_1         {| ex:occuredatTime "2021-01-06T09:10:58"^^xsd:datetime|};
@@ -122,7 +122,7 @@ BBC:bbc                     ex:Describes           ex:E_BBC_2                   
 
 #Event 3
 ex:E_BBC_3                  a                      ex:Event                     {| ex:occuredatTime "2021-01-06T12:53:00"^^xsd:datetime|}.
-ex:StamentTrump_BBC_2       a                      ex:Statment;
+ex:StamentTrump_BBC_2       a                      ex:Statement;
                             rdfs:label             "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard".
 ex:donaldTrump              ex:gaveStatement       ex:StamentTrump_BBC_2        {| ex:occuredatTime "2021-01-06T12:00:00"^^xsd:datetime|};
                             ex:eventOfStatement    ex:E_BBC_3.  
