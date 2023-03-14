@@ -1,0 +1,151 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix CNN: <https://edition.cnn.com/2022/07/10/politics/jan-6-us-capitol-riot-timeline/index.html>.
+
+################ Ontology Development ####################################
+
+#Instanciating classes and suclass relations
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+
+# PoliticalParty needs to become subclass of Group in our Ontology
+foaf:PoliticalParty        a rdfs:Class .
+
+ex:Statment                a rdfs:Class .
+
+ex:News_Outlet             a rdfs:Class.
+
+# Instanciating Perdicates 
+ex:Describes            rdfs:domain         ex:News_Outlet;
+                        rdfs:range          ex:Event .
+
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+ex:communicatedWith     rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+ex:memberOf             rdfs:domain         foaf:Individual;
+                        rdfs:range          foaf:Group .
+
+ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
+                        rdfs:domain         foaf:PoliticalParty;
+                        rdfs:range          foaf:Group .
+
+ex:tookPartIn           rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Event .
+                        
+ex:occuredOn            rdfs:domain         foaf:Event;
+                        rdfs:range          foaf:Location .
+
+ex:performed            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Action .
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement .
+
+ex:evacuates            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+#############################################################################
+
+####################### Instanciating ontology ##############################
+
+#Individuals
+ex:markMeadows                  a       foaf:Individual.
+ex:jimJordan                    a       foaf:Individual.
+ex:donaldTrump                  a       foaf:Individual.
+ex:mikePence                    a       foaf:Individual.
+ex:stephenMiller                a       foaf:Individual.
+ex:tonyOrnato                   a       foaf:Individual.
+ex:davidGroseman                a       foaf:Individual.
+ex:correspondentBBC             a       foaf:Individual.
+ex:rudyGiuliani                 a       foaf:Individual.
+ex:cassidyHutchinson            a       foaf:Individual.
+ex:johnEastman                  a       foaf:Individual.
+
+
+#Groups
+ex:congress                    a        foaf:Group.
+ex:attendees                   a        foaf:Group.
+ex:proudBoys                   a        foaf:Group.
+ex:republicans                 a        foaf:Group.
+ex:democrats                   a        foaf:Group.
+ex:proTrumpRioters             a        foaf:Group.
+ex:crowdOutsideTheCapitol      a        foaf:Group.
+ex:police                      a        foaf:Group.
+ex:protesters                  a        foaf:Group.
+ex:capitolPolice               a        foaf:Group.
+ex:secretService               a        foaf:Group.
+ex:rioters                     a        foaf:Group.
+CNN:CNN                        a        ex:News_Outlet.
+
+#Locations
+ex:ellipse                     a        ex:location.
+
+
+#############################################################################
+
+####################### Building triples for BBC Outlet #####################
+
+#Event 1
+ex:E_CNN_1                  a                       ex:Event                          {| ex:occuredatTime "2021-01-06T07:30:00"^^xsd:datetime|}.
+ex:markMeadows              ex:communicatedWith     ex:jimJordan                      {| ex:occuredAtEvent ex:E_CNN_1|}.
+ex:Statement_Meadows_1      a                       ex:Statment.
+ex:Statement_Meadows_1      rdfs:label              "I have pushed for this"          {| ex:occuredAtEvent ex:E_CNN_1|}.
+ex:Statement_Meadows_1      rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+ex:Statement_Meadows_2      a                       ex:Statment.
+ex:Statement_Meadows_2      rdfs:label              "not sure it is going to happen." {| ex:occuredAtEvent ex:E_CNN_1|}.                   
+CNN:CNN                     ex:Describes            ex:E_CNN_1.
+
+
+#Event 2                                                       
+#############################################################################
+ex:E_CNN_2                  a                       ex:Event                          {| ex:occuredatTime "2021-01-06T09:24:00"^^xsd:datetime|}.
+ex:donaldTrump              ex:communicatedWith     ex:jimJordan                      {| ex:occuredAtEvent ex:E_CNN_2|}.
+ex:donaldTrump              ex:communicatedWith     ex:jimJordan                      {| rdfs:seeAlso <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>|}.
+CNN:CNN                     ex:Describes            ex:E_CNN_2.
+
+#Event 3
+ex:E_CNN_3                  a                       ex:Event                          {| ex:occuredatTime "2021-01-06T09:52:00"^^xsd:datetime|}.
+ex:donaldTrump              ex:communicatedWith     ex:stephenMiller                  {| ex:occuredAtEvent ex:E_CNN_3|}.
+CNN:CNN                     ex:Describes            ex:E_CNN_3.
+
+#Event 4
+#TO DO: In text 
+ex:E_CNN_4                 a                        ex:Event                          {| ex:occuredatTime "2021-01-06T10:00:00"^^xsd:datetime|}.
+ex:attendees               ex:tookPartIn            ex:E_CNN_4.
+ex:police                  ex:tookPartIn            ex:E_CNN_4.
+ex:E_CNN_4                 ex:occuredOn             ex:ellipse.
+ex:tonyOrnato              ex:communicatedWith      ex:donaldTrump                    {| ex:occuredAtEvent ex:E_CNN_4|}.
+ex:tonyOrnato              ex:communicatedWith      ex:donaldTrump                    {| rdfs:seeAlso <https://www.cnn.com/2022/06/30/politics/tony-ornato-met-january-6-committee/index.html>|}.
+
+#Event 5
+ex:E_CNN_5                 a                        ex:Event                          {| ex:occuredatTime "2021-01-06T10:15:00"^^xsd:datetime|}.
+ex:cassidyHutchinson       ex:communicatedWith      ex:markMeadows                    {| ex:occuredAtEvent ex:E_CNN_5|}.
+ex:cassidyHutchinson       ex:communicatedWith      ex:markMeadows                    {| rdfs:seeAlso <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>|}.
+ex:tonyOrnato              ex:communicatedWith      ex:markMeadows                    {| ex:occuredAtEvent ex:E_CNN_5|}.
+
+
+#Event 6
+ex:E_CNN_6                 a                        ex:Event                          {| ex:occuredatTime "2021-01-06T10:47:00"^^xsd:datetime|}.
+ex:statement_RG_1_CNN      a                        ex:Statement                      {| ex:occuredAtEvent ex:E_CNN_6|}.
+ex:rudyGiuliani            ex:gaveStatement         ex:statement_RG_1_CNN             {| ex:occuredAtEvent ex:E_CNN_6|}.
+ex:rudyGiuliani            ex:gaveStatement         ex:statement_RG_1_CNN             {| rdfs:seeAlso <https://www.c-span.org/video/?c4933578/user-clip-rudy-giuliani-professor-john-eastman>|}.
+ex:statement_RG_1_CNN      rdfs:label               "let’s have trial by combat.".         
+
+
+#Event 7    
+ex:E_CNN_7                 a                        ex:Event                          {| ex:occuredatTime "2021-01-06T11:20:00"^^xsd:datetime|}.  
+ex:donaldTrump             ex:communicatedWith      ex:mikePence                      {| ex:occuredAtEvent ex:E_CNN_7|}.
+ex:statementDT_1_CNN       a                        ex:Statement.
+ex:donaldTrump             ex:gaveStatement         ex:statementDT_1_CNN               {| rdfs:seeAlso <https://www.cnn.com/politics/live-news/january-6-hearings-june-16/h_5fd172c97e1c0f72f8491372c37790d8>|}.
+ex:donaldTrump             ex:gaveStatement         ex:statementDT_1_CNN               {| rdfs:seeAlso <https://twitter.com/January6thCmte/status/1537512734870360069>|}.
+ex:statementDT_1_CNN       rdfs:label               "wimp".
+
+#Event 2        
+#Event 2        
+#Event 2        
