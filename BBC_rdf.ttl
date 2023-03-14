@@ -71,6 +71,8 @@ ex:mittRomney                  a        foaf:Individual.
 ex:nancyPelosi                 a        foaf:Individual.
 ex:staffMember_1               a        foaf:Individual.
 ex:ericSwalwell                a        foaf:Individual.
+ex:mikeLee                     a        foaf:Individual.
+ex:tommyTuberville             a        foaf:Individual.
 
 #Groups
 ex:congress                    a        foaf:Group.
@@ -87,6 +89,7 @@ ex:secretService               a        foaf:Group.
 ex:rioters                     a        foaf:Group.
 ex:unknown                     a        foaf:Group. # check for this
 ex:theHouse                    a        foaf:Group.
+ex:houseImpeachmentManager     a        foaf:Group.
 
 
 
@@ -199,5 +202,21 @@ ex:statementEricSwalwell_1  a                       ex:Statement;
                             rdfs:label              "I love you and the babies. Please hug them for me".                            
 ex:ericSwalwell             ex:gaveStatement        ex:ex:statementEricSwalwell_1   {| ex:occuredatTime "2021-01-06T14:24:00"^^xsd:datetime|};
                             ex:eventOfStatement     ex:E_BBC_7.
-BBC:bbc                     ex:Describes            ex:E_BBC_7                      {| ex:occuredatTime "2021-01-06T14:24:00"^^xsd:datetime|}.                                                        
+BBC:bbc                     ex:Describes            ex:E_BBC_7                      {| ex:occuredatTime "2021-01-06T14:24:00"^^xsd:datetime|}.
+
+
+#Event 8
+ex:E_BBC_8                  a                       ex:Event                    {| ex:occuredatTime "2021-01-06T14:26:00"^^xsd:datetime|}.
+ex:donaldTrump              ex:communicatedWith     ex:mikeLee                  {| ex:occuredatTime "2021-01-06T14:26:00"^^xsd:datetime|},
+                                                    ex:tommyTuberville          {| ex:occuredatTime "2021-01-06T14:26:00"^^xsd:datetime|};
+                            rdfs:seeAlso            <https://www.independent.co.uk/news/world/americas/us-politics/ap-fact-check-the-senator-and-trumps-misdialed-phone-call-mike-lee-tommy-tuberville-donald-trump-david-cicilline-house-b1801162.html>;
+                            rdfs:label              "According to his office, he received a call from the White House switchboard number - and the call lasted four minutes. Mr Lee has said that apparently the call was meant for Alabama senator Tommy Tuberville, and that he handed his phone to his colleague.".
+ex:statementTubervilleBBC_1 a                       ex:Statement;
+                            rdfs:label              "I said: Mr President, they've taken the vice-president out. They want me to get off the phone, I gotta go.".
+ex:tommyTuberville          ex:gaveStatement        ex:statementTubervilleBBC_1   {| ex:occuredatTime "2021-01-06T14:26:00"^^xsd:datetime|};
+                            ex:eventOfStatement     ex:E_BBC_8.
+ex:statementHIM_1           a                       ex:Statement;
+                            rdfs:label              "it is further evidence that the president knew how much danger his vice-president was in.".
+ex:houseImpeachmentManager  ex:gaveStatement        ex:statementHIM_1   {| ex:occuredatTime "2021-01-06T14:26:00"^^xsd:datetime|};
+                            ex:eventOfStatement     ex:E_BBC_8.
 #############################################################################
