@@ -6,6 +6,7 @@
 
 ################ Ontology Development ####################################
 
+
 #Instanciating classes and suclass relations
 foaf:Individual            rdfs:subClassOf foaf:Participant .
 
@@ -13,16 +14,15 @@ foaf:Group                 rdfs:subClassOf foaf:Participant .
 
 foaf:PoliticalParty        a rdfs:Class .
 
-#ex:Statment               a rdfs:Class .
+#ex:Statment                a rdfs:Class .
 
 ex:News_Outlet             a rdfs:Class.
 
 # Instanciating Perdicates 
-ex:Describes            rdfs:domain         ex:News_Outlet;
+ex:described            rdfs:domain         ex:News_Outlet;
                         rdfs:range          ex:Event .
 
-ex:attacked             rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
+ex:attacked             rdfs:domain         foaf:Participant.
 
 ex:communicatedWith     rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
@@ -37,19 +37,22 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          ex:Event .
                         
-ex:occuredOn            rdfs:domain         ex:Event;
-                        rdfs:range          foaf:Location .
+ex:occuredAt            rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
 
+ex:occuredOn            rdfs:domain         ex:Event;
+                        rdfs:range          ex:DateTime.
+
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
 
 ex:gaveStatement        rdfs:domain         foaf:Participant;
-                        rdfs:range          ex:Statement .
+                        rdfs:range          foaf:Statement .
 
-ex:evacuates            rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
-ex:eventOfStatement     rdfs:domain         ex:Statement;
-                        rdfs:range          ex:Event.
-
-                       
+ex:evacuated            rdfs:domain         foaf:Participant.
+                        
+                        
+                            
 
 #############################################################################
 

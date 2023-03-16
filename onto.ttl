@@ -5,27 +5,46 @@
 @prefix BBC: <https://www.bbc.com/news/world-us-canada-56004916>.
 
 ################ Ontology Development ####################################
-
-#Instanciating classes and suclass relations
+# tekstie
+#
+#
+#### Instanciating classes and suclass relations ####
 foaf:Individual            rdfs:subClassOf foaf:Participant .
 
 foaf:Group                 rdfs:subClassOf foaf:Participant .
 
-foaf:PoliticalParty        a rdfs:Class .
-
-#ex:Statment                a rdfs:Class .
 
 ex:News_Outlet             a rdfs:Class.
 
-# Instanciating Perdicates 
+#### Instanciating Perdicates ####
+#tekstie
+#
+#
+### RDF * predicate ###
 ex:described            rdfs:domain         ex:News_Outlet;
                         rdfs:range          ex:Event .
 
-ex:attacked             rdfs:domain         foaf:Participant.
+### Predicates in relation to participant actions ###
+
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant. # als die ook naar andere moet moet je rdf range toevoegen zie evacuated.
+
+
+ex:evacuated            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant,
+                                            ex:Location.
 
 ex:communicatedWith     rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
 
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement.
+
+
+#### Instanciating other perdicates ####
 ex:memberOf             rdfs:domain         foaf:Individual;
                         rdfs:range          foaf:Group .
 
@@ -41,19 +60,7 @@ ex:occuredAt            rdfs:domain         ex:Event;
 
 ex:occuredOn            rdfs:domain         ex:Event;
                         rdfs:range          ex:DateTime.
-
-ex:vandalized           rdfs:domain         foaf:Participant;
-                        rdfs:range          ex:Location.
-
-ex:gaveStatement        rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Statement .
-
-ex:evacuated            rdfs:domain         foaf:Participant.
-                        
-ex:eventOfStatement     rdfs:domain         foaf:Statement;
-                        rdfs:range          ex:Event.
-
-                       
+   
 
 #############################################################################
 
