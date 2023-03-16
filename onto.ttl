@@ -5,9 +5,13 @@
 @prefix BBC: <https://www.bbc.com/news/world-us-canada-56004916>.
 
 ################ Ontology Development ####################################
-# tekstie
-#
-#
+
+# The following turtle statments instanciate our Ontology, it consits of three main parts
+# 1. Instanciating the subclass relations between classes
+# 2. Instanciating the actions participants took
+# 3. Instanciating the other relations in the ontology
+# We instanciate the calsses through the predicate instanciation
+
 #### Instanciating classes and suclass relations ####
 foaf:Individual            rdfs:subClassOf foaf:Participant .
 
