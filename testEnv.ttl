@@ -6,27 +6,49 @@
 
 ################ Ontology Development ####################################
 
-#Instanciating classes and suclass relations
+# The following turtle statments instanciate our Ontology, it consits of three main parts
+# 1. Instanciating the subclass relations between classes
+# 2. Instanciating the actions participants took
+# 3. Instanciating the other relations in the ontology
+# We instanciate the calsses through the predicate instanciation
+
+#### Instanciating classes and suclass relations ####
 foaf:Individual            rdfs:subClassOf foaf:Participant .
 
 foaf:Group                 rdfs:subClassOf foaf:Participant .
 
-foaf:PoliticalParty        a rdfs:Class .
-
-#ex:Statment               a rdfs:Class .
 
 ex:News_Outlet             a rdfs:Class.
 
-# Instanciating Perdicates 
-ex:Describes            rdfs:domain         ex:News_Outlet;
+#### Instanciating Perdicates ####
+#tekstie
+#
+#
+### RDF * predicate ###
+ex:described            rdfs:domain         ex:News_Outlet;
                         rdfs:range          ex:Event .
 
+### Predicates in relation to participant actions ###
+
 ex:attacked             rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
+                        rdfs:range          foaf:Participant. # als die ook naar andere moet moet je rdf range toevoegen zie evacuated.
+
+
+ex:evacuated            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant,
+                                            ex:Location.
 
 ex:communicatedWith     rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
 
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement.
+
+
+#### Instanciating other perdicates ####
 ex:memberOf             rdfs:domain         foaf:Individual;
                         rdfs:range          foaf:Group .
 
@@ -37,25 +59,18 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          ex:Event .
                         
+ex:occuredAt            rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
+
 ex:occuredOn            rdfs:domain         ex:Event;
-                        rdfs:range          foaf:Location .
-
-
-ex:gaveStatement        rdfs:domain         foaf:Participant;
-                        rdfs:range          ex:Statement .
-
-ex:evacuates            rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
-ex:eventOfStatement     rdfs:domain         ex:Statement;
-                        rdfs:range          ex:Event.
-
-                       
+                        rdfs:range          ex:DateTime.
+   
 
 #############################################################################
 
 ####################### Instanciating ontology ##############################
 
-#Individuals
+### Individuals ###
 ex:markMeadows                 a        foaf:Individual.
 ex:jimJordan                   a        foaf:Individual.
 ex:donaldTrump                 a        foaf:Individual.
@@ -71,14 +86,20 @@ ex:mittRomney                  a        foaf:Individual.
 ex:nancyPelosi                 a        foaf:Individual.
 ex:staffMember_1               a        foaf:Individual.
 ex:ericSwalwell                a        foaf:Individual.
+ex:mikeLee                     a        foaf:Individual.
+ex:tommyTuberville             a        foaf:Individual.
+ex:ashliBabbit                 a        foaf:Individual. 
+ex:rioter_1                    a        foaf:Individual.
+ex:officer_1                   a        foaf:Individual.
+ex:babbitt                     a        foaf:Individual.
+ex:rioter_2                    a        foaf:Individual.
 
-#Groups
+### Groups ###
 ex:congress                    a        foaf:Group.
 ex:attendees                   a        foaf:Group.
 ex:proudBoys                   a        foaf:Group.
-ex:republicans                 a        foaf:Group.
-ex:democrats                   a        foaf:Group.
 ex:proTrumpRioters             a        foaf:Group.
+ex:staffMembers                a        foaf:Group.
 ex:crowdOutsideTheCapitol      a        foaf:Group.
 ex:police                      a        foaf:Group.
 ex:protesters                  a        foaf:Group.
@@ -87,44 +108,43 @@ ex:secretService               a        foaf:Group.
 ex:rioters                     a        foaf:Group.
 ex:unknown                     a        foaf:Group. # check for this
 ex:theHouse                    a        foaf:Group.
+ex:houseImpeachmentManager     a        foaf:Group.
+ex:aGroup                      a        foaf:Group.
 
+## PoliticalParty instaition ##
+ex:republicanParty             a        foaf:PoliticalParty.
+ex:democraticParty             a        foaf:PoliticalParty.
 
 
 #############################################################################
 
 ####################### Building triples for BBC Outlet #####################
 
-#Event 1
-ex:E_BBC_1                  a                       ex:Event.                    
-ex:StamentTrump_BBC_1       a                       ex:Statement;
-                            rdfs:label              <https://ichef.bbci.co.uk/news/976/cpsprodpb/13E18/production/_116923418_21e80ad3-11f0-4fcf-a3f4-42c19ce312ab.jpg.webp>. 
-ex:donaldTrump              ex:gaveStatement        ex:StamentTrump_BBC_1;
-                            ex:eventOfStatement     ex:E_BBC_1.                           
-BBC:bbc                     a                       ex:News_Outlet;
-                            ex:Describes            ex:E_BBC_1.                  
-
-
-#Event 2
-ex:towardsTheCapitol        a                      foaf:Location.
-ex:E_BBC_2                  a                      ex:Event;                     
-                            ex:occuredOn           ex:towardsTheCapitol.         
-ex:statementDG_BBC_1        a                      ex:Statement;
-                            rdfs:label             "We're taking our country back.".              
-ex:davidGroseman            ex:memberOf            ex:proudBoys;
-                            ex:gaveStatement       ex:statementDG_BBC_1;         
-                            ex:eventOfStatement    ex:E_BBC_2.    
-ex:statementCBBC_BBC_1      a                      ex:Statement;
-                            rdfs:label             "It was clear he was communicating - getting messages, sending messages to somebody" .
-ex:correspondentBBC         ex:gaveStatement       ex:statementCBBC_BBC_1;       
-                            ex:eventOfStatement     ex:E_BBC_2.  
-BBC:bbc                     ex:Describes           ex:E_BBC_2.                   
-
-
-#Event 3
-ex:E_BBC_3                  a                      ex:Event.                     
-ex:StamentTrump_BBC_2       a                      ex:Statement;
-                            rdfs:label             "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard".
-ex:donaldTrump              ex:gaveStatement       ex:StamentTrump_BBC_2 ;       
-                            ex:eventOfStatement    ex:E_BBC_3.  
-BBC:bbc                     ex:Describes           ex:E_BBC_3.                   
-
+#Event 7
+ex:senateFloor              a                       foaf:Location.
+ex:within30mOfMrPence       a                       foaf:Location;
+                            rdfs:seeAlso            <https://ichef.bbci.co.uk/news/976/cpsprodpb/92B9/production/_116916573_capitol_floorplan_rioters_pence_info640_v2-nc.png.webp>.
+ex:E_BBC_7                  a                       ex:Event;
+                            ex:occuredOn            "2021-01-06T14:13:00"^^xsd:datetime;
+                            ex:occuredAt            ex:senateFloor,
+                                                    ex:within30mOfMrPence.
+BBC:bbc                     ex:Describes            ex:E_BBC_7.
+ex:secretService            ex:evacuated            ex:mikePence                {|ex:occuredAtEvent ex:E_BBC_7|}.
+ex:protestors_statement_1   a                       ex:Statement;
+                            rdfs:label              "Mr Pence to be hanged.".
+ex:protesters               ex:vandalized           ex:senateFloor              {|ex:occuredAtEvent ex:E_BBC_7|};
+                            rdfs:comment            "The protesters break through the windows. They push inside, hopping through the broken glass. They then kick open the doors to let others in. Some wear hoods and helmets, some hold cameras or Confederate flags.";
+                            ex:gaveStatement        ex:protestors_statement_1 {|ex:occuredAtEvent ex:E_BBC_7|}.
+ex:eugeneGoodman            ex:communicatedWith     ex:mittRomney {|ex:occuredAtEvent ex:E_BBC_7|},
+                                                    ex:protesters {|ex:occuredAtEvent ex:E_BBC_7|};
+                            rdfs:seeAlso            <https://ichef.bbci.co.uk/news/976/cpsprodpb/13CBB/production/_116438018_confrontation.png.webp>.                                     
+ex:secretService            ex:evacuated            ex:nancyPelosi              {|ex:occuredAtEvent ex:E_BBC_7|}. 
+ex:riotersStatement_1       a                       ex:Statement;
+                            rdfs:label              "Where are you Nancy?".
+ex:rioters                  ex:gaveStatement        ex:riotersStatement_1       {|ex:occuredAtEvent ex:E_BBC_7|}.
+ex:staffMembers             ex:communicatedWith     ex:staffMembers             {|ex:occuredAtEvent ex:E_BBC_7|};
+                            rdfs:label            "Staff members of the House leader speak softly, frantically, to each other. Just outside, rioters are spreading out across the building, searching for Ms Pelosi herself.".
+ex:statementStaffMember_1   a                       ex:Statement;
+                            rdfs:label              "They're pounding on doors trying to find her.".
+ex:staffMember_1            ex:gaveStatement        ex:statementStaffMember_1   {|ex:occuredAtEvent ex:E_BBC_7|};
+                            ex:memberOf             ex:staffMembers.
