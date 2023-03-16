@@ -18,11 +18,10 @@ foaf:PoliticalParty        a rdfs:Class .
 ex:News_Outlet             a rdfs:Class.
 
 # Instanciating Perdicates 
-ex:Describes            rdfs:domain         ex:News_Outlet;
+ex:described            rdfs:domain         ex:News_Outlet;
                         rdfs:range          ex:Event .
 
-ex:attacked             rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
+ex:attacked             rdfs:domain         foaf:Participant.
 
 ex:communicatedWith     rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
@@ -37,15 +36,20 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          ex:Event .
                         
-ex:occuredOn            rdfs:domain         ex:Event;
-                        rdfs:range          foaf:Location .
+ex:occuredAt            rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
 
+ex:occuredOn            rdfs:domain         ex:Event;
+                        rdfs:range          ex:DateTime.
+
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
 
 ex:gaveStatement        rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Statement .
 
-ex:evacuates            rdfs:domain         foaf:Participant;
-                        rdfs:range          foaf:Participant .
+ex:evacuated            rdfs:domain         foaf:Participant.
+                        
 ex:eventOfStatement     rdfs:domain         foaf:Statement;
                         rdfs:range          ex:Event.
 
@@ -58,8 +62,10 @@ ex:eventOfStatement     rdfs:domain         foaf:Statement;
 #Individuals
 ex:markMeadows                 a        foaf:Individual.
 ex:jimJordan                   a        foaf:Individual.
-ex:donaldTrump                 a        foaf:Individual.
-ex:mikePence                   a        foaf:Individual.
+ex:donaldTrump                 a        foaf:Individual;
+                                ex:memberOfParty   ex:republicans.
+ex:mikePence                   a        foaf:Individual;
+                                ex:memberOfParty   ex:republicans.
 ex:stevenMiller                a        foaf:Individual.
 ex:tommyOrnato                 a        foaf:Individual.
 ex:davidGroseman               a        foaf:Individual.
