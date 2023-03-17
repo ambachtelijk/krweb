@@ -70,19 +70,22 @@ ex:occuredOn            rdfs:domain         ex:Event;
 ####################### Instanciating ontology ##############################
 
 #Individuals
-ex:markMeadows                  a       foaf:Individual.
-ex:jimJordan                    a       foaf:Individual.
-ex:donaldTrump                  a       foaf:Individual.
-ex:mikePence                    a       foaf:Individual.
-ex:stephenMiller                a       foaf:Individual.
-ex:tonyOrnato                   a       foaf:Individual.
-ex:davidGroseman                a       foaf:Individual.
-ex:correspondentBBC             a       foaf:Individual.
-ex:rudyGiuliani                 a       foaf:Individual.
-ex:cassidyHutchinson            a       foaf:Individual.
-ex:johnEastman                  a       foaf:Individual.
-ex:kevinMccarthy                a       foaf:Individual.
-ex:patChipollone                a       foaf:Individual.
+ex:markMeadows                 a       foaf:Individual.
+ex:jimJordan                   a       foaf:Individual.
+ex:donaldTrump                 a       foaf:Individual.
+ex:mikePence                   a       foaf:Individual.
+ex:stephenMiller               a       foaf:Individual.
+ex:tonyOrnato                  a       foaf:Individual.
+ex:davidGroseman               a       foaf:Individual.
+ex:correspondentBBC            a       foaf:Individual.
+ex:rudyGiuliani                a       foaf:Individual.
+ex:cassidyHutchinson           a       foaf:Individual.
+ex:johnEastman                 a       foaf:Individual.
+ex:kevinMccarthy               a       foaf:Individual.
+ex:patChipollone               a       foaf:Individual.
+ex:tommyTuberville             a       foaf:Individual.
+ex:marjorieGreene              a       foaf:Individual.
+ex:LauraInraham                a       foaf:Individual.
 
 
 #Groups
@@ -112,13 +115,13 @@ ex:ellipse                     a        ex:location.
 ex:E_CNN_1                  a                       ex:Event;
                             ex:occuredAt               "2021-01-06T07:30:00"^^xsd:datetime.
 ex:markMeadows              ex:communicatedWith     ex:jimJordan                      {| ex:occuredAtEvent ex:E_CNN_1|}.
-ex:Statement_Meadows_1      a                       ex:Statement.
-ex:markMeadows              ex:gaveStatement        ex:Statement_Meadows_1            {| ex:occuredAtEvent ex:E_CNN_1|}.
-ex:Statement_Meadows_1      rdfs:label              "I have pushed for this".
-ex:Statement_Meadows_1      rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
-ex:Statement_Meadows_2      a                       ex:Statement.
-ex:markMeadows              ex:gaveStatement        ex:Statement_Meadows_2            {| ex:occuredAtEvent ex:E_CNN_1|}.
-ex:Statement_Meadows_2      rdfs:label              "not sure it is going to happen.".                  
+ex:Statement_MM_1           a                       ex:Statement.
+ex:markMeadows              ex:gaveStatement        ex:Statement_MM_1            {| ex:occuredAtEvent ex:E_CNN_1|}.
+ex:Statement_MM_1           rdfs:label              "I have pushed for this".
+ex:Statement_MM_1           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+ex:Statement_MM_2           a                       ex:Statement.
+ex:markMeadows              ex:gaveStatement        ex:Statement_MM_2            {| ex:occuredAtEvent ex:E_CNN_1|}.
+ex:Statement_MM_2           rdfs:label              "not sure it is going to happen.".                  
 CNN:CNN                     ex:described            ex:E_CNN_1.
 
 
@@ -239,7 +242,7 @@ CNN:CNN                    ex:described            ex:E_CNN_13.
 #Event 14
 ex:E_CNN_14                a                       ex:Event;
                            ex:occuredAt            "2021-01-06T13:39:00"^^xsd:datetime.
-ex:donaldTrump             ex:communicatedWith     ex:rudyGiuliani.
+ex:donaldTrump             ex:communicatedWith     ex:rudyGiuliani                      {| ex:occuredAtEvent ex:E_CNN_14|}.
 CNN:CNN                    ex:described            ex:E_CNN_14.
 
 #Event 15 
@@ -248,18 +251,71 @@ ex:E_CNN_15                a                       ex:Event;
                            rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>,
                                                    <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
 ex:statement_PC_1_CNN      a                       ex:statement.
-ex:patChipollone           ex:communicatedWith     ex:markMeadows;
-                           ex:gaveStatement        "something needs to be done or people are going to die,".   
+ex:patChipollone           ex:communicatedWith     ex:markMeadows                       {| ex:occuredAtEvent ex:E_CNN_15|};
+                           ex:gaveStatement        "something needs to be done or people are going to die,"                 {| ex:occuredAtEvent ex:E_CNN_15|}.   
 CNN:CNN                    ex:described            ex:E_CNN_15.
 
 #Event 16 
 ex:E_CNN_16                a                       ex:Event;
                            ex:occuredAt            "2021-01-06T14:03:00"^^xsd:datetime.
-ex:rudyGiuliani            ex:communicatedWith     ex:donaldTrump.
+ex:rudyGiuliani            ex:communicatedWith     ex:donaldTrump                       {| ex:occuredAtEvent ex:E_CNN_16|}.
                             
-#Event 13 
-ex:E_CNN_13                a                       ex:Event;
-                           ex:occuredAt            "2021-01-06T13:25:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_c9f535b0bada89a01b3527ac70438025>,
-                                                   <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_434c66d4a46dc3ed3d1708f59928c76b>.
+#Event 17 
+ex:E_CNN_17                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:13:00"^^xsd:datetime;
+                           rdfs:seeAlso            <https://www.al.com/politics/2022/07/donald-trump-call-to-strongest-supporter-tommy-tuberville-makes-appearance-at-jan-6-committee-hearing.html>.
+ex:donaldTrump             ex:communicatedWith     ex:tommyTuberville                   {| ex:occuredAtEvent ex:E_CNN_17|}.
+                            
+#Event 18 
+ex:E_CNN_18                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:14:00"^^xsd:datetime;
+                           rdfs:seeAlso            <https://twitter.com/igorbobic/status/1348122699843981312?>.
+ex:dougJensen              ex:attacked             ex:eugeneGoodman                     {| ex:occuredAtEvent ex:E_CNN_18|}.
+                            
+#Event 19 
+ex:E_CNN_19                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:15:00"^^xsd:datetime.
+ex:Statement_MM_3_CNN      a                       ex:statement;
+                           rdfs:label              "Trump “doesn’t want to do anything” about the riot and that Trump agrees with the rioters who were calling for Pence to be hanged,".
+ex:patChipollone           ex:communicatedWith     ex:markMeadows                       {| ex:occuredAtEvent ex:E_CNN_19|}.
+ex:markMeadows             ex:gaveStatement        ex:Statement_MM_3_CNN                {| ex:occuredAtEvent ex:E_CNN_19|}.
 
+#TODO: Check if you can add description of what happened.                           
+#Event 20
+ex:E_CNN_20                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:24:00"^^xsd:datetime.                        
+                            
+#Event 21 
+ex:E_CNN_21                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:26:00"^^xsd:datetime;
+                           rdf:seeAlso             <https://www.cnn.com/2022/03/21/politics/pence-capitol-loading-dock-january-6-riot-secret-service/index.html>.
+ex:secretService           ex:evacuated            ex:mikePence.
+                            
+#Event 22 
+ex:E_CNN_22                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:28:00"^^xsd:datetime;
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+ex:marjorieGreene          ex:communicatedWith     ex:markMeadows                       {| ex:occuredAtEvent ex:E_CNN_22|}.
+ex:statement_MG_1_CNN      a                       ex:Statement;
+                           rdfs:label              "tell the President to calm people,".
+                            
+#Event 23 
+ex:E_CNN_23                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:28:00"^^xsd:datetime;
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+ex:marjorieGreene          ex:communicatedWith     ex:markMeadows                       {| ex:occuredAtEvent ex:E_CNN_23|}.
+ex:statement_MG_1_CNN      a                       ex:Statement;
+                           rdfs:label              "tell the President to calm people,".
+
+#TODO check if evacuated can be edited
+#Event 24 
+ex:E_CNN_22                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:30:00"^^xsd:datetime.
+
+#Event 25 
+ex:E_CNN_22                a                       ex:Event;
+                           ex:occuredAt            "2021-01-06T14:32:00"^^xsd:datetime.
+ex:statement_LI_1_CNN      a                       ex:Statement;
+                           rdfs:label              “the president needs to tell people in the Capitol to go home,”.
+ex:LauraInraham            ex:communicatedWith     ex:markMeadows                      {| ex:occuredAtEvent ex:E_CNN_25|};
+                           ex:gaveStatement        statement_LI_1_CNN                  {| ex:occuredAtEvent ex:E_CNN_25|}.
