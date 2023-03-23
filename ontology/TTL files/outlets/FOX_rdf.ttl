@@ -89,7 +89,7 @@ ex:capitolPolice               a        foaf:Group.
 ex:secretService               a        foaf:Group.
 ex:rioters                     a        foaf:Group.
 ex:lawmakers                   a        foaf:Group.
-ex:protestors                  a        foaf:Group
+ex:protestors                  a        foaf:Group.
 
 
 #Locations
@@ -97,14 +97,14 @@ ex:ellipse                     a        ex:Location.
 ex:CapitolGrounds               a                   foaf:Location.
 ex:CapitolRotunda               a                   foaf:Location.
 
-FOX:fox29                       a                   ex:News_Outlet;
+FOX:fox29                       a                   ex:News_Outlet.
 #############################################################################
 
 ####################### Building triples for FOX Outlet #####################
 
 # Event 1
 ex:e_FOX_1                      a                   ex:Event;            
-                                occurredOn           "2021-01-06T10:02:00"^^xsd:datetime.
+                                ex:occurredOn           "2021-01-06T10:02:00"^^xsd:datetime.
 FOX:fox29                       ex:described        e_FOX_1.
 ex:StatementPence_FOX_1         a                   ex:Statement;         
                                 rdfs:label          "It is my considered judgment that my oath to support and defend the Constitution constrains me from claiming unilateral authority to determine which electoral votes should be counted and which should not.".
@@ -129,7 +129,7 @@ FOX:fox29                       ex:described        ex:e_FOX_3.
 
 # Event 4
 ex:e_FOX_4                      a                   ex:Event;
-                                occurredOn           "2021-01-06T13:47:00"^^xsd:datetime.            
+                                ex:occurredOn           "2021-01-06T13:47:00"^^xsd:datetime.            
 ex:protestors                   ex:attacked         ex:police                  {|occurredAtEvent ex:E_FOX_4|}.
 ex:capitolPolice                ex:evacuates        ex:congress                {|occurredAtEvent ex:E_FOX_4|}.
 FOX:fox29                       ex:described        ex:e_FOX_4.
@@ -224,7 +224,7 @@ FOX:fox29                       ex:described         ex:e_FOX_15.
 
 # Event 16
 ex:e_FOX_16                     a                   ex:Event;
-                                ex:occurredAt        "2021-01-06T18:00:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T18:00:00"^^xsd:datetime.
 ex:StatementTrump_FOX_2         a                   ex:Statement;
                                 rdfs:label          "sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long.Go home with love & in peace. Remember this day forever!"
 ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_2                     {|occurredAtEvent ex:E_FOX_16|}.       
