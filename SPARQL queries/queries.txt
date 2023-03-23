@@ -1,0 +1,72 @@
+# get the labels
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?resource ?label
+WHERE {
+    ?resource rdfs:label ?label .
+  }
+
+# count statements 
+
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+
+SELECT ?s (COUNT(?Statement) as ?numSatement)
+WHERE {
+  ?s rdf:type foaf:Participant.
+  ?s ex:gaveStatement ?Statement.
+} GROUP BY (?s)
+order by desc (?numSatement)
+
+#attacked and vandalized
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+PREFIX Location: <http://example.com/Location>
+
+SELECT (?s as ?Agressor) (?o as ?Victim) ?Location
+WHERE {
+    {?s foaf:Participant ?o}
+    UNION { ?s ex:attacked ?o.}
+    UNION {?s ex:vandalized  ?Location.}
+} 
+
+
+ # locations of events
+ PREFIX ex: <http://example.com/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?s ?o ?location where { 
+	?s ex:occuredAt ?o.
+    bind("Point(23.2980 17.0028)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> as ?location).
+}
+
+#count subject Individuals
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+PREFIX Location: <http://example.com/Location>
+select ?individual (COUNT(?individual) AS ?N)
+	where {
+    ?individual ?p ?o;
+                 rdf:type foaf:Individual.
+    
+    
+}GROUP BY (?individual) order by desc (?N)
+
+
+#count object Individuals
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+PREFIX Location: <http://example.com/Location>
+select ?individual (COUNT(?individual) AS ?N)
+	where { 
+    ?s ?p ?individual.
+    ?individual rdf:type foaf:Individual.
+    
+}GROUP BY (?individual) order by desc (?N)

@@ -1,0 +1,106 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix BBC: <https://www.bbc.com/news/world-us-canada-56004916>.
+
+################ Ontology Development ####################################
+
+# The following turtle statments instanciate our Ontology, it consits of three main parts
+# 1. Instanciating the subclass relations between classes
+# 2. Instanciating the actions participants took
+# 3. Instanciating the other relations in the ontology
+# We instanciate the calsses through the predicate instanciation
+
+#### Instanciating classes and suclass relations ####
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+
+
+ex:News_Outlet             a rdfs:Class.
+
+#### Instanciating Perdicates ####
+#tekstie
+#
+#
+### RDF * predicate ###
+ex:described            rdfs:domain         ex:News_Outlet;
+                        rdfs:range          ex:Event .
+
+### Predicates in relation to participant actions ###
+
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant. # als die ook naar andere moet moet je rdf range toevoegen zie evacuated.
+
+
+ex:evacuated            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant,
+                                            ex:Location.
+
+ex:communicatedWith     rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement.
+
+
+#### Instanciating other perdicates ####
+ex:memberOf             rdfs:domain         foaf:Individual;
+                        rdfs:range          foaf:Group .
+
+ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
+                        rdfs:domain         foaf:PoliticalParty;
+                        rdfs:range          foaf:Group .
+
+ex:tookPartIn           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Event .
+                        
+ex:occuredAt            rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
+
+ex:occuredOn            rdfs:domain         ex:Event;
+                        rdfs:range          ex:DateTime.
+   
+
+#############################################################################
+
+####################### Instanciating ontology ##############################
+
+#Individuals
+ex:markMeadows                 a        foaf:Individual.
+ex:jimJordan                   a        foaf:Individual.
+ex:donaldTrump                 a        foaf:Individual;
+                                ex:memberOfParty   ex:republicans.
+ex:mikePence                   a        foaf:Individual;
+                                ex:memberOfParty   ex:republicans.
+ex:stevenMiller                a        foaf:Individual.
+ex:tommyOrnato                 a        foaf:Individual.
+ex:davidGroseman               a        foaf:Individual.
+ex:correspondentBBC            a        foaf:Individual.
+ex:rudyGiuliani                a        foaf:Individual.
+ex:capitolOfficer_BBC_1        a        foaf:Individual.
+ex:eugeneGoodman               a        foaf:Individual.
+ex:mittRomney                  a        foaf:Individual.
+ex:nancyPelosi                 a        foaf:Individual.
+ex:staffMember_1               a        foaf:Individual.
+ex:ericSwalwell                a        foaf:Individual.
+
+#Groups
+ex:congress                    a        foaf:Group.
+ex:attendees                   a        foaf:Group.
+ex:proudBoys                   a        foaf:Group.
+ex:republicans                 a        foaf:Group.
+ex:democrats                   a        foaf:Group.
+ex:proTrumpRioters             a        foaf:Group.
+ex:crowdOutsideTheCapitol      a        foaf:Group.
+ex:police                      a        foaf:Group.
+ex:protesters                  a        foaf:Group.
+ex:capitolPolice               a        foaf:Group.
+ex:secretService               a        foaf:Group.
+ex:rioters                     a        foaf:Group.
+ex:unknown                     a        foaf:Group. # check for this
+ex:theHouse                    a        foaf:Group.
