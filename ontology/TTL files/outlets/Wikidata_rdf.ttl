@@ -1,0 +1,558 @@
+@prefix wiki: <https://www.wikidata.org/wiki/Q104705419>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+
+
+#### Instantiating classes and subclass relations ####
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+
+#### Instantiating classes and subclass relations ####
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+ex:News_Outlet             a rdfs:Class.
+
+### RDF * predicate ###
+ex:described            rdfs:domain         ex:News_Outlet;
+                        rdfs:range          ex:Event .
+
+### Predicates in relation to participant actions ###
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant.
+
+
+ex:evacuated            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant,
+                                            ex:Location.
+
+ex:communicatedWith     rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement.
+
+
+#### Instantiating other predicates ####
+ex:memberOf             rdfs:domain         foaf:Individual;
+                        rdfs:range          foaf:Group .
+
+ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
+                        rdfs:domain         foaf:PoliticalParty;
+                        rdfs:range          foaf:Group .
+
+ex:tookPartIn           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Event .
+
+ex:occurredAt           rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
+
+ex:occurredOn           rdfs:domain         ex:Event;
+                        rdfs:range          ex:DateTime.
+
+
+####################### Populating ontology ##############################
+
+Wiki:wiki                     a                       ex:News_Outlet.
+
+# Individuals
+ex:donaldTrump                 a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:aliAlexander                a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:ronWatkins                  a                       foaf:Individual;
+                               ex:memberOf             ex:qanon.
+
+ex:courtneyHolland             a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:scottPresler                a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:meganBarth                  a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:roseTennent                 a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:jimJordan                   a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:markMeadows                 a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:mikePence                   a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:moBrooks                    a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+# Groups
+ex:stopTheSteal                a                       foaf:Group.
+ex:qanon                       a                       foaf:Group.
+ex:secretService               a                       foaf:Group.
+
+# PoliticalParty
+ex:republicanParty             a                       foaf:PoliticalParty.
+ex:democraticParty             a                       foaf:PoliticalParty.
+
+
+
+# Event 000
+# 1:00 a.m.: Trump tweets: "If Vice President @Mike_Pence comes through for us, we will win the Presidency."
+
+Wiki:wiki                   ex:described           ex:E_Wiki_000.
+ex:E_Wiki_000               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T01:00:00"^^xsd:datetime.
+ex:Statement_Wiki_000       a                      ex:Statement;
+                            rdfs:label             "If Vice President @Mike_Pence comes through for us, we will win the Presidency.".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_000        {|ex:occurredAtEvent ex:E_Wiki_000|}.
+
+
+
+# Event 001
+# 1:13 a.m.: Ali Alexander, Stop the Steal organizer, tweets "First official day of the rebellion."
+
+Wiki:wiki                   ex:described           ex:E_Wiki_001.
+ex:E_Wiki_001               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T01:13:00"^^xsd:datetime.
+ex:Statement_Wiki_001       a                      ex:Statement;
+                            rdfs:label             "First official day of the rebellion.".
+ex:aliAlexander             ex:gaveStatement       ex:Statement_Wiki_001        {|ex:occurredAtEvent ex:E_Wiki_001|}.
+
+
+# Event 002
+# 1:00 a.m.: Ron Watkins, imageboard administrator and prominent QAnon figure, posts a tweet accusing Vice President Mike Pence of orchestrating a coup against Trump. He also linked to a blog post which called for "the immediate arrest of [Pence], for treason."
+
+Wiki:wiki                   ex:described           ex:E_Wiki_002.
+ex:E_Wiki_002               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T01:00:00"^^xsd:datetime.
+ex:Statement_Wiki_002       a                      ex:Statement;
+                            rdfs:label             "Posts a tweet accusing Vice President Mike Pence of orchestrating a coup against Trump. He also linked to a blog post which called for "the immediate arrest of [Pence], for treason.".
+ex:ronWatkins               ex:gaveStatement       ex:Statement_Wiki_002        {|ex:occurredAtEvent ex:E_Wiki_002|}.
+
+
+
+# Event 003
+# 7:29 a.m.: Courtney Holland, who later became communications director for# E the Republican Senate nominee in Nevada, tweets that she is walking to the Stop the Steal rally with Scott Presler, Megan Barth, and Rose Tennent. Those three people are scheduled to speak later at a different rally at the Capitol."
+
+Wiki:wiki                   ex:described           ex:E_Wiki_003.
+ex:E_Wiki_003               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T07:29:00"^^xsd:datetime.
+ex:Statement_Wiki_003       a                      ex:Statement;
+                            rdfs:label             "Tweets that she is walking to the Stop the Steal rally with Scott Presler, Megan Barth, and Rose Tennent.".
+ex:courtneyHolland          ex:gaveStatement       ex:Statement_Wiki_003       {|ex:occurredAtEvent ex:E_Wiki_003|}.
+ex:courtneyHolland          ex:communicatedWith    [ ex:scottPresler ; ex:meganBarth ; ex:roseTennent ; ]        {|ex:occurredAtEvent ex:E_Wiki_003|}.
+
+
+
+# Event 004
+# •	7:30 a.m.: White House chief of staff Mark Meadows texts Representative Jim Jordan "I have pushed for this" but is "not sure it is going to happen," referring to Pence overturning the election results.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_004.
+ex:E_Wiki_004               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T07:30:00"^^xsd:datetime.
+ex:Statement_Wiki_004       a                      ex:Statement;
+                            rdfs:label             "Texts Representative Jim Jordan "I have pushed for this" but is "not sure it is going to happen," referring to Pence overturning the election results".
+ex:markMeadows              ex:gaveStatement       ex:Statement_Wiki_004  {|ex:occurredAtEvent ex:E_Wiki_004|}.
+ex:markMeadows              ex:communicatedWith    ex:jimJordan           {|ex:occurredAtEvent ex:E_Wiki_004|}.
+
+
+# Event 005
+# 8:07 a.m.: Secret Service countersurveillance agents reported that “members of the crowd are wearing ballistic helmets, body armor and carrying radio equipment and military grade backpacks.”
+Wiki:wiki                   ex:described           ex:E_Wiki_005.
+ex:E_Wiki_005               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T08:07:00"^^xsd:datetime.
+ex:Statement_Wiki_005       a                      ex:Statement;
+                            rdfs:label             "Members of the crowd are wearing ballistic helmets, body armor and carrying radio equipment and military grade backpacks.".
+ex:secretService            ex:gaveStatement       ex:Statement_Wiki_005  {|ex:occurredAtEvent ex:E_Wiki_005|}.
+
+
+# Event 006
+# 8:17 a.m.: President Trump tweets allegations of vote fraud, stating, States want to correct their votes, which they now know were based on irregularities and fraud, plus corrupt process never received legislative approval. All Mike Pence has to do is send them back to the States, AND WE WIN. Do it Mike, this is a time for extreme courage!"[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_006.
+ex:Statement_Wiki_006       a                      ex:Statement;
+                            rdfs:label             "Tweets allegations of vote fraud, stating, States want to correct their votes, which they now know were based on irregularities and fraud, plus corrupt process never received legislative approval. All Mike Pence has to do is send them back to the States, AND WE WIN. Do it Mike, this is a time for extreme courage!".
+ex:E_Wiki_006               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T08:17:00"^^xsd:datetime.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_006        {|ex:occurredAtEvent ex:E_Wiki_006|}.
+
+
+# Event 007
+# 9:00 a.m.: At start time on permit for First Amendment rally "March for Trump" speeches,[95] the "Save America" rally (or "March to Save America") begins. Above the podium at The Ellipse are banners for "Save America March". Mo Brooks (R–AL) makes a speech about "kicking ass", asking "Will you fight for America?"
+Wiki:wiki                   ex:described           ex:E_Wiki_007.
+ex:E_Wiki_007               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:00:00"^^xsd:datetime.
+
+
+# Event 008
+# 9:24 a.m.: Trump has an approximately 10-minute phone call with Representative Jim Jordan.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_008.
+ex:E_Wiki_008               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:24:00"^^xsd:datetime.
+
+
+
+# Event 009
+# 9:45 a.m.: A Federal Protective Service liaison officer informs the Capitol Police that more than the permitted 30,000 protesters are expected at the Ellipse, the Freedom Plaza permit was increased from 5,000 to 30,000, and the protest outside the Sylven Theater is permitted for 15,000.[117] According to Newsweek, "Six times as many protestors—as many as 120,000—would show up on the Mall on January 6, according to classified numbers still not released by the Secret Service and the FBI but seen by Newsweek."[139]
+Wiki:wiki                   ex:described           ex:E_Wiki_009.
+ex:E_Wiki_009               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:45:00"^^xsd:datetime.
+
+
+
+# Event 010
+#•	9:52 a.m.: Trump has a 26-minute phone call with adviser Stephen Miller.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_010.
+ex:E_Wiki_010               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:52:00"^^xsd:datetime.
+
+
+
+
+# Event 011
+#•	10:00 a.m.: Before this time, White House deputy chief of staff Tony Ornato informs Trump that authorities have spotted armed individuals at the crowd gathering at the Ellipse.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_011.
+ex:E_Wiki_011               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:00:00"^^xsd:datetime.
+
+
+
+
+# Event 012
+#•	10:15 a.m.: Around this time, Tony Ornato, along with Cassidy Hutchinson, who was an aide to Mark Meadows, inform Meadows about the armed Trump supporters.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_012.
+ex:E_Wiki_012               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:15:00"^^xsd:datetime.
+
+
+
+
+# Event 013
+#•	10:30 a.m.: Benjamin Philips splits from his group to park, not reuniting but later dying from a stroke at George Washington University Hospital.[140]
+Wiki:wiki                   ex:described           ex:E_Wiki_013.
+ex:E_Wiki_013               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:30:00"^^xsd:datetime.
+
+
+
+# Event 014
+#•	10:30 a.m.: ~200-300 Proud Boys started their march down the National Mall towards the U.S. Capitol.
+Wiki:wiki                   ex:described           ex:E_Wiki_014.
+ex:E_Wiki_014               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:30:00"^^xsd:datetime.
+
+
+
+# Event 015
+#•	10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".[133][141]
+Wiki:wiki                   ex:described           ex:E_Wiki_015.
+ex:E_Wiki_015               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:47:00"^^xsd:datetime.
+
+
+# Event 016
+#•	10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building.[142] (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)[143]
+Wiki:wiki                   ex:described           ex:E_Wiki_016.
+ex:E_Wiki_016               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:58:00"^^xsd:datetime.
+
+
+
+# Event 017
+#•	11:00 a.m.: The Ellipse, located south of the White House, is filled with Trump supporters.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_017.
+ex:E_Wiki_017               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:00:00"^^xsd:datetime.
+
+
+
+
+# Event 018
+#•	11:06 a.m.: "There is no official record of President Trump receiving or placing a call between 11:06 a.m. and 6:54 p.m.," Representative Elaine Luria stated at a public hearing a year later.[144]
+Wiki:wiki                   ex:described           ex:E_Wiki_018.
+ex:E_Wiki_018               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:06:00"^^xsd:datetime.
+
+
+
+
+# Event 019
+#•	11:30 a.m.: Acting Secretary of Defense Christopher C. Miller participates in a tabletop exercise on Department of Defense contingency response options for the D.C. protests.[145]
+Wiki:wiki                   ex:described           ex:E_Wiki_019.
+ex:E_Wiki_019               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:30:00"^^xsd:datetime.
+
+
+
+
+# Event 020
+#•	11:30 a.m.: The motorcade of Vice President–elect Kamala Harris arrived at DNC headquarters. (Law enforcement would discover a pipe bomb at 1:07 p.m., only several yards away from where her motorcade had passed through the garage of DNC headquarters, and they would evacuate Harris seven minutes after that.)[146]
+Wiki:wiki                   ex:described           ex:E_Wiki_020.
+ex:E_Wiki_020               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:30:00"^^xsd:datetime.
+
+
+
+
+# Event 021
+#•	11:46 a.m.: Some Proud Boys, including Joe Biggs and Ethan Nordean, are gathered where Trump is about to speak.[147]
+Wiki:wiki                   ex:described           ex:E_Wiki_021.
+ex:E_Wiki_021               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:46:00"^^xsd:datetime.
+
+
+
+
+# Event 022
+#•	11:57 a.m.: President Trump begins his over one-hour speech.[127][148] He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks),[149] accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.[150]
+Wiki:wiki                   ex:described           ex:E_Wiki_022.
+ex:E_Wiki_022               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:57:00"^^xsd:datetime.
+
+
+
+
+# Event 023
+#•	12:00 p.m.: A Federal Protective Service briefing email reports that about 300 Proud Boys are at the Capitol, a man in a tree near the Ellipse is holding what looks like a rifle, and some of the 25,000 people around the White House are hiding bags in bushes.[117] The email warns that the Proud Boys are threatening to shut down the downtown water system.[117]
+Wiki:wiki                   ex:described           ex:E_Wiki_023.
+ex:E_Wiki_023               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:00:00"^^xsd:datetime.
+
+
+
+
+# Event 024
+#•	12:05 p.m.: Rep. Paul Gosar tweets a demand for Biden to concede by the next morning.[151][152]
+Wiki:wiki                   ex:described           ex:E_Wiki_024.
+ex:E_Wiki_024               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:05:00"^^xsd:datetime.
+
+
+
+# Event 025
+#•	12:16 p.m. Trump tells the crowd: "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard." Finishing his speech with "We fight. We fight like hell and if you don't fight like hell, you're not going to have a country anymore. So let's walk down Pennsylvania Avenue."[153][154]
+Wiki:wiki                   ex:described           ex:E_Wiki_025.
+ex:E_Wiki_025               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:16:00"^^xsd:datetime.
+
+
+# Event 026
+#•	12:20 p.m.: A Federal Protective Service officer writes in an email, "POTUS is encouraging the protesters to march to capitol grounds and continue protesting there."[117]
+Wiki:wiki                   ex:described           ex:E_Wiki_026.
+ex:E_Wiki_026               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:20:00"^^xsd:datetime.
+
+
+
+# Event 027
+#•	12:26 p.m.: Pence arrives at the Capitol.[127]
+Wiki:wiki                   ex:described           ex:E_Wiki_027.
+ex:E_Wiki_027               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:26:00"^^xsd:datetime.
+
+
+
+# Event 028
+#•	12:28 p.m.: A Federal Protective Service officer reports 10,000–15,000 people moving towards the Capitol down Pennsylvania, Constitution, and Madison Avenues.[117]
+Wiki:wiki                   ex:described           ex:E_Wiki_028.
+ex:E_Wiki_028               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:28:00"^^xsd:datetime.
+
+
+
+
+# Event 029
+#•	12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.[155]
+Wiki:wiki                   ex:described           ex:E_Wiki_029.
+ex:E_Wiki_029               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:30:00"^^xsd:datetime.
+
+
+
+# Event 030
+#•	12:45 p.m.: FBI, Capitol Police, and ATF responded to the pipe bomb found outside RNC headquarters,[156] which had been planted the night before.[121]
+Wiki:wiki                   ex:described           ex:E_Wiki_030.
+ex:E_Wiki_030               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime.
+
+
+
+
+# Event 031
+#•	12:45 p.m.: Proud Boys arrive at the Peace Monument northwest of the Capitol.[127]
+Wiki:wiki                   ex:described           ex:E_Wiki_031.
+ex:E_Wiki_031               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime.
+
+
+
+
+# Event 032
+#•	12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb.[157][155] A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
+Wiki:wiki                   ex:described           ex:E_Wiki_032.
+ex:E_Wiki_032               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime.
+
+
+
+
+# Event 033
+#•	12:49 p.m.: A police sweep of the area identifies a vehicle which held one handgun, an M4 Carbine assault rifle with loaded magazine, and components for 11 Molotov cocktails with homemade napalm. Around 6:30 p.m, the driver was apprehended carrying two unregistered handguns as he returned to the vehicle. He is not suspected of planting the pipe bombs.[159][160]
+Wiki:wiki                   ex:described           ex:E_Wiki_033.
+ex:E_Wiki_033               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime.
+
+
+
+
+# Event 034
+#•	12:49 p.m.: Joe Biggs and Ethan Nordean, again, are caught on video in the crowd outside the Capitol.[161]
+Wiki:wiki                   ex:described           ex:E_Wiki_034.
+ex:E_Wiki_034               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime.
+
+
+
+# Event 035
+#•	12:52 p.m. Some Oath Keepers, including Jessica Watkins, leave the Ellipse.[162]
+Wiki:wiki                   ex:described           ex:E_Wiki_035.
+ex:E_Wiki_035               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:52:00"^^xsd:datetime.
+
+
+# Event 036
+#•	12:53 p.m.: Rioters overwhelm police along the outer perimeter west of the Capitol building, pushing aside temporary fencing. Some protesters immediately follow, while others, at least initially, remain behind and admonish the others: "Don't do it. You're breaking the law."[163][164] By 1:03 p.m., a vanguard of rioters have overrun three layers of barricades and have forced police officers to the base of the west Capitol steps.[157]
+Wiki:wiki                   ex:described           ex:E_Wiki_036.
+ex:E_Wiki_036               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:53:00"^^xsd:datetime.
+
+
+
+# Event 037
+#•	12:57 p.m.: Federal Protective Service officers report that the Capitol Police barricade on the west side of the Capitol building has been breached by a large group.[117]
+Wiki:wiki                   ex:described           ex:E_Wiki_037.
+ex:E_Wiki_037               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:57:00"^^xsd:datetime.
+
+
+
+# Event 038
+#•	12:58 p.m.: Chief Sund asks House Sergeant at Arms Paul D. Irving and Senate Sergeant at Arms Michael C. Stenger to declare an emergency and call for deployment of the National Guard. Irving and Stenger state that they will forward the request up their chains of command. Soon afterwards, aides to Congressional leaders arrive in Stenger's office and are outraged to learn that he has not yet called for any reinforcement.[155] Phone records obtained at the Senate Hearings reflect that Sund first reached out to Irving to request the National Guard at 12:58 p.m. on the day of the attack. Sund then called the Senate sergeant-at-arms at the time, Michael Stenger, at 1:05 p.m. Sund repeated his request in a call at 1:28 p.m. and then again at 1:34 p.m., 1:39 p.m. and 1:45 p.m. that day.[165] The Capitol Police Board consisting of the Architect of the Capitol, the House Sergeant at Arms, and the Senate Sergeant at Arms have the authority to request the national guard to the Capitol, but had made the decision three days earlier not to do so.[166][167]
+Wiki:wiki                   ex:described           ex:E_Wiki_038.
+ex:E_Wiki_038               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:58:00"^^xsd:datetime.
+
+
+
+# Event 039
+#•	1:00 p.m.: Senators and Vice President Pence walk to the House chamber.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_039.
+ex:E_Wiki_019               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime.
+
+
+
+# Event 040
+#•	1:00 p.m.: US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.[155]
+Wiki:wiki                   ex:described           ex:E_Wiki_040.
+ex:E_Wiki_040               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime.
+
+
+
+
+# Event 041
+#•	1:02 p.m.: Pence refuses to go along with Trump's plan to pick and choose electors, and tweets a letter[168] stating in part,
+# It is my considered judgment that my oath to support and defend the Constitution constrains me from claiming unilateral authority to determine which electoral votes should be counted and which should not.
+# Pence had not shown it to the White House Counsel in advance.[169]
+Wiki:wiki                   ex:described           ex:E_Wiki_041.
+ex:E_Wiki_041               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:02:00"^^xsd:datetime.
+
+
+
+
+# Event 042
+#•	1:05 p.m.: Congress meets in joint session to confirm Joe Biden's electoral victory.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_042.
+ex:E_Wiki_042               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime.
+
+
+
+
+# Event 043
+#•	1:05 p.m.: Acting Secretary of Defense Miller receives open-source intelligence reports of demonstrators moving towards the U.S. Capitol.[145]
+Wiki:wiki                   ex:described           ex:E_Wiki_043.
+ex:E_Wiki_043               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime.
+
+
+
+
+# Event 044
+#•	1:07 p.m.: Authorities respond to the headquarters of the Democratic National Committee, following discovery of the second pipe bomb.[121][158] When police arrive, Vice President-elect Kamala Harris was inside.[158]
+Wiki:wiki                   ex:described           ex:E_Wiki_044.
+ex:E_Wiki_044               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:07:00"^^xsd:datetime.
+
+
+
+# Event 045
+#•	1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:[170][145][171][172]
+# If you don't fight like hell, you're not going to have a country anymore....We're going to try and give them [Republicans] the kind of pride and boldness that they need to take back our country...The Democrats are hopeless — they never vote for anything. Not even one vote. But we're going to try and give our Republicans, the weak ones because the strong ones don't need any of our help. We're going to try and give them the kind of pride and boldness that they need to take back our country.
+Wiki:wiki                   ex:described           ex:E_Wiki_045.
+ex:E_Wiki_045               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:10:00"^^xsd:datetime.
+
+
+# Event 046
+#•	1:11 p.m.: First MPD officers arrive at lower west plaza to confront rioters approaching the Capitol
+Wiki:wiki                   ex:described           ex:E_Wiki_046.
+ex:E_Wiki_046               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:11:00"^^xsd:datetime.
+
+
+
+# Event 047
+#•	1:12 p.m.: Rep. Paul Gosar (R–AZ) and Sen. Ted Cruz (R–TX) object to certifying the votes made in the 2020 United States presidential election in Arizona. The joint session separates into House and Senate chambers to debate the objection.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_047.
+ex:E_Wiki_047               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:12:00"^^xsd:datetime.
+
+
+
+# Event 048
+#•	1:14 p.m.: Due to the pipe bomb (see 1:07pm), Vice President-elect Harris is evacuated from DNC Headquarters.[158]
+Wiki:wiki                   ex:described           ex:E_Wiki_048.
+ex:E_Wiki_048               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:14:00"^^xsd:datetime.
+
+
+
+# Event 049
+#•	1:17 p.m.: Trump's motorcade leaves the Ellipse.[173] The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
+Wiki:wiki                   ex:described           ex:E_Wiki_049.
+ex:E_Wiki_049               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:17:00"^^xsd:datetime.
+
+
+# Event 050
+#•	1:19 p.m.: Trump's motorcade arrives at the White House.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_050.
+ex:E_Wiki_050               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:19:00"^^xsd:datetime.
+
+
+# Event 051
+#•	1:21 p.m.: "The Presidential Daily Diary...contains no information for the period between 1:21 p.m. and 4:03 p.m.," Representative Elaine Luria stated at a public hearing a year later. "The chief White House photographer wanted to take pictures because it was, in her words, 'very important for his archives and for history.' But she was told, 'no photographs.'"[144]
+Wiki:wiki                   ex:described           ex:E_Wiki_051.
+ex:E_Wiki_051               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:21:00"^^xsd:datetime.
