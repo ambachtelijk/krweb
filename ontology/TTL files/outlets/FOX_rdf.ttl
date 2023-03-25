@@ -89,7 +89,7 @@ ex:capitolPolice               a        foaf:Group.
 ex:secretService               a        foaf:Group.
 ex:rioters                     a        foaf:Group.
 ex:lawmakers                   a        foaf:Group.
-ex:protestors                  a        foaf:Group
+ex:protestors                  a        foaf:Group.
 
 
 #Locations
@@ -97,15 +97,15 @@ ex:ellipse                     a        ex:Location.
 ex:CapitolGrounds               a                   foaf:Location.
 ex:CapitolRotunda               a                   foaf:Location.
 
-FOX:fox29                       a                   ex:News_Outlet;
+FOX:fox29                       a                   ex:News_Outlet.
 #############################################################################
 
 ####################### Building triples for FOX Outlet #####################
 
 # Event 1
 ex:e_FOX_1                      a                   ex:Event;            
-                                occurredOn           "2021-01-06T10:02:00"^^xsd:datetime.
-FOX:fox29                       ex:described        e_FOX_1.
+                                ex:occurredOn           "2021-01-06T10:02:00"^^xsd:datetime.
+FOX:fox29                       ex:described        ex:e_FOX_1.
 ex:StatementPence_FOX_1         a                   ex:Statement;         
                                 rdfs:label          "It is my considered judgment that my oath to support and defend the Constitution constrains me from claiming unilateral authority to determine which electoral votes should be counted and which should not.".
 ex:mikePence                    ex:memberOfParty    ex:republicanParty;
@@ -123,15 +123,15 @@ ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_1     
 # Event 3
 ex:e_FOX_3                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T13:10:00"^^xsd:datetime.
-ex:lawmakers                    ex:communicatedWith ex:lawmakers;
-                                rdfs:label          "debate on the counting of the votes in Arizona"        {|occurredAtEvent ex:E_FOX_3|}.
+ex:lawmakers                    ex:communicatedWith ex:lawmakers {|ex:occurredAtEvent ex:E_FOX_3|};
+                                rdfs:label          "debate on the counting of the votes in Arizona".   
 FOX:fox29                       ex:described        ex:e_FOX_3.
 
 # Event 4
 ex:e_FOX_4                      a                   ex:Event;
-                                occurredOn           "2021-01-06T13:47:00"^^xsd:datetime.            
-ex:protestors                   ex:attacked         ex:police                  {|occurredAtEvent ex:E_FOX_4|}.
-ex:capitolPolice                ex:evacuates        ex:congress                {|occurredAtEvent ex:E_FOX_4|}.
+                                ex:occurredOn           "2021-01-06T13:47:00"^^xsd:datetime.            
+ex:protestors                   ex:attacked         ex:police                  {|ex:occurredAtEvent ex:E_FOX_4|}.
+ex:capitolPolice                ex:evacuates        ex:congress                {|ex:occurredAtEvent ex:E_FOX_4|}.
 FOX:fox29                       ex:described        ex:e_FOX_4.
 
 # Event 5
@@ -139,30 +139,30 @@ ex:e_FOX_5                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T14:00:00"^^xsd:datetime.    
 ex:StatementFOX_reporter_1      a                   ex:Statement;
                                 rdfs:label          "rioters have gotten into the U.S. Capitol building".
-FOX:FOXreporter                 ex:gaveStatement    ex:StatementFOX_reporter_1         {|occurredAtEvent ex:E_FOX_5|}.
-ex:police                       ex:attacked         ex:rioters                         {|occurredAtEvent ex:E_FOX_5|}.
+FOX:FOXreporter                 ex:gaveStatement    ex:StatementFOX_reporter_1         {|ex:occurredAtEvent ex:E_FOX_5|}.
+ex:police                       ex:attacked         ex:rioters                         {|ex:occurredAtEven ex:E_FOX_5|}.
 FOX:fox29                       ex:described        ex:e_FOX_5.
 
 # Event 6
 ex:e_FOX_6                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T14:20:00"^^xsd:datetime.
 ex:capitolPolice                ex:communicatedWith ex:lawmakers;
-                                rdfs:label          "Due to an "external security threat," no one could enter or exit the Capitol complex."        {|occurredAtEvent ex:E_FOX_6|}.
+                                rdfs:label          "Due to an external security threat, no one could enter or exit the Capitol complex."        {|ex:occurredAtEvent ex:E_FOX_6|}.
 FOX:fox29                       ex:described        ex:e_FOX_6.
 
 # Event 7
 ex:e_FOX_7                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T14:40:00"^^xsd:datetime;
-                                ex:occurredAt        ex:CapitolRotunda
-ex:rioters                      ex:attacked         ex:police                      {|occurredAtEvent ex:E_FOX_7|}.
-ex:police                       ex:attacked         ex:rioters                     {|occurredAtEvent ex:E_FOX_7|}.
+                                ex:occurredAt       ex:CapitolRotunda.
+ex:rioters                      ex:attacked         ex:police                      {|ex:occurredAtEvent ex:E_FOX_7|}.
+ex:police                       ex:attacked         ex:rioters                     {|ex:occurredAtEvent ex:E_FOX_7|}.
 FOX:fox29                       ex:described        ex:e_FOX_7.
 
 # Event 8
 ex:e_FOX_8                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T15:30:00"^^xsd:datetime.
 ex:capitolPolice                ex:attacked         ex:attendees;
-                                rdfs:label          "One person was shot. The condition of the person is unclear."         {|occurredAtEvent ex:E_FOX_8|}.
+                                rdfs:label          "One person was shot. The condition of the person is unclear."         {|ex:occurredAtEven ex:E_FOX_8|}.
 FOX:fox29                       ex:described        ex:e_FOX_8.
 
 # Event 9
@@ -170,7 +170,7 @@ ex:e_FOX_9                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T15:36:00"^^xsd:datetime.
 ex:StatementchrisMiller_FOX_1   a                   ex:Statement;
                                 rdfs:label          "We have fully activated the D.C. National Guard to assist federal and local law enforcement as they work to peacefully address the situation. We are prepared to provide additional support as necessary and appropriate as requested by local authorities. Our people are sworn to defend the constitution and our democratic form of government and they will act accordingly.".
-ex:chrisMiller                  ex:gaveStatement    StatementchrisMiller_FOX_1         {|occurredAtEvent ex:E_FOX_9|}.
+ex:chrisMiller                  ex:gaveStatement    ex:StatementchrisMiller_FOX_1         {|ex:occurredAtEvent ex:E_FOX_9|}.
 FOX:fox29                       ex:described        ex:e_FOX_9.                        
 
 # Event 10
@@ -178,15 +178,15 @@ ex:e_FOX_10                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T16:00:00"^^xsd:datetime.
 ex:StatementPolice_FOX_1        a                   ex:Statement;
                                 rdfs:label          "At least one explosive device had been found near the U.S. Capitol.".
-ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|occurredAtEvent ex:E_FOX_10|}.    
+ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|ex:occurredAtEvent ex:E_FOX_10|}.    
 FOX:fox29                       ex:described        ex:e_FOX_10.
 
 # Event 11
 ex:e_FOX_11                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T16:10:00"^^xsd:datetime.
 ex:StatementBiden_FOX_1         a                   ex:Statement;
-                                rdfs:label          "President-elect Joe Biden addressed the nation to demand an end to the 'siege' underway at the U.S. Capitol building.".
-ex:joeBiden                     ex:gaveStatement    ex:StatementBiden_FOX_1                     {|occurredAtEvent ex:E_FOX_11|}.    
+                                rdfs:label          "President-elect Joe Biden addressed the nation to demand an end to the siege underway at the U.S. Capitol building.".
+ex:joeBiden                     ex:gaveStatement    ex:StatementBiden_FOX_1                     {|ex:occurredAtEvent ex:E_FOX_11|}.    
 FOX:fox29                       ex:described        ex:e_FOX_11.
 
 # Event 12
@@ -194,24 +194,24 @@ ex:e_FOX_12                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T16:25:00"^^xsd:datetime.
 ex:StatementPolice_FOX_1        a                   ex:Statement;
                                 rdfs:label          "At least five weapons had been recovered and at least 13 people had been arrested".
-ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|occurredAtEvent ex:E_FOX_12|}.
-FOX:fox29                       ex:described        ex:e_FOX_12
+ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|ex:occurredAtEvent ex:E_FOX_12|}.
+FOX:fox29                       ex:described        ex:e_FOX_12.
 
 # Event 13
 ex:e_FOX_13                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T17:00:00"^^xsd:datetime.
-                                rdfs:label          "Social media deleted video from Trump"
+                                ex:occurredOn        "2021-01-06T17:00:00"^^xsd:datetime;
+                                rdfs:label          "Social media deleted video from Trump".
 ex:StatementguyRosen_FOX_1      a                   ex:Statement;
                                 rdfs:label          "This is an emergency situation and we are taking appropriate emergency measures, including removing President Trump’s video. We removed it because on balance we believe it contributes to rather than diminishes the risk of ongoing violence".
-ex:guyRosen                     ex:gaveStatement    ex:StatementguyRosen_FOX_1                  {|occurredAtEvent ex:E_FOX_13|}.  
+ex:guyRosen                     ex:gaveStatement    ex:StatementguyRosen_FOX_1                  {|ex:occurredAtEvent ex:E_FOX_13|}.  
 FOX:fox29                       ex:described        ex:e_FOX_13.
 
 # Event 14
 ex:e_FOX_14                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T17:15:00"^^xsd:datetime;
-                                ex:occurredAt        ex:CapitolGrounds;
+                                ex:occurredAt        ex:CapitolGrounds.
 ex:police                       ex:attacked         ex:rioters;
-                                rdfs:label          "used tear gas and percussian grenades to begin clearing pro-Trump rioters"       {|occurredAtEvent ex:E_FOX_14|}.  
+                                rdfs:label          "used tear gas and percussian grenades to begin clearing pro-Trump rioters"       {|ex:occurredAtEvent ex:E_FOX_14|}.  
 FOX:fox29                       ex:described         ex:e_FOX_14.
                                 
 # Event 15
@@ -219,15 +219,15 @@ ex:e_FOX_15                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T17:30:00"^^xsd:datetime.
 ex:StatementcapitolPolice_FOX_1    a                   ex:Statement;
                                 rdfs:label          "The Capitol is secure".
-ex:capitolPolice                ex:gaveStatement    ex:StatementcapitolPolice_FOX_1             {|occurredAtEvent ex:E_FOX_15|}.
+ex:capitolPolice                ex:gaveStatement    ex:StatementcapitolPolice_FOX_1             {|ex:occurredAtEvent ex:E_FOX_15|}.
 FOX:fox29                       ex:described         ex:e_FOX_15.
 
 # Event 16
 ex:e_FOX_16                     a                   ex:Event;
-                                ex:occurredAt        "2021-01-06T18:00:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T18:00:00"^^xsd:datetime.
 ex:StatementTrump_FOX_2         a                   ex:Statement;
-                                rdfs:label          "sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long.Go home with love & in peace. Remember this day forever!"
-ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_2                     {|occurredAtEvent ex:E_FOX_16|}.       
+                                rdfs:label          "sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long.Go home with love & in peace. Remember this day forever!".
+ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_2                     {|ex:occurredAtEvent ex:E_FOX_16|}.       
 FOX:fox29                       ex:described         ex:e_FOX_16.
 
 
