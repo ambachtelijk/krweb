@@ -226,16 +226,17 @@ ex:E_Wiki_009               a                      ex:Event;
 
 
 # Event 010
-#•	9:52 a.m.: Trump has a 26-minute phone call with adviser Stephen Miller.[133]
-Wiki:wiki                   ex:described           ex:E_Wiki_010.
-ex:E_Wiki_010               a                      ex:Event;
+# 9:52 a.m.: Trump has a 26-minute phone call with adviser Stephen Miller.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_001.
+ex:E_PhoneCall_001          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T09:52:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:donaldTrump              ex:communicatedWith    ex:stephenMiller {|ex:occurredAtEvent ex:E_PhoneCall_001|}.
 
 
 
 # Event 011
-#•	10:00 a.m.: Before this time, White House deputy chief of staff Tony Ornato informs Trump that authorities have spotted armed individuals at the crowd gathering at the Ellipse.[133]
+# 10:00 a.m.: Before this time, White House deputy chief of staff Tony Ornato informs Trump that authorities have spotted armed individuals at the crowd gathering at the Ellipse.[133]
 Wiki:wiki                   ex:described           ex:E_Wiki_011.
 ex:E_Wiki_011               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:00:00"^^xsd:datetime;
@@ -244,7 +245,7 @@ ex:E_Wiki_011               a                      ex:Event;
 
 
 # Event 012
-#•	10:15 a.m.: Around this time, Tony Ornato, along with Cassidy Hutchinson, who was an aide to Mark Meadows, inform Meadows about the armed Trump supporters.[133]
+# 10:15 a.m.: Around this time, Tony Ornato, along with Cassidy Hutchinson, who was an aide to Mark Meadows, inform Meadows about the armed Trump supporters.[133]
 Wiki:wiki                   ex:described           ex:E_Wiki_012.
 ex:E_Wiki_012               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:15:00"^^xsd:datetime;
@@ -253,7 +254,7 @@ ex:E_Wiki_012               a                      ex:Event;
 
 
 # Event 013
-#•	10:30 a.m.: Benjamin Philips splits from his group to park, not reuniting but later dying from a stroke at George Washington University Hospital.[140]
+# 10:30 a.m.: Benjamin Philips splits from his group to park, not reuniting but later dying from a stroke at George Washington University Hospital.[140]
 Wiki:wiki                   ex:described           ex:E_Wiki_013.
 ex:E_Wiki_013               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:30:00"^^xsd:datetime;
@@ -261,7 +262,7 @@ ex:E_Wiki_013               a                      ex:Event;
 
 
 # Event 014
-#•	10:30 a.m.: ~200-300 Proud Boys started their march down the National Mall towards the U.S. Capitol.
+# 10:30 a.m.: ~200-300 Proud Boys started their march down the National Mall towards the U.S. Capitol.
 Wiki:wiki                   ex:described           ex:E_Wiki_014.
 ex:E_Wiki_014               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:30:00"^^xsd:datetime;
@@ -269,14 +270,14 @@ ex:E_Wiki_014               a                      ex:Event;
 
 
 # Event 015
-#•	10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".[133][141]
+# 10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".[133][141]
 Wiki:wiki                   ex:described           ex:E_Wiki_015.
 ex:E_Wiki_015               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:47:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
 # Event 016
-#•	10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building.[142] (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)[143]
+# 10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building.[142] (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)[143]
 Wiki:wiki                   ex:described           ex:E_Wiki_016.
 ex:E_Wiki_016               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:58:00"^^xsd:datetime;
@@ -284,7 +285,7 @@ ex:E_Wiki_016               a                      ex:Event;
 
 
 # Event 017
-#•	11:00 a.m.: The Ellipse, located south of the White House, is filled with Trump supporters.[134]
+# 11:00 a.m.: The Ellipse, located south of the White House, is filled with Trump supporters.[134]
 Wiki:wiki                   ex:described           ex:E_Wiki_017.
 ex:E_Wiki_017               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:00:00"^^xsd:datetime;
@@ -293,7 +294,7 @@ ex:E_Wiki_017               a                      ex:Event;
 
 
 # Event 018
-#•	11:06 a.m.: "There is no official record of President Trump receiving or placing a call between 11:06 a.m. and 6:54 p.m.," Representative Elaine Luria stated at a public hearing a year later.[144]
+# 11:06 a.m.: "There is no official record of President Trump receiving or placing a call between 11:06 a.m. and 6:54 p.m.," Representative Elaine Luria stated at a public hearing a year later.
 Wiki:wiki                   ex:described           ex:E_Wiki_018.
 ex:E_Wiki_018               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:06:00"^^xsd:datetime;
@@ -302,7 +303,7 @@ ex:E_Wiki_018               a                      ex:Event;
 
 
 # Event 019
-#•	11:30 a.m.: Acting Secretary of Defense Christopher C. Miller participates in a tabletop exercise on Department of Defense contingency response options for the D.C. protests.[145]
+# 11:30 a.m.: Acting Secretary of Defense Christopher C. Miller participates in a tabletop exercise on Department of Defense contingency response options for the D.C. protests.[145]
 Wiki:wiki                   ex:described           ex:E_Wiki_019.
 ex:E_Wiki_019               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:30:00"^^xsd:datetime;
@@ -311,7 +312,7 @@ ex:E_Wiki_019               a                      ex:Event;
 
 
 # Event 020
-#•	11:30 a.m.: The motorcade of Vice President–elect Kamala Harris arrived at DNC headquarters. (Law enforcement would discover a pipe bomb at 1:07 p.m., only several yards away from where her motorcade had passed through the garage of DNC headquarters, and they would evacuate Harris seven minutes after that.)[146]
+# 11:30 a.m.: The motorcade of Vice President–elect Kamala Harris arrived at DNC headquarters. (Law enforcement would discover a pipe bomb at 1:07 p.m., only several yards away from where her motorcade had passed through the garage of DNC headquarters, and they would evacuate Harris seven minutes after that.)[146]
 Wiki:wiki                   ex:described           ex:E_Wiki_020.
 ex:E_Wiki_020               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:30:00"^^xsd:datetime;
@@ -320,7 +321,7 @@ ex:E_Wiki_020               a                      ex:Event;
 
 
 # Event 021
-#•	11:46 a.m.: Some Proud Boys, including Joe Biggs and Ethan Nordean, are gathered where Trump is about to speak.[147]
+# 11:46 a.m.: Some Proud Boys, including Joe Biggs and Ethan Nordean, are gathered where Trump is about to speak.[147]
 Wiki:wiki                   ex:described           ex:E_Wiki_021.
 ex:E_Wiki_021               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:46:00"^^xsd:datetime;
@@ -329,7 +330,7 @@ ex:E_Wiki_021               a                      ex:Event;
 
 
 # Event 022
-#•	11:57 a.m.: President Trump begins his over one-hour speech.[127][148] He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks),[149] accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.[150]
+# 11:57 a.m.: President Trump begins his over one-hour speech.[127][148] He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks),[149] accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.[150]
 Wiki:wiki                   ex:described           ex:E_Wiki_022.
 ex:E_Wiki_022               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:57:00"^^xsd:datetime;
@@ -338,7 +339,7 @@ ex:E_Wiki_022               a                      ex:Event;
 
 
 # Event 023
-#•	12:00 p.m.: A Federal Protective Service briefing email reports that about 300 Proud Boys are at the Capitol, a man in a tree near the Ellipse is holding what looks like a rifle, and some of the 25,000 people around the White House are hiding bags in bushes.[117] The email warns that the Proud Boys are threatening to shut down the downtown water system.[117]
+# 12:00 p.m.: A Federal Protective Service briefing email reports that about 300 Proud Boys are at the Capitol, a man in a tree near the Ellipse is holding what looks like a rifle, and some of the 25,000 people around the White House are hiding bags in bushes.[117] The email warns that the Proud Boys are threatening to shut down the downtown water system.[117]
 Wiki:wiki                   ex:described           ex:E_Wiki_023.
 ex:E_Wiki_023               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:00:00"^^xsd:datetime;
@@ -347,7 +348,7 @@ ex:E_Wiki_023               a                      ex:Event;
 
 
 # Event 024
-#•	12:05 p.m.: Rep. Paul Gosar tweets a demand for Biden to concede by the next morning.
+# 12:05 p.m.: Rep. Paul Gosar tweets a demand for Biden to concede by the next morning.
 Wiki:wiki                   ex:described           ex:E_Tweet_005.
 ex:E_Tweet_005              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:05:00"^^xsd:datetime;
@@ -358,14 +359,14 @@ ex:paulGosar                ex:gaveStatement       ex:Statement_Wiki_024       {
 
 
 # Event 025
-#•	12:16 p.m. Trump tells the crowd: "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard." Finishing his speech with "We fight. We fight like hell and if you don't fight like hell, you're not going to have a country anymore. So let's walk down Pennsylvania Avenue."[153][154]
+# 12:16 p.m. Trump tells the crowd: "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard." Finishing his speech with "We fight. We fight like hell and if you don't fight like hell, you're not going to have a country anymore. So let's walk down Pennsylvania Avenue."[153][154]
 Wiki:wiki                   ex:described           ex:E_Wiki_025.
 ex:E_Wiki_025               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:16:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
 # Event 026
-#•	12:20 p.m.: A Federal Protective Service officer writes in an email, "POTUS is encouraging the protesters to march to capitol grounds and continue protesting there."[117]
+# 12:20 p.m.: A Federal Protective Service officer writes in an email, "POTUS is encouraging the protesters to march to capitol grounds and continue protesting there."[117]
 Wiki:wiki                   ex:described           ex:E_Wiki_026.
 ex:E_Wiki_026               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:20:00"^^xsd:datetime;
@@ -373,7 +374,7 @@ ex:E_Wiki_026               a                      ex:Event;
 
 
 # Event 027
-#•	12:26 p.m.: Pence arrives at the Capitol.[127]
+# 12:26 p.m.: Pence arrives at the Capitol.[127]
 Wiki:wiki                   ex:described           ex:E_Wiki_027.
 ex:E_Wiki_027               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:26:00"^^xsd:datetime;
@@ -381,7 +382,7 @@ ex:E_Wiki_027               a                      ex:Event;
 
 
 # Event 028
-#•	12:28 p.m.: A Federal Protective Service officer reports 10,000–15,000 people moving towards the Capitol down Pennsylvania, Constitution, and Madison Avenues.[117]
+# 12:28 p.m.: A Federal Protective Service officer reports 10,000–15,000 people moving towards the Capitol down Pennsylvania, Constitution, and Madison Avenues.[117]
 Wiki:wiki                   ex:described           ex:E_Wiki_028.
 ex:E_Wiki_028               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:28:00"^^xsd:datetime;
@@ -390,7 +391,7 @@ ex:E_Wiki_028               a                      ex:Event;
 
 
 # Event 029
-#•	12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.[155]
+# 12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.[155]
 Wiki:wiki                   ex:described           ex:E_Wiki_029.
 ex:E_Wiki_029               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:30:00"^^xsd:datetime;
@@ -398,7 +399,7 @@ ex:E_Wiki_029               a                      ex:Event;
 
 
 # Event 030
-#•	12:45 p.m.: FBI, Capitol Police, and ATF responded to the pipe bomb found outside RNC headquarters,[156] which had been planted the night before.[121]
+# 12:45 p.m.: FBI, Capitol Police, and ATF responded to the pipe bomb found outside RNC headquarters,[156] which had been planted the night before.[121]
 Wiki:wiki                   ex:described           ex:E_Wiki_030.
 ex:E_Wiki_030               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime;
@@ -407,7 +408,7 @@ ex:E_Wiki_030               a                      ex:Event;
 
 
 # Event 031
-#•	12:45 p.m.: Proud Boys arrive at the Peace Monument northwest of the Capitol.[127]
+# 12:45 p.m.: Proud Boys arrive at the Peace Monument northwest of the Capitol.[127]
 Wiki:wiki                   ex:described           ex:E_Wiki_031.
 ex:E_Wiki_031               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime;
@@ -416,7 +417,7 @@ ex:E_Wiki_031               a                      ex:Event;
 
 
 # Event 032
-#•	12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb.[157][155] A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
+# 12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb.[157][155] A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
 Wiki:wiki                   ex:described           ex:E_Wiki_032.
 ex:E_Wiki_032               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime;
@@ -425,7 +426,7 @@ ex:E_Wiki_032               a                      ex:Event;
 
 
 # Event 033
-#•	12:49 p.m.: A police sweep of the area identifies a vehicle which held one handgun, an M4 Carbine assault rifle with loaded magazine, and components for 11 Molotov cocktails with homemade napalm. Around 6:30 p.m, the driver was apprehended carrying two unregistered handguns as he returned to the vehicle. He is not suspected of planting the pipe bombs.[159][160]
+# 12:49 p.m.: A police sweep of the area identifies a vehicle which held one handgun, an M4 Carbine assault rifle with loaded magazine, and components for 11 Molotov cocktails with homemade napalm. Around 6:30 p.m, the driver was apprehended carrying two unregistered handguns as he returned to the vehicle. He is not suspected of planting the pipe bombs.[159][160]
 Wiki:wiki                   ex:described           ex:E_Wiki_033.
 ex:E_Wiki_033               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime;
@@ -434,7 +435,7 @@ ex:E_Wiki_033               a                      ex:Event;
 
 
 # Event 034
-#•	12:49 p.m.: Joe Biggs and Ethan Nordean, again, are caught on video in the crowd outside the Capitol.[161]
+# 12:49 p.m.: Joe Biggs and Ethan Nordean, again, are caught on video in the crowd outside the Capitol.[161]
 Wiki:wiki                   ex:described           ex:E_Wiki_034.
 ex:E_Wiki_034               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime;
@@ -442,14 +443,14 @@ ex:E_Wiki_034               a                      ex:Event;
 
 
 # Event 035
-#•	12:52 p.m. Some Oath Keepers, including Jessica Watkins, leave the Ellipse.[162]
+# 12:52 p.m. Some Oath Keepers, including Jessica Watkins, leave the Ellipse.[162]
 Wiki:wiki                   ex:described           ex:E_Wiki_035.
 ex:E_Wiki_035               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:52:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
 # Event 036
-#•	12:53 p.m.: Rioters overwhelm police along the outer perimeter west of the Capitol building, pushing aside temporary fencing. Some protesters immediately follow, while others, at least initially, remain behind and admonish the others: "Don't do it. You're breaking the law."[163][164] By 1:03 p.m., a vanguard of rioters have overrun three layers of barricades and have forced police officers to the base of the west Capitol steps.[157]
+# 12:53 p.m.: Rioters overwhelm police along the outer perimeter west of the Capitol building, pushing aside temporary fencing. Some protesters immediately follow, while others, at least initially, remain behind and admonish the others: "Don't do it. You're breaking the law."[163][164] By 1:03 p.m., a vanguard of rioters have overrun three layers of barricades and have forced police officers to the base of the west Capitol steps.[157]
 Wiki:wiki                   ex:described           ex:E_Wiki_036.
 ex:E_Wiki_036               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:53:00"^^xsd:datetime;
@@ -457,7 +458,7 @@ ex:E_Wiki_036               a                      ex:Event;
 
 
 # Event 037
-#•	12:57 p.m.: Federal Protective Service officers report that the Capitol Police barricade on the west side of the Capitol building has been breached by a large group.[117]
+# 12:57 p.m.: Federal Protective Service officers report that the Capitol Police barricade on the west side of the Capitol building has been breached by a large group.[117]
 Wiki:wiki                   ex:described           ex:E_Wiki_037.
 ex:E_Wiki_037               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:57:00"^^xsd:datetime;
@@ -465,15 +466,36 @@ ex:E_Wiki_037               a                      ex:Event;
 
 
 # Event 038
-#•	12:58 p.m.: Chief Sund asks House Sergeant at Arms Paul D. Irving and Senate Sergeant at Arms Michael C. Stenger to declare an emergency and call for deployment of the National Guard. Irving and Stenger state that they will forward the request up their chains of command. Soon afterwards, aides to Congressional leaders arrive in Stenger's office and are outraged to learn that he has not yet called for any reinforcement.[155] Phone records obtained at the Senate Hearings reflect that Sund first reached out to Irving to request the National Guard at 12:58 p.m. on the day of the attack. Sund then called the Senate sergeant-at-arms at the time, Michael Stenger, at 1:05 p.m. Sund repeated his request in a call at 1:28 p.m. and then again at 1:34 p.m., 1:39 p.m. and 1:45 p.m. that day.[165] The Capitol Police Board consisting of the Architect of the Capitol, the House Sergeant at Arms, and the Senate Sergeant at Arms have the authority to request the national guard to the Capitol, but had made the decision three days earlier not to do so.[166][167]
-Wiki:wiki                   ex:described           ex:E_Wiki_038.
-ex:E_Wiki_038               a                      ex:Event;
+# 12:58 p.m.: Chief Sund asks House Sergeant at Arms Paul D. Irving and Senate Sergeant at Arms Michael C. Stenger to declare an emergency and call for deployment of the National Guard.
+# Irving and Stenger state that they will forward the request up their chains of command.
+### Soon afterwards, aides to Congressional leaders arrive in Stenger's office and are outraged to learn that he has not yet called for any reinforcement.
+# Phone records obtained at the Senate Hearings reflect that Sund first reached out to Irving to request the National Guard at 12:58 p.m. on the day of the attack.
+# Sund then called the Senate sergeant-at-arms at the time, Michael Stenger, at 1:05 p.m. Sund repeated his request in a call at 1:28 p.m. and then again at 1:34 p.m., 1:39 p.m. and 1:45 p.m. that day.
+### The Capitol Police Board consisting of the Architect of the Capitol, the House Sergeant at Arms, and the Senate Sergeant at Arms have the authority to request the national guard to the Capitol, but had made the decision three days earlier not to do so.
+ex:Statement_Wiki_038a      a                      ex:Statement;
+                            rdfs:label             "Chief Sund asks House Sergeant at Arms Paul D. Irving and Senate Sergeant at Arms Michael C. Stenger to declare an emergency and call for deployment of the National Guard.".
+ex:Statement_Wiki_038b      a                      ex:Statement;
+                            rdfs:label             "Irving and Stenger state that they will forward the request up their chains of command.".
+
+Wiki:wiki                   ex:described           ex:E_PhoneCall_002.
+ex:E_PhoneCall_002          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:58:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:stevenSund               ex:communicatedWith    ex:paulIrving                 {|ex:occurredAtEvent ex:E_PhoneCall_002|}.
+ex:stevenSund               ex:gaveStatement       ex:Statement_Wiki_038a        {|ex:occurredAtEvent ex:E_PhoneCall_002|}.
+ex:paulIrving               ex:gaveStatement       ex:Statement_Wiki_038a        {|ex:occurredAtEvent ex:E_PhoneCall_002|}.
+
+Wiki:wiki                   ex:described           ex:E_PhoneCall_003.
+ex:E_PhoneCall_003          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall.
+ex:stevenSund               ex:communicatedWith    ex:michaelStenger             {|ex:occurredAtEvent ex:E_PhoneCall_003|}.
+ex:stevenSund               ex:gaveStatement       ex:Statement_Wiki_038a        {|ex:occurredAtEvent ex:E_PhoneCall_003|}.
+ex:michaelStenger           ex:gaveStatement       ex:Statement_Wiki_038a        {|ex:occurredAtEvent ex:E_PhoneCall_003|}.
 
 
 # Event 039
-#•	1:00 p.m.: Senators and Vice President Pence walk to the House chamber.[134]
+# 1:00 p.m.: Senators and Vice President Pence walk to the House chamber.
 Wiki:wiki                   ex:described           ex:E_Wiki_039.
 ex:E_Wiki_019               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime;
@@ -482,19 +504,19 @@ ex:E_Wiki_019               a                      ex:Event;
 
 # Event 040
 # 1:00 p.m.: US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_001.
-ex:E_PhoneCall_001          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_004.
+ex:E_PhoneCall_004          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_040       a                      ex:Statement;
                             rdfs:label             "US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.".
-ex:stevenSund               ex:communicatedWith    ex:robertContee              {|ex:occurredAtEvent ex:E_PhoneCall_001|}.
-ex:stevenSund               ex:gaveStatement       ex:Statement_Wiki_040        {|ex:occurredAtEvent ex:E_PhoneCall_001|}.
+ex:stevenSund               ex:communicatedWith    ex:robertContee              {|ex:occurredAtEvent ex:E_PhoneCall_004|}.
+ex:stevenSund               ex:gaveStatement       ex:Statement_Wiki_040        {|ex:occurredAtEvent ex:E_PhoneCall_004|}.
 
 
 
 # Event 041
-#•	1:02 p.m.: Pence refuses to go along with Trump's plan to pick and choose electors, and tweets a letter[168] stating in part,
+# 1:02 p.m.: Pence refuses to go along with Trump's plan to pick and choose electors, and tweets a letter[168] stating in part,
 # It is my considered judgment that my oath to support and defend the Constitution constrains me from claiming unilateral authority to determine which electoral votes should be counted and which should not.
 # Pence had not shown it to the White House Counsel in advance.[169]
 Wiki:wiki                   ex:described           ex:E_Wiki_041.
@@ -505,7 +527,7 @@ ex:E_Wiki_041               a                      ex:Event;
 
 
 # Event 042
-#•	1:05 p.m.: Congress meets in joint session to confirm Joe Biden's electoral victory.[134]
+# 1:05 p.m.: Congress meets in joint session to confirm Joe Biden's electoral victory.[134]
 Wiki:wiki                   ex:described           ex:E_Wiki_042.
 ex:E_Wiki_042               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime;
@@ -514,7 +536,7 @@ ex:E_Wiki_042               a                      ex:Event;
 
 
 # Event 043
-#•	1:05 p.m.: Acting Secretary of Defense Miller receives open-source intelligence reports of demonstrators moving towards the U.S. Capitol.[145]
+# 1:05 p.m.: Acting Secretary of Defense Miller receives open-source intelligence reports of demonstrators moving towards the U.S. Capitol.[145]
 Wiki:wiki                   ex:described           ex:E_Wiki_043.
 ex:E_Wiki_043               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime;
@@ -523,7 +545,7 @@ ex:E_Wiki_043               a                      ex:Event;
 
 
 # Event 044
-#•	1:07 p.m.: Authorities respond to the headquarters of the Democratic National Committee, following discovery of the second pipe bomb.[121][158] When police arrive, Vice President-elect Kamala Harris was inside.[158]
+# 1:07 p.m.: Authorities respond to the headquarters of the Democratic National Committee, following discovery of the second pipe bomb.[121][158] When police arrive, Vice President-elect Kamala Harris was inside.[158]
 Wiki:wiki                   ex:described           ex:E_Wiki_044.
 ex:E_Wiki_044               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:07:00"^^xsd:datetime;
@@ -531,7 +553,7 @@ ex:E_Wiki_044               a                      ex:Event;
 
 
 # Event 045
-#•	1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:[170][145][171][172]
+# 1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:[170][145][171][172]
 # If you don't fight like hell, you're not going to have a country anymore....We're going to try and give them [Republicans] the kind of pride and boldness that they need to take back our country...The Democrats are hopeless — they never vote for anything. Not even one vote. But we're going to try and give our Republicans, the weak ones because the strong ones don't need any of our help. We're going to try and give them the kind of pride and boldness that they need to take back our country.
 Wiki:wiki                   ex:described           ex:E_Wiki_045.
 ex:E_Wiki_045               a                      ex:Event;
@@ -539,7 +561,7 @@ ex:E_Wiki_045               a                      ex:Event;
                             ex:occurredAt          ex:.
 
 # Event 046
-#•	1:11 p.m.: First MPD officers arrive at lower west plaza to confront rioters approaching the Capitol
+# 1:11 p.m.: First MPD officers arrive at lower west plaza to confront rioters approaching the Capitol
 Wiki:wiki                   ex:described           ex:E_Wiki_046.
 ex:E_Wiki_046               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:11:00"^^xsd:datetime;
@@ -547,7 +569,7 @@ ex:E_Wiki_046               a                      ex:Event;
 
 
 # Event 047
-#•	1:12 p.m.: Rep. Paul Gosar (R–AZ) and Sen. Ted Cruz (R–TX) object to certifying the votes made in the 2020 United States presidential election in Arizona. The joint session separates into House and Senate chambers to debate the objection.[134]
+# 1:12 p.m.: Rep. Paul Gosar (R–AZ) and Sen. Ted Cruz (R–TX) object to certifying the votes made in the 2020 United States presidential election in Arizona. The joint session separates into House and Senate chambers to debate the objection.[134]
 Wiki:wiki                   ex:described           ex:E_Wiki_047.
 ex:E_Wiki_047               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:12:00"^^xsd:datetime;
@@ -555,7 +577,7 @@ ex:E_Wiki_047               a                      ex:Event;
 
 
 # Event 048
-#•	1:14 p.m.: Due to the pipe bomb (see 1:07pm), Vice President-elect Harris is evacuated from DNC Headquarters.[158]
+# 1:14 p.m.: Due to the pipe bomb (see 1:07pm), Vice President-elect Harris is evacuated from DNC Headquarters.[158]
 Wiki:wiki                   ex:described           ex:E_Wiki_048.
 ex:E_Wiki_048               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:14:00"^^xsd:datetime;
@@ -563,21 +585,21 @@ ex:E_Wiki_048               a                      ex:Event;
 
 
 # Event 049
-#•	1:17 p.m.: Trump's motorcade leaves the Ellipse.[173] The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
+# 1:17 p.m.: Trump's motorcade leaves the Ellipse.[173] The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
 Wiki:wiki                   ex:described           ex:E_Wiki_049.
 ex:E_Wiki_049               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:17:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
 # Event 050
-#•	1:19 p.m.: Trump's motorcade arrives at the White House.[133]
+# 1:19 p.m.: Trump's motorcade arrives at the White House.[133]
 Wiki:wiki                   ex:described           ex:E_Wiki_050.
 ex:E_Wiki_050               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:19:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
 # Event 051
-#•	1:21 p.m.: "The Presidential Daily Diary...contains no information for the period between 1:21 p.m. and 4:03 p.m.," Representative Elaine Luria stated at a public hearing a year later. "The chief White House photographer wanted to take pictures because it was, in her words, 'very important for his archives and for history.' But she was told, 'no photographs.'"[144]
+# 1:21 p.m.: "The Presidential Daily Diary...contains no information for the period between 1:21 p.m. and 4:03 p.m.," Representative Elaine Luria stated at a public hearing a year later. "The chief White House photographer wanted to take pictures because it was, in her words, 'very important for his archives and for history.' But she was told, 'no photographs.'"[144]
 Wiki:wiki                   ex:described           ex:E_Wiki_051.
 ex:E_Wiki_051               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:21:00"^^xsd:datetime;
@@ -625,10 +647,14 @@ ex:E_                       a                      ex:Event;
 
 # Event 057
 # 1:34 p.m.: D.C. Mayor Muriel Bowser requests via phone that Army Secretary Ryan D. McCarthy provide an unspecified number of additional forces.
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_005.
+ex:E_PhoneCall_005          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:34:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:Statement_Wiki_057       a                      ex:Statement;
+                            rdfs:label             "D.C. Mayor Muriel Bowser requests via phone that Army Secretary Ryan D. McCarthy provide an unspecified number of additional forces.".
+ex:murielBowser             ex:communicatedWith    ex:ryanMcCarthy              {|ex:occurredAtEvent ex:E_PhoneCall_005|}.
+ex:murielBowser             ex:gaveStatement       ex:Statement_Wiki_057        {|ex:occurredAtEvent ex:E_PhoneCall_005|}.
 
 
 # Event 058
@@ -751,14 +777,14 @@ ex:E_                       a                      ex:Event;
 
 # Event 072
 # 2:10 p.m.: House Sergeant at Arms Irving calls Chief Sund with formal approval to request assistance from the National Guard.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_002.
-ex:E_PhoneCall_002          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_006.
+ex:E_PhoneCall_006          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:10:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_072       a                      ex:Statement;
                             rdfs:label             "House Sergeant at Arms Irving calls Chief Sund with formal approval to request assistance from the National Guard.".
-ex:paulIrving               ex:communicatedWith    ex:stevenSund {|ex:occurredAtEvent ex:E_PhoneCall_002|}.
-ex:paulIrving               ex:gaveStatement       ex:Statement_Wiki_072 {|ex:occurredAtEvent ex:E_PhoneCall_002|}.
+ex:paulIrving               ex:communicatedWith    ex:stevenSund {|ex:occurredAtEvent ex:E_PhoneCall_006|}.
+ex:paulIrving               ex:gaveStatement       ex:Statement_Wiki_072 {|ex:occurredAtEvent ex:E_PhoneCall_006|}.
 
 
 # Event 073
@@ -883,14 +909,14 @@ ex:E_                       a                      ex:Event;
 
 # Event 088
 # 2:22 p.m.: Army Secretary McCarthy has a phone call with Mayor Bowser, D.C. Deputy Mayor John Falcicchio, Director of the D.C. Homeland Security and Emergency Management Agency Christopher Rodriguez, and leadership of the Metropolitan Police in which additional DCNG support is requested.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_003.
-ex:E_PhoneCall_003          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_007.
+ex:E_PhoneCall_007          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:22:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_088       a                      ex:Statement;
                             rdfs:label             "Army Secretary McCarthy has a phone call with Mayor Bowser, D.C. Deputy Mayor John Falcicchio, Director of the D.C. Homeland Security and Emergency Management Agency Christopher Rodriguez, and leadership of the Metropolitan Police in which additional DCNG support is requested.".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:johnFalcicchio; ex:christopherRodriguez; ex:metropolitanPolice; ] {|ex:occurredAtEvent ex:E_PhoneCall_003|}.
-ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_088 {|ex:occurredAtEvent ex:E_PhoneCall_003|}.
+ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:johnFalcicchio; ex:christopherRodriguez; ex:metropolitanPolice; ]  {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
+ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_088                                                                    {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
 
 
 # Event 089
@@ -911,10 +937,13 @@ ex:E_                       a                      ex:Event;
 
 # Event 091
 # 2:23 p.m.: Nancy Pelosi walks through the complex, speaking on a phone. She says that if Congress can't "finish the proceedings", the insurrectionists "will have had a complete victory."
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_008.
+ex:E_PhoneCall_008          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:23:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:Statement_Wiki_091       a                      ex:Statement;
+                            rdfs:label             "She says that if Congress can't 'finish the proceedings", the insurrectionists "will have had a complete victory.'".
+ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_091       {|ex:occurredAtEvent ex:E_PhoneCall_008|}.
 
 
 # Event 092
@@ -965,35 +994,35 @@ ex:E_                       a                      ex:Event;
 # Piatt contests this description of the call, denying that he talked about visuals and stating that he stayed on the conference call while senior Defense Department officials were meeting.
 # The Army falsely denied for two weeks that Lt. Gen. Charles A. Flynn - the Army deputy chief of staff for operations, plans and training - was in this call.
 # His brother Michael Flynn, a retired Trump National Security Advisor, had pledged an oath to the QAnon conspiracy theory, though there are no indications that Lt. Gen. Flynn shares his brother's beliefs.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_004.
-ex:E_PhoneCall_004          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_009.
+ex:E_PhoneCall_009          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_096       a                      ex:Statement;
                             rdfs:label             "".
-ex:chrisRodriguez           ex:communicatedWith    [ ex:murielBowser; ex:williamWalker; ex:capitolPolice; ex:stevenSund; ]  {|ex:occurredAtEvent ex:E_PhoneCall_006|}.
-ex:chrisRodriguez           ex:gaveStatement       ex:Statement_Wiki_096                                                    {|ex:occurredAtEvent ex:E_PhoneCall_006|}.
+ex:chrisRodriguez           ex:communicatedWith    [ ex:murielBowser; ex:williamWalker; ex:capitolPolice; ex:stevenSund; ]  {|ex:occurredAtEvent ex:E_PhoneCall_009|}.
+ex:chrisRodriguez           ex:gaveStatement       ex:Statement_Wiki_096                                                    {|ex:occurredAtEvent ex:E_PhoneCall_009|}.
 
 
 # Event 097
 # 2:26 p.m.: Trump calls Senator Mike Lee (R–UT), having misdialed Senator Tommy Tuberville (R–AL). Lee passes his phone to Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. "I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go'," he recounted to reporters of his call.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_005.
-ex:E_PhoneCall_005          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_010.
+ex:E_PhoneCall_010          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_097       a                      ex:Statement;
                             rdfs:label             "Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. 'I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go',' he recounted to reporters of his call.".
-ex:donaldTrump              ex:communicatedWith    [ ex:mikeLee; ex:tommyTuberville; ]  {|ex:occurredAtEvent ex:E_PhoneCall_005|}.
-ex:tommyTuberville          ex:gaveStatement       ex:Statement_Wiki_097                {|ex:occurredAtEvent ex:E_PhoneCall_005|}.
+ex:donaldTrump              ex:communicatedWith    [ ex:mikeLee; ex:tommyTuberville; ]  {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
+ex:tommyTuberville          ex:gaveStatement       ex:Statement_Wiki_097                {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
 
 
 # Event 098
 # 2:26 p.m.: After receipt of a call from D.C. Mayor Muriel E. Bowser indicating that DoD had refused to send assistance to the U.S. Capitol, the Public Safety Secretary of Virginia, Brian Moran, dispatches the Virginia State Police to the Capitol as permitted by mutual aid agreement with D.C.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_006.
-ex:E_PhoneCall_006          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_011.
+ex:E_PhoneCall_011          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
-ex:murielBowser             ex:communicatedWith    ex:brianMoran  {|ex:occurredAtEvent ex:E_PhoneCall_006|}.
+ex:murielBowser             ex:communicatedWith    ex:brianMoran  {|ex:occurredAtEvent ex:E_PhoneCall_011|}.
 
 
 # Event 099
@@ -1192,11 +1221,31 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 122
-# 3:00 p.m.: Chuck Schumer, seated with Nancy Pelosi, tells her: "I'm gonna call up the effin' Secretary of DoD." Then, speaking on the phone to Christopher Miller, acting Secretary of Defense, he says: "We have some Senators who are still in their hideaways. They need massive personnel now. Can you get the Maryland National Guard to come too?" Nancy Pelosi then speaks into Schumer's phone, telling Miller she plans to call the DC mayor to learn what other backup may have already been called. (She credits House Majority Leader Steny Hoyer, standing behind her, for that advice.)
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+## 3:00 p.m.: Chuck Schumer, seated with Nancy Pelosi, tells her: "I'm gonna call up the effin' Secretary of DoD."
+# Then, speaking on the phone to Christopher Miller, acting Secretary of Defense, he says: "We have some Senators who are still in their hideaways. They need massive personnel now. Can you get the Maryland National Guard to come too?"
+# Nancy Pelosi then speaks into Schumer's phone, telling Miller she plans to call the DC mayor to learn what other backup may have already been called.
+# (She credits House Majority Leader Steny Hoyer, standing behind her, for that advice.)
+Wiki:wiki                   ex:described           ex:E_Conversation_000.
+ex:E_Conversation_000       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:00:00"^^xsd:datetime.
+ex:Statement_Wiki_122a      a                      ex:Statement;
+                            rdfs:label             "Chuck Schumer, seated with Nancy Pelosi, tells her: 'I'm gonna call up the effin' Secretary of DoD.'".
+ex:chuckSchumer             ex:communicatedWith    ex:nancyPelosi               {|ex:occurredAtEvent ex:E_Conversation_000|}.
+ex:chuckSchumer             ex:gaveStatement       ex:Statement_Wiki_122a       {|ex:occurredAtEvent ex:E_Conversation_000|}.
+ex:nancyPelosi              ex:communicatedWith    ex:stenyHoyer                {|ex:occurredAtEvent ex:E_Conversation_000|}.
+
+Wiki:wiki                   ex:described           ex:E_PhoneCall_012.
+ex:E_PhoneCall_012          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:Statement_Wiki_122b      a                      ex:Statement;
+                            rdfs:label             "Then, speaking on the phone to Christopher Miller, acting Secretary of Defense, he says: 'We have some Senators who are still in their hideaways. They need massive personnel now. Can you get the Maryland National Guard to come too?'".
+ex:chuckSchumer             ex:communicatedWith    ex:christopherMiller         {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
+ex:chuckSchumer             ex:gaveStatement       ex:Statement_Wiki_122b       {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
+ex:Statement_Wiki_122c      a                      ex:Statement;
+                            rdfs:label             "Nancy Pelosi then speaks into Schumer's phone, telling Miller she plans to call the DC mayor to learn what other backup may have already been called. ".
+ex:nancyPelosi              ex:communicatedWith    ex:christopherMiller         {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
+ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_122c       {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
 
 
 # Event 123
@@ -1208,7 +1257,9 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 124
-# 3:05 p.m.: House Minority Leader Kevin McCarthy (R–CA) started a phone-in interview on live TV with WUSA. McCarthy said he had called the president to urge him to "calm people down" and in reply the president had sent out a tweet.[236] Months later, McCarthy would claim to police that, based on his phone call with Trump, it wasn't obvious to him that Trump was aware of the violence inside the Capitol at the time.
+# 3:05 p.m.: House Minority Leader Kevin McCarthy (R–CA) started a phone-in interview on live TV with WUSA.
+# McCarthy said he had called the president to urge him to "calm people down" and in reply the president had sent out a tweet.
+# Months later, McCarthy would claim to police that, based on his phone call with Trump, it wasn't obvious to him that Trump was aware of the violence inside the Capitol at the time.
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:05:00"^^xsd:datetime;
@@ -1268,14 +1319,14 @@ ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_130       {
 
 # Event 131
 # 3:15 p.m.: House Speaker Pelosi calls the Governor of Virginia. The Governor of Virginia, Ralph Northam, confirms to House Speaker Pelosi that all assets of the State of Virginia including the National Guard are being sent to aid the U.S. Capitol.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_007.
-ex:E_PhoneCall_007          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_013.
+ex:E_PhoneCall_013          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:15:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_131       a                      ex:Statement;
                             rdfs:label             "Ralph Northam, confirms to House Speaker Pelosi that all assets of the State of Virginia including the National Guard are being sent to aid the U.S. Capitol.".
-ex:nancyPelosi              ex:communicatedWith    ex:ralphNortham        {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
-ex:ralphNortham             ex:gaveStatement       ex:Statement_Wiki_131  {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
+ex:nancyPelosi              ex:communicatedWith    ex:ralphNortham        {|ex:occurredAtEvent ex:E_PhoneCall_013|}.
+ex:ralphNortham             ex:gaveStatement       ex:Statement_Wiki_131  {|ex:occurredAtEvent ex:E_PhoneCall_013|}.
 
 
 # Event 132
@@ -1288,20 +1339,21 @@ ex:E_                       a                      ex:Event;
 
 # Event 133
 # 3:19 p.m.: Army Secretary McCarthy has a phone call with Senator Schumer and House Speaker Pelosi about Mayor Bowser's request. McCarthy explains that a full DCNG mobilization has been approved.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_008.
-ex:E_PhoneCall_008          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_014.
+ex:E_PhoneCall_014          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:19:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_133       a                      ex:Statement;
                             rdfs:label             "McCarthy explains that a full DCNG mobilization has been approved.".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:chuckSchumer;  ex:nancyPelosi; ]  {|ex:occurredAtEvent ex:E_PhoneCall_008|}.
-ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_133                  {|ex:occurredAtEvent ex:E_PhoneCall_008|}.
+ex:ryanMcCarthy             ex:communicatedWith    [ ex:chuckSchumer;  ex:nancyPelosi; ]  {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
+ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_133                  {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
 
 
 # Event 134
-# 3:21 p.m.: Albuquerque Cosper Head pulls Officer Michael Fanone into the crowd, where Daniel Rodriguez tases Fanone in the neck. (In 2022, Head and Rodriguez are sentenced to prison for this.)[241] Fanone is carried unconscious back into the tunnel.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_009.
-ex:E_PhoneCall_009          a                      ex:Event;
+# 3:21 p.m.: Albuquerque Cosper Head pulls Officer Michael Fanone into the crowd, where Daniel Rodriguez tases Fanone in the neck. (In 2022, Head and Rodriguez are sentenced to prison for this.)
+# Fanone is carried unconscious back into the tunnel.
+Wiki:wiki                   ex:described           ex:.
+ex:          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:21:00"^^xsd:datetime;
                             ex:occurredAt          ex:.
 
@@ -1309,15 +1361,15 @@ ex:E_PhoneCall_009          a                      ex:Event;
 # Event 135
 # 3:22 p.m.: Nancy Pelosi calls Virginia Governor Ralph Northam and asks if he's discussed sending the Virginia National Guard, noting that Steny Hoyer has already spoken to Maryland's Governor Larry Hogan and that Northam may need federal approval to send troops to "another jurisdiction".
 # When the call ends, someone in the room tells Pelosi that the Virginia National Guard has been called in, and Pelosi confirms that Northam just told her "they sent 200 of state police and a unit of the National Guard."
-Wiki:wiki                   ex:described           ex:E_PhoneCall_010.
-ex:E_PhoneCall_010          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_015.
+ex:E_PhoneCall_015          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:22:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_135       a                      ex:Statement;
                             rdfs:label             "Pelosi confirms that Northam just told her 'they sent 200 of state police and a unit of the National Guard.'".
-ex:nancyPelosi              ex:communicatedWith    ex:ralphNortham          {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
-ex:ralphNortham             ex:gaveStatement       ex:Statement_Wiki_135    {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
-ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_135    {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
+ex:nancyPelosi              ex:communicatedWith    ex:ralphNortham          {|ex:occurredAtEvent ex:E_PhoneCall_015|}.
+ex:ralphNortham             ex:gaveStatement       ex:Statement_Wiki_135    {|ex:occurredAtEvent ex:E_PhoneCall_015|}.
+ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_135    {|ex:occurredAtEvent ex:E_PhoneCall_015|}.
 
 
 # Event 136
@@ -1329,23 +1381,33 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 137
-# 3:25 p.m.: Pelosi and Schumer sit together holding a phone and speak to acting attorney general Jeffrey Rosen. Pelosi acknowledges that rioters are "ransacking our offices" but says she is primarily concerned about "personal harm." Schumer suggests that Rosen, "in your law enforcement responsibility," persuade Trump to make a "public statement" to tell his supporters "to leave the Capitol."
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+# 3:25 p.m.: Pelosi and Schumer sit together holding a phone and speak to acting attorney general Jeffrey Rosen.
+# Pelosi acknowledges that rioters are "ransacking our offices" but says she is primarily concerned about "personal harm."
+# Schumer suggests that Rosen, "in your law enforcement responsibility," persuade Trump to make a "public statement" to tell his supporters "to leave the Capitol."
+Wiki:wiki                   ex:described           ex:E_PhoneCall_016.
+ex:E_PhoneCall_016          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:25:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:nancyPelosi              ex:communicatedWith    ex:jeffreyRosen          {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
+ex:chuckSchumer             ex:communicatedWith    ex:jeffreyRosen          {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
+ex:Statement_Wiki_137a      a                      ex:Statement;
+                            rdfs:label             "Pelosi acknowledges that rioters are "ransacking our offices" but says she is primarily concerned about 'personal harm.'".
+ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_137a   {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
+ex:Statement_Wiki_137b      a                      ex:Statement;
+                            rdfs:label             "Schumer suggests that Rosen, 'in your law enforcement responsibility,' persuade Trump to make a 'public statement' to tell his supporters 'to leave the Capitol.'".
+ex:chuckSchumer             ex:gaveStatement       ex:Statement_Wiki_137b   {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
 
 
 # Event 138
 # 3:26 p.m.: McCarthy has a phone call with Mayor Bowser and Metro Police Chief Contee conveying that their request was not denied and that Secretary Miller has approved full activation of the DCNG.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_011.
-ex:E_PhoneCall_011          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_017.
+ex:E_PhoneCall_017          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:26:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_138       a                      ex:Statement;
                             rdfs:label             "their request was not denied and that Secretary Miller has approved full activation of the DCNG".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:robertContee; ]  {|ex:occurredAtEvent ex:E_PhoneCall_011|}.
-ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_138                 {|ex:occurredAtEvent ex:E_PhoneCall_011|}.
+ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:robertContee; ]  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
+ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_138                  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
 
 
 # Event 139
@@ -1392,23 +1454,32 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 144
-# 3:46 p.m.: Leaders from both parties, including Steny Hoyer and Republican leaders Mitch McConnell, Steve Scalise, and John Thune, huddle around a single phone, appealing to the Department of Defense to send troops with a sense of urgency. The person on the other end says they cannot give a timeline for when the Capitol will be secured.
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+# 3:46 p.m.: Leaders from both parties, including Steny Hoyer and Republican leaders Mitch McConnell, Steve Scalise, and John Thune, huddle around a single phone, appealing to the Department of Defense to send troops with a sense of urgency.
+# The person on the other end says they cannot give a timeline for when the Capitol will be secured.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_018.
+ex:E_PhoneCall_018          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:46:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:stenyHoyer               ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:mitchMcConnell           ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:steveScalise             ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:johnThune                ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:Statement_Wiki_144       a                      ex:Statement;
+                            rdfs:label             "The person on the other end says they cannot give a timeline for when the Capitol will be secured.".
+ex:departmentOfDefense      ex:gaveStatement       ex:Statement_Wiki_144           {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+
 
 
 # Event 145
 # 3:46 p.m.: Chief of the National Guard Bureau Gen. Daniel R. Hokanson has a phone call with Virginia Adjutant General Timothy P. Williams to discuss support to Washington, D.C. and is informed that Virginia National Guard forces have already been mobilized.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_012.
-ex:E_PhoneCall_012          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_019.
+ex:E_PhoneCall_019          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:46:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_145       a                      ex:Statement;
                             rdfs:label             "informed that Virginia National Guard forces have already been mobilized".
-ex:danielHokanson           ex:communicatedWith    ex:timothyWilliams     {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
-ex:timothyWilliams          ex:gaveStatement       ex:Statement_Wiki_145  {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
+ex:danielHokanson           ex:communicatedWith    ex:timothyWilliams     {|ex:occurredAtEvent ex:E_PhoneCall_019|}.
+ex:timothyWilliams          ex:gaveStatement       ex:Statement_Wiki_145  {|ex:occurredAtEvent ex:E_PhoneCall_019|}.
 
 
 # Event 146
@@ -1421,14 +1492,14 @@ ex:E_                       a                      ex:Event;
 
 # Event 147
 # 3:55 p.m.: Gen. Hokanson has a phone call with Maryland Adjutant General Maj. Gen. Timothy E. Gowen to discuss support to Washington, D.C. and is informed that Maryland National Guard forces have already been mobilized.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_013.
-ex:E_PhoneCall_013          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_020.
+ex:E_PhoneCall_020          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:55:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_147       a                      ex:Statement;
                             rdfs:label             "informed that Maryland National Guard forces have already been mobilized".
-ex:danielHokanson           ex:communicatedWith    ex:timothyGowen {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
-ex:timothyGowen             ex:gaveStatement       ex:Statement_Wiki_147 {|ex:occurredAtEvent ex:E_PhoneCall_012|}.
+ex:danielHokanson           ex:communicatedWith    ex:timothyGowen              {|ex:occurredAtEvent ex:E_PhoneCall_020|}.
+ex:timothyGowen             ex:gaveStatement       ex:Statement_Wiki_147        {|ex:occurredAtEvent ex:E_PhoneCall_020|}.
 
 
 # Event 148
@@ -1449,10 +1520,14 @@ ex:E_                       a                      ex:Event;
 
 # Event 150
 # 4:08 p.m.: From a secure location, Vice President Pence phoned Christopher Miller, the acting defense secretary, to confirm the Capitol was not secure and ask military leaders for a deadline for securing the building while demanding that the Capitol be cleared.
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_021.
+ex:E_PhoneCall_021          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:08:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:Statement_Wiki_150       a                      ex:Statement;
+                            rdfs:label             "Vice President Pence phoned Christopher Miller, the acting defense secretary, to confirm the Capitol was not secure and ask military leaders for a deadline for securing the building while demanding that the Capitol be cleared.".
+ex:mikePence                ex:communicatedWith    ex:christopherMiller    {|ex:occurredAtEvent ex:E_PhoneCall_021|}.
+ex:mikePence                ex:gaveStatement       ex:Statement_Wiki_150   {|ex:occurredAtEvent ex:E_PhoneCall_021|}.
 
 
 # Event 151
@@ -1481,11 +1556,16 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 154
-# 4:22 p.m.: Pelosi speaks to Pence on the phone about how to move forward with the election certification. She wonders if the Republicans could "confine it to just one complaint, Arizona, and then we could vote and...move forward with the rest of the states." She suspects it may be "days" before it is possible to enter the Capitol again.
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+# 4:22 p.m.: Pelosi speaks to Pence on the phone about how to move forward with the election certification.
+# She wonders if the Republicans could "confine it to just one complaint, Arizona, and then we could vote and...move forward with the rest of the states." She suspects it may be "days" before it is possible to enter the Capitol again.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_022.
+ex:E_PhoneCall_022          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:22:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:Statement_Wiki_154       a                      ex:Statement;
+                            rdfs:label             "She wonders if the Republicans could 'confine it to just one complaint, Arizona, and then we could vote and...move forward with the rest of the states.' She suspects it may be 'days' before it is possible to enter the Capitol again.".
+ex:nancyPelosi              ex:communicatedWith    ex:mikePence            {|ex:occurredAtEvent ex:E_PhoneCall_022|}.
+ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_154   {|ex:occurredAtEvent ex:E_PhoneCall_022|}.
 
 
 # Event 155
@@ -1505,39 +1585,37 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 157
-# 4:34 p.m.: A White House landline places a call to the cell phone of Anton Lunyk, a rioter who had entered the Capitol an hour earlier. The call lasts nine seconds. (The call was first publicly disclosed in September 2022 and is the only known call between the White House and a rioter that day.)
-# Wiki:wiki                   ex:described           ex:E_PhoneCall_014.
-# ex:E_PhoneCall_014          a                      ex:Event;
-#                             ex:occurredOn          "2021-01-06T16:34:00"^^xsd:datetime;
-#                             ex:occurredAt          ex:phoneCall.
-# ex:Statement_Wiki_157       a                      ex:Statement;
-#                             rdfs:label             "".
-# ex:              ex:communicatedWith    ex: {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
-# ex:              ex:gaveStatement       ex:Statement_Wiki_157 {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
+# 4:34 p.m.: A White House landline places a call to the cell phone of Anton Lunyk, a rioter who had entered the Capitol an hour earlier.
+# The call lasts nine seconds. (The call was first publicly disclosed in September 2022 and is the only known call between the White House and a rioter that day.)
+Wiki:wiki                   ex:described           ex:E_PhoneCall_023.
+ex:E_PhoneCall_023          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T16:34:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall.
+ex:whiteHouse               ex:communicatedWith    ex:antonLunyk      {|ex:occurredAtEvent ex:E_PhoneCall_023|}.
 
 
 # Event 158
 # 4:40 p.m.: Army Secretary McCarthy has a phone call with Maryland Governor Hogan in which the Governor agrees to send Maryland NG forces to D.C., expected the next day.
-Wiki:wiki                   ex:described           ex:E_PhoneCall_015.
-ex:E_PhoneCall_015          a                      ex:Event;
+Wiki:wiki                   ex:described           ex:E_PhoneCall_024.
+ex:E_PhoneCall_024          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:40:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_158       a                      ex:Statement;
                             rdfs:label             "the Governor agrees to send Maryland NG forces to D.C., expected the next day.".
-ex:ryanMcCarthy             ex:communicatedWith    ex:larryHogan {|ex:occurredAtEvent ex:E_PhoneCall_015|}.
-ex:larryHogan               ex:gaveStatement       ex:Statement_Wiki_158 {|ex:occurredAtEvent ex:E_PhoneCall_015|}.
+ex:ryanMcCarthy             ex:communicatedWith    ex:larryHogan {|ex:occurredAtEvent ex:E_PhoneCall_024|}.
+ex:larryHogan               ex:gaveStatement       ex:Statement_Wiki_158 {|ex:occurredAtEvent ex:E_PhoneCall_024|}.
 
 
 # Event 159
 # 5:00 p.m.: At some point during the "afternoon", Trump tried to call into Lou Dobbs Tonight, which aired every weekday at 5 p.m., but Fox executives decided it would be "irresponsible" to allow him on the air.
-# Wiki:wiki                   ex:described           ex:E_PhoneCall_016.
-# ex:E_PhoneCall_016          a                      ex:Event;
+# Wiki:wiki                   ex:described           ex:.
+# ex:          a                      ex:Event;
 #                             ex:occurredOn          "2021-01-06T17:00:00"^^xsd:datetime;
-#                             ex:occurredAt          ex:phoneCall.
+#                             ex:occurredAt          .
 # ex:Statement_Wiki_159       a                      ex:Statement;
 #                             rdfs:label             "".
-# ex:donaldTrump              ex:communicatedWith    ex:    {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
-# ex:              ex:gaveStatement       ex:Statement_Wiki_159 {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
+# ex:donaldTrump              ex:communicatedWith    ex:    {|ex:occurredAtEvent ex:|}.
+# ex:              ex:gaveStatement       ex:Statement_Wiki_159 {|ex:occurredAtEvent ex:|}.
 
 
 # Event 160
@@ -1589,11 +1667,22 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 166
-# 5:58 p.m.: Pence—calling from the basement of the Capitol, where he is standing with the chief of the U.S. Capitol Police, Steven Sund—talks to Speaker of the House Nancy Pelosi by phone. He says that Sund "just informed me what you will hear through official channels": that the police expect to secure the Capitol soon, and thus Pelosi can expect to hear from Paul Irving, the Sergeant-at-Arms, who is "your point of contact on security in the House", about "the process for reentering" the building so that the leaders can reconvene the House and the Senate in about an hour. Pence says he also plans to speak to Senate Minority Leader Chuck Schumer, and Pelosi passes the phone to him. Pence repeats the message and tells Schumer he wants to give him a "heads up," although Pence said he's already informed the Senate and that Schumer can expect to hear directly from the Sergeant-at-Arms. "I hope that's helpful. I'll let you talk through regular channels", Pence says.
-Wiki:wiki                   ex:described           ex:E_.
-ex:E_                       a                      ex:Event;
+# 5:58 p.m.: Pence —calling from the basement of the Capitol, where he is standing with the chief of the U.S. Capitol Police, Steven Sund- talks to Speaker of the House Nancy Pelosi by phone.
+# He says that Sund "just informed me what you will hear through official channels": that the police expect to secure the Capitol soon, and thus Pelosi can expect to hear from Paul Irving, the Sergeant-at-Arms, who is "your point of contact on security in the House", about "the process for reentering" the building so that the leaders can reconvene the House and the Senate in about an hour.
+# Pence says he also plans to speak to Senate Minority Leader Chuck Schumer, and Pelosi passes the phone to him.
+# Pence repeats the message and tells Schumer he wants to give him a "heads up," although Pence said he's already informed the Senate and that Schumer can expect to hear directly from the Sergeant-at-Arms. "I hope that's helpful. I'll let you talk through regular channels", Pence says.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_025.
+ex:E_PhoneCall_025          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T17:58:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:phoneCall.
+ex:mikePence                ex:communicatedWith    ex:nancyPelosi               {|ex:occurredAtEvent ex:E_PhoneCall_025|}.
+ex:mikePence                ex:communicatedWith    ex:chuckSchumer              {|ex:occurredAtEvent ex:E_PhoneCall_025|}.
+ex:Statement_Wiki_166a      a                      ex:Statement;
+                            rdfs:label             "He says that Sund 'just informed me what you will hear through official channels': that the police expect to secure the Capitol soon, and thus Pelosi can expect to hear from Paul Irving, the Sergeant-at-Arms, who is 'your point of contact on security in the House', about 'the process for reentering' the building so that the leaders can reconvene the House and the Senate in about an hour. Pence says he also plans to speak to Senate Minority Leader Chuck Schumer, and Pelosi passes the phone to him.".
+ex:Statement_Wiki_166b      a                      ex:Statement;
+                            rdfs:label             "Pence repeats the message and tells Schumer he wants to give him a 'heads up,' although Pence said he's already informed the Senate and that Schumer can expect to hear directly from the Sergeant-at-Arms. 'I hope that's helpful. I'll let you talk through regular channels', Pence says.".
+ex:mikePence                ex:gaveStatement       ex:Statement_Wiki_166a       {|ex:occurredAtEvent ex:E_PhoneCall_025|}.
+ex:mikePence                ex:gaveStatement       ex:Statement_Wiki_166b       {|ex:occurredAtEvent ex:E_PhoneCall_025|}.
 
 
 # Event 167
