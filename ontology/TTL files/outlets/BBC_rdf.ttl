@@ -329,10 +329,10 @@ ex:donaldTrump              ex:gaveStatement        ex:statementTrump_BBC_6     
 
 
 ##########################################################################################################
-ex:E_BBC_12                 a                       ex:Event;
+ex:E_BBC_13                 a                       ex:Event;
                             ex:occurredOn            "2021-01-06T18:00:00"^^xsd:datetime;
                             rdfs:label              "Fifteen minutes after police confirm Ashli Babbitt has died, Trump tweets again. He refers to those at the Capitol as 'great patriots'.".
-BBC:bbc                     ex:Describes            ex:E_BBC_12.
+BBC:bbc                     ex:Describes            ex:E_BBC_13.
 ex:policeStatement_1        a                       ex:Statement;
                             rdfs:label              "police confirm Ashli Babbitt has died";
                             rdfs:seeAlso            <https://en.wikipedia.org/wiki/Killing_of_Ashli_Babbitt>.
