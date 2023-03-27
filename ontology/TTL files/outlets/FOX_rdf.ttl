@@ -93,9 +93,9 @@ ex:protestors                  a        foaf:Group.
 
 
 #Locations
-ex:ellipse                     a        ex:Location.
-ex:CapitolGrounds               a                   foaf:Location.
-ex:CapitolRotunda               a                   foaf:Location.
+ex:ellipse                     a                    ex:Location.
+ex:CapitolGrounds               a                   ex:Location.
+ex:CapitolRotunda               a                   ex:Location.
 
 FOX:fox29                       a                   ex:News_Outlet.
 #############################################################################
