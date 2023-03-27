@@ -357,7 +357,7 @@ ex:E_Tweet_005              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_024       a                      ex:Statement;
                             rdfs:label             "Rep. Paul Gosar tweets a demand for Biden to concede by the next morning.".
-ex:paulGosar                ex:gaveStatement       ex:Statement_Wiki_024       {|ex:occurredAtEvent ex:E_Tweet_005}.
+ex:paulGosar                ex:gaveStatement       ex:Statement_Wiki_024       {|ex:occurredAtEvent ex:E_Tweet_005|}.
 
 
 # Event 025
@@ -691,7 +691,7 @@ ex:E_Tweet_006              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_061       a                      ex:Statement;
                             rdfs:label             "Trump tweets a video replay of the Ellipse rally where he'd wrapped up his speech a half-hour earlier.".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_061       {|ex:occurredAtEvent ex:E_Tweet_006}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_061       {|ex:occurredAtEvent ex:E_Tweet_006|}.
 
 
 # Event 062
@@ -718,7 +718,7 @@ ex:E_Tweet_007              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_064       a                      ex:Statement;
                             rdfs:label             "Radio talk show host and former FEMA director Michael D. Brown tweets the baseless claim that the people breaching Capitol security are likely antifa, Black Lives Matter protestors, or other insurgents disguised as Trump supporters, and suggests the attack could be a psychological warfare operation.".
-ex:michaelBrown             ex:gaveStatement       ex:Statement_Wiki_064       {|ex:occurredAtEvent ex:E_Tweet_007}.
+ex:michaelBrown             ex:gaveStatement       ex:Statement_Wiki_064       {|ex:occurredAtEvent ex:E_Tweet_007|}.
 
 
 # Event 065
@@ -917,7 +917,7 @@ ex:E_PhoneCall_007          a                      ex:Event;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_088       a                      ex:Statement;
                             rdfs:label             "Army Secretary McCarthy has a phone call with Mayor Bowser, D.C. Deputy Mayor John Falcicchio, Director of the D.C. Homeland Security and Emergency Management Agency Christopher Rodriguez, and leadership of the Metropolitan Police in which additional DCNG support is requested.".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:johnFalcicchio; ex:christopherRodriguez; ex:metropolitanPolice; ]  {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
+ex:ryanMcCarthy             ex:communicatedWith    ex:murielBowser, ex:johnFalcicchio, ex:christopherRodriguez, ex:metropolitanPolice  {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
 ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_088                                                                    {|ex:occurredAtEvent ex:E_PhoneCall_007|}.
 
 
@@ -944,7 +944,7 @@ ex:E_PhoneCall_008          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:23:00"^^xsd:datetime;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_091       a                      ex:Statement;
-                            rdfs:label             "She says that if Congress can't 'finish the proceedings", the insurrectionists "will have had a complete victory.'".
+                            rdfs:label             "She says that if Congress can't 'finish the proceedings', the insurrectionists 'will have had a complete victory.'".
 ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_091       {|ex:occurredAtEvent ex:E_PhoneCall_008|}.
 
 
@@ -964,7 +964,7 @@ ex:E_Tweet_008              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_093       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'Mike Pence didn't have the courage to do what should have been done to protect our Country and our Constitution, giving States a chance to certify a corrected set of facts, not the fraudulent or inaccurate ones which they were asked to previously certify. USA demands the truth!'".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_093       {|ex:occurredAtEvent ex:E_Tweet_008}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_093       {|ex:occurredAtEvent ex:E_Tweet_008|}.
 
 
 # Event 094
@@ -1002,7 +1002,7 @@ ex:E_PhoneCall_009          a                      ex:Event;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_096       a                      ex:Statement;
                             rdfs:label             "".
-ex:chrisRodriguez           ex:communicatedWith    [ ex:murielBowser; ex:williamWalker; ex:capitolPolice; ex:stevenSund; ]  {|ex:occurredAtEvent ex:E_PhoneCall_009|}.
+ex:chrisRodriguez           ex:communicatedWith    ex:murielBowser, ex:williamWalker, ex:capitolPolice, ex:stevenSund  {|ex:occurredAtEvent ex:E_PhoneCall_009|}.
 ex:chrisRodriguez           ex:gaveStatement       ex:Statement_Wiki_096                                                    {|ex:occurredAtEvent ex:E_PhoneCall_009|}.
 
 
@@ -1014,7 +1014,7 @@ ex:E_PhoneCall_010          a                      ex:Event;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_097       a                      ex:Statement;
                             rdfs:label             "Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. 'I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go',' he recounted to reporters of his call.".
-ex:donaldTrump              ex:communicatedWith    [ ex:mikeLee; ex:tommyTuberville; ]  {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
+ex:donaldTrump              ex:communicatedWith    ex:mikeLee, ex:tommyTuberville  {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
 ex:tommyTuberville          ex:gaveStatement       ex:Statement_Wiki_097                {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
 
 
@@ -1091,8 +1091,8 @@ ex:E_Tweet_009              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_106       a                      ex:Statement;
                             rdfs:label             "Fox News anchor Laura Ingraham tweets Chief of Staff Meadows: 'Hey Mark, The president needs to tell people in the Capitol to go home.'".
-ex:lauraIngraham            ex:gaveStatement       ex:Statement_Wiki_106       {|ex:occurredAtEvent ex:E_Tweet_009}.
-ex:lauraIngraham            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_009}.
+ex:lauraIngraham            ex:gaveStatement       ex:Statement_Wiki_106       {|ex:occurredAtEvent ex:E_Tweet_009|}.
+ex:lauraIngraham            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_009|}.
 
 
 # Event 107
@@ -1103,7 +1103,7 @@ ex:E_Tweet_010              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_107       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'Please support our Capitol Police and Law Enforcement. They are truly on the side of our Country. Stay peaceful!'".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_107       {|ex:occurredAtEvent ex:E_Tweet_010}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_107       {|ex:occurredAtEvent ex:E_Tweet_010|}.
 
 
 # Event 108
@@ -1210,8 +1210,8 @@ ex:E_Tweet_011              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_120       a                      ex:Statement;
                             rdfs:label             "Donald Trump, Jr. tweets to Meadows: 'He's got to condem [sic] this shit. Asap.The captiol [sic] police tweet is not enough.'".
-ex:donaldTrumpJr            ex:gaveStatement       ex:Statement_Wiki_120       {|ex:occurredAtEvent ex:E_Tweet_011}.
-ex:donaldTrumpJr            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_011}.
+ex:donaldTrumpJr            ex:gaveStatement       ex:Statement_Wiki_120       {|ex:occurredAtEvent ex:E_Tweet_011|}.
+ex:donaldTrumpJr            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_011|}.
 
 
 # Event 121
@@ -1316,7 +1316,7 @@ ex:E_Tweet_012              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_130       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'I am asking for everyone at the U.S. Capitol to remain peaceful. No violence! Remember, WE are the Party of Law & Order – respect the Law and our great men and women in Blue. Thank you!'".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_130       {|ex:occurredAtEvent ex:E_Tweet_012}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_130       {|ex:occurredAtEvent ex:E_Tweet_012|}.
 
 
 # Event 131
@@ -1347,7 +1347,7 @@ ex:E_PhoneCall_014          a                      ex:Event;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_133       a                      ex:Statement;
                             rdfs:label             "McCarthy explains that a full DCNG mobilization has been approved.".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:chuckSchumer;  ex:nancyPelosi; ]  {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
+ex:ryanMcCarthy             ex:communicatedWith    ex:chuckSchumer, ex:nancyPelosi  {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
 ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_133                  {|ex:occurredAtEvent ex:E_PhoneCall_014|}.
 
 
@@ -1393,7 +1393,7 @@ ex:E_PhoneCall_016          a                      ex:Event;
 ex:nancyPelosi              ex:communicatedWith    ex:jeffreyRosen          {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
 ex:chuckSchumer             ex:communicatedWith    ex:jeffreyRosen          {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
 ex:Statement_Wiki_137a      a                      ex:Statement;
-                            rdfs:label             "Pelosi acknowledges that rioters are "ransacking our offices" but says she is primarily concerned about 'personal harm.'".
+                            rdfs:label             "Pelosi acknowledges that rioters are 'ransacking our offices' but says she is primarily concerned about 'personal harm.'".
 ex:nancyPelosi              ex:gaveStatement       ex:Statement_Wiki_137a   {|ex:occurredAtEvent ex:E_PhoneCall_016|}.
 ex:Statement_Wiki_137b      a                      ex:Statement;
                             rdfs:label             "Schumer suggests that Rosen, 'in your law enforcement responsibility,' persuade Trump to make a 'public statement' to tell his supporters 'to leave the Capitol.'".
@@ -1408,7 +1408,7 @@ ex:E_PhoneCall_017          a                      ex:Event;
                             ex:occurredAt          ex:phoneCall.
 ex:Statement_Wiki_138       a                      ex:Statement;
                             rdfs:label             "their request was not denied and that Secretary Miller has approved full activation of the DCNG".
-ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:robertContee; ]  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
+ex:ryanMcCarthy             ex:communicatedWith    ex:murielBowser, ex:robertContee  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
 ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_138                  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
 
 
@@ -1428,7 +1428,7 @@ ex:E_Tweet_013              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_140       a                      ex:Statement;
                             rdfs:label             "White House press secretary Kayleigh McEnany tweets that National Guard and other Federal forces are headed to the Capitol.".
-ex:kayLeighMcEnany          ex:gaveStatement       ex:Statement_Wiki_140       {|ex:occurredAtEvent ex:E_Tweet_013}.
+ex:kayLeighMcEnany          ex:gaveStatement       ex:Statement_Wiki_140       {|ex:occurredAtEvent ex:E_Tweet_013|}.
 
 
 # Event 141
@@ -1705,7 +1705,7 @@ ex:E_Tweet_014              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_168       a                      ex:Statement;
                             rdfs:label             "These are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long. Go home with love & in peace. Remember this day forever!".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_168       {|ex:occurredAtEvent ex:E_Tweet_014}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_168       {|ex:occurredAtEvent ex:E_Tweet_014|}.
 
 
 # Event 169
@@ -1764,7 +1764,7 @@ ex:E_Tweet_015              a                      ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_175       a                      ex:Statement;
                             rdfs:label             "Stephanie Grisham, chief of staff to Melania Trump and former White House press secretary, tweets her resignation, becoming the first official to resign post-attack.".
-ex:stephanieGrisham         ex:gaveStatement       ex:Statement_Wiki_175       {|ex:occurredAtEvent ex:E_Tweet_015}.
+ex:stephanieGrisham         ex:gaveStatement       ex:Statement_Wiki_175       {|ex:occurredAtEvent ex:E_Tweet_015|}.
 
 
 # Event 176
