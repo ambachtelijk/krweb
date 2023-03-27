@@ -128,7 +128,8 @@ ex:democraticParty             a        foaf:PoliticalParty.
 
 ####################### Building triples for BBC Outlet #####################                         
 ex:E_BBC_1                  a                       ex:Event;
-                            ex:occurredOn            "2021-01-06T08:17:00"^^xsd:datetime.
+                            ex:occurredOn            "2021-01-06T08:17:00"^^xsd:datetime;
+                            rdfs:label              "President Donald Trump tweets allegations of vote fraud ahead of his rally in Washington DC.".
 BBC:bbc                     ex:described            ex:E_BBC_1.
 ex:statementTrump_BBC_1       a                       ex:Statement;
                             rdfs:label              <https://ichef.bbci.co.uk/news/976/cpsprodpb/13E18/production/_116923418_21e80ad3-11f0-4fcf-a3f4-42c19ce312ab.jpg.webp>.
@@ -200,7 +201,7 @@ ex:E_BBC_6                  a                      ex:Event;
                             ex:occurredOn           "2021-01-06T13:45:00"^^xsd:datetime;
                             ex:occurredAt           ex:theWestSteps;
                             rdfs:seeAlso           <https://www.bbc.com/news/av/world-us-canada-56019115>;
-                            rdfs:labels            "Protesters surge past Capitol police protecting the west steps, the side facing the White House. Minutes later, an officer declares there is a riot at the Capitol. 'We're going to give riot warnings,' he says. 'We're going to try to get compliance but this is now effectively a riot. Meanwhile Vice President Mike Pence is continuing to preside over the session.".
+                            rdfs:label            "Protesters surge past Capitol police protecting the west steps, the side facing the White House. Minutes later, an officer declares there is a riot at the Capitol. 'We're going to give riot warnings,' he says. 'We're going to try to get compliance but this is now effectively a riot. Meanwhile Vice President Mike Pence is continuing to preside over the session.".
 BBC:bbc                     ex:Describes           ex:E_BBC_6.      
 ex:protesters               ex:attacked            ex:capitolPolice            {|ex:occurredAtEvent ex:E_BBC_6|}.
 ex:Statement_officer_1_BBC  a                      ex:Statement;
