@@ -126,7 +126,7 @@ ex:E_Tweet_000               a                     ex:Event;
                             ex:occurredAt          ex:twitter.
 ex:Statement_Wiki_000       a                      ex:Statement;
                             rdfs:label             "Trump tweets: 'If Vice President @Mike_Pence comes through for us, we will win the Presidency.'".
-ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_000        {|ex:occurredAtEvent ex:E_Tweet|}.
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_000        {|ex:occurredAtEvent ex:E_Tweet_000|}.
 
 
 # Event 001
@@ -160,8 +160,10 @@ ex:E_Tweet_003              a                      ex:Event;
 ex:Statement_Wiki_003       a                      ex:Statement;
                             rdfs:label             "Courtney Holland, who later became communications director for the Republican Senate nominee in Nevada, tweets that she is walking to the Stop the Steal rally with Scott Presler, Megan Barth, and Rose Tennent. Those three people are scheduled to speak later at a different rally at the Capitol.".
 ex:courtneyHolland          ex:gaveStatement       ex:Statement_Wiki_003       {|ex:occurredAtEvent ex:E_Tweet_003|}.
-ex:courtneyHolland          ex:communicatedWith    [ ex:scottPresler ; ex:meganBarth ; ex:roseTennent ; ].
-ex:courtneyHolland          ex:tookPartIn          ex:stopTheSteal
+ex:courtneyHolland          ex:communicatedWith    ex:scottPresler , 
+                                                   ex:meganBarth , 
+                                                   ex:roseTennent {|ex:occurredAtEvent ex:E_Tweet_003|}.
+ex:courtneyHolland          ex:tookPartIn          ex:stopTheSteal {|ex:occurredAtEvent ex:E_Tweet_003|}.
 
 
 # Event 004
