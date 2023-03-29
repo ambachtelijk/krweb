@@ -36,7 +36,7 @@ ex:attacked             rdfs:domain         foaf:Participant;
 
 
 ex:evacuated            rdfs:domain         foaf:Participant.
-                       
+
 
 ex:communicatedWith     rdfs:domain         foaf:Participant;
                         rdfs:range          foaf:Participant .
@@ -58,7 +58,7 @@ ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
 
 ex:tookPartIn           rdfs:domain         foaf:Participant;
                         rdfs:range          ex:Event .
-                        
+
 ex:occurredAt            rdfs:domain         ex:Event;
                         rdfs:range          ex:Location .
 
@@ -119,7 +119,8 @@ ex:ellipse                     a        ex:location.
 
 #Event 1
 ex:E_CNN_1                  a                       ex:Event;
-                            ex:occurredAt            "2021-01-06T07:30:00"^^xsd:datetime.
+                            ex:occurredAt            "2021-01-06T07:30:00"^^xsd:datetime;
+                            rdfs:label              "Meadows texts Rep. Jim Jordan, an Ohio Republican who backed Trump’s efforts to overturn the election, according to texts obtained by CNN. Meadows tells Jordan 'I have pushed for this,' responding to a text that Jordan sent the night before, which advocated for Vice President Mike Pence to overturn the election while presiding over Congress’ certification of the Electoral College results. Meadows also tells Jordan he’s 'not sure it is going to happen.'".
 ex:markMeadows              ex:communicatedWith     ex:jimJordan                      {| ex:occurredAtEvent ex:E_CNN_1|}.
 ex:Statement_MM_1_CNN       a                       ex:Statement.
 ex:markMeadows              ex:gaveStatement        ex:Statement_MM_1_CNN            {| ex:occurredAtEvent ex:E_CNN_1|}.
@@ -136,14 +137,16 @@ CNN:CNN                     ex:described            ex:E_CNN_1.
 #Event 2                                                       
 ex:E_CNN_2                  a                       ex:Event;
                             ex:occurredAt            "2021-01-06T09:24:00"^^xsd:datetime;
-                            rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                            rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                            rdfs:label              "Trump talks on the phone with Jordan for approximately 10 minutes, according to White House records that were obtained by the committee and released at a public hearing. After Trump’s conversation with Miller, Trump adjusts a draft of his upcoming speech to add more lines about Pence and the joint session of Congress, according to the committee, which reviewed the drafts.".
 ex:donaldTrump              ex:communicatedWith     ex:jimJordan                      {| ex:occurredAtEvent ex:E_CNN_2|}.
 ex:donaldTrump              ex:communicatedWith     ex:jimJordan.
 CNN:CNN                     ex:described            ex:E_CNN_2.
 
 #Event 3
 ex:E_CNN_3                  a                       ex:Event;
-                            ex:occurredAt            "2021-01-06T09:52:00"^^xsd:datetime.
+                            ex:occurredAt            "2021-01-06T09:52:00"^^xsd:datetime;
+                            rdfs:label              "Trump talks to senior adviser and lead speechwriter Stephen Miller for 26 minutes, according to White House records that were obtained by the committee and released at a public hearing. After Trump’s conversation with Miller, Trump adjusts a draft of his upcoming speech to add more lines about Pence and the joint session of Congress, according to the committee, which reviewed the drafts.".
 ex:donaldTrump              ex:communicatedWith     ex:stephenMiller                  {| ex:occurredAtEvent ex:E_CNN_3|}.
 CNN:CNN                     ex:described            ex:E_CNN_3.
 
@@ -151,7 +154,8 @@ CNN:CNN                     ex:described            ex:E_CNN_3.
 #TO DO: In text 
 ex:E_CNN_4                 a                        ex:Event;
                            ex:occurredAt             "2021-01-06T10:00:00"^^xsd:datetime;
-                           rdfs:seeAlso             <https://www.cnn.com/2022/06/30/politics/tony-ornato-met-january-6-committee/index.html>.
+                           rdfs:seeAlso             <https://www.cnn.com/2022/06/30/politics/tony-ornato-met-january-6-committee/index.html>;
+                           rdfs:label               "White House deputy chief of staff Tony Ornato informs Trump that authorities at the Ellipse, where Trump was going to hold a rally, encountered attendees with weapons, including pistols, rifles, bear spray and spears, according to Hutchinson’s testimony.".
 ex:attendees               ex:attacked              ex:police                        {| ex:occurredAtEvent ex:E_CNN_4|}.
 ex:E_CNN_4                 ex:occurredOn             ex:ellipse.
 ex:tonyOrnato              ex:communicatedWith      ex:donaldTrump                    {| ex:occurredAtEvent ex:E_CNN_4|}.
@@ -161,7 +165,8 @@ CNN:CNN                    ex:described             ex:E_CNN_4.
 #Event 5
 ex:E_CNN_5                 a                        ex:Event;
                            ex:occurredAt             "2021-01-06T10:15:00"^^xsd:datetime;
-                           rdfs:seeAlso <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                           rdfs:seeAlso <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "Hutchinson and Ornato inform Meadows about the armed members of the crowd forming at the Ellipse, according to Hutchinson’s testimony. Hutchinson told lawmakers that Meadows had little reaction when she told him about reports about weapons in the crowd.".
 ex:cassidyHutchinson       ex:communicatedWith      ex:markMeadows                    {| ex:occurredAtEvent ex:E_CNN_5|}.
 ex:tonyOrnato              ex:communicatedWith      ex:markMeadows                    {| ex:occurredAtEvent ex:E_CNN_5|}.
 CNN:CNN                    ex:described             ex:E_CNN_5.
@@ -170,7 +175,8 @@ CNN:CNN                    ex:described             ex:E_CNN_5.
 #Event 6
 ex:E_CNN_6                 a                        ex:Event;
                            ex:occurredAt             "2021-01-06T10:47:00"^^xsd:datetime;
-                           rdfs:seeAlso             <https://www.c-span.org/video/?c4933578/user-clip-rudy-giuliani-professor-john-eastman>.        
+                           rdfs:seeAlso             <https://www.c-span.org/video/?c4933578/user-clip-rudy-giuliani-professor-john-eastman>;
+                           rdfs:label               "Trump lawyer Rudy Giuliani begins his speech at the Ellipse rally, urges lawmakers to overturn the election, and tells the crowd, 'let’s have trial by combat.' Giuliani shares the podium with another right-wing lawyer, John Eastman, the architect of a Trump-backed plan for Pence to overturn the results while presiding over that day’s joint session of Congress, where lawmakers certify the Electoral College winner.".        
 ex:statement_RG_1_CNN      a                        ex:Statement                      {| ex:occurredAtEvent ex:E_CNN_6|}.
 ex:rudyGiuliani            ex:gaveStatement         ex:statement_RG_1_CNN             {| ex:occurredAtEvent ex:E_CNN_6|}.
 ex:statement_RG_1_CNN      rdfs:label               "let’s have trial by combat.".
@@ -180,7 +186,8 @@ CNN:CNN                    ex:described             ex:E_CNN_6.
 #Event 7    
 ex:E_CNN_7                 a                        ex:Event;
                            ex:occurredAt             "2021-01-06T11:20:00"^^xsd:datetime;
-                           rdfs:seeAlso <https://www.cnn.com/politics/live-news/january-6-hearings-june-16/h_5fd172c97e1c0f72f8491372c37790d8>.
+                           rdfs:seeAlso <https://www.cnn.com/politics/live-news/january-6-hearings-june-16/h_5fd172c97e1c0f72f8491372c37790d8>;
+                           rdfs:label               "Trump speaks on the phone with Pence. White House aides told the committee that the call was tense and heated, and that Pence reiterated that he wasn’t going to change the outcome of the election during the joint session of Congress. Trump responded by calling Pence a 'wimp,' according to witness testimony.".
 ex:donaldTrump             ex:communicatedWith      ex:mikePence                       {| ex:occurredAtEvent ex:E_CNN_7|}.
 ex:statementDT_1_CNN       a                        ex:Statement.
 ex:donaldTrump             ex:gaveStatement         ex:statementDT_1_CNN.
@@ -190,7 +197,8 @@ CNN:CNN                    ex:described             ex:E_CNN_7.
 #Event 8      
 ex:E_CNN_8                 a                       ex:Event;
                            ex:occurredAt            "2021-01-06T12:00:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "Trump tells his staff to 'take the f**king mags away,' referring to the metal detectors at the security line for his Ellipse rally, because the rallygoers were 'not here to hurt me,' according to Hutchinson’s testimony. Trump wanted to increase the size of the crowd, Hutchinson said.".
 ex:statementDT_3_CNN       a                       ex:Statement.
 ex:donaldTrump             ex:communicatedWith     ex:staffMembers                     {| ex:occurredAtEvent ex:E_CNN_8|}.
 
@@ -198,7 +206,8 @@ CNN:CNN                    ex:described             ex:E_CNN_8.
 
 #Event 9    
 ex:E_CNN_9                 a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T12:00:00"^^xsd:datetime. 
+                           ex:occurredAt            "2021-01-06T12:00:00"^^xsd:datetime;
+                           rdfs:label               "Trump begins his speech at the Ellipse, where he repeats many of his election lies and publicly pressures Pence to go along with Eastman’s legally dubious scheme.".
 ex:statementDT_3_CNN       a                       ex:Statement.
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_3_CNN                {| ex:occurredAtEvent ex:E_CNN_9|}.
 ex:statementDT_3_CNN       rdfs:label              "he repeats many of his election lies and publicly pressures Pence to go along with Eastman’s legally dubious scheme.".
@@ -208,7 +217,8 @@ CNN:CNN                    ex:described            ex:E_CNN_9.
 ex:E_CNN_10                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T13:00:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>,
-                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "Pro-Trump rioters – including members of the Proud Boys, a far-right extremist group – overrun the first set of barriers outside the Capitol and start rushing toward the building. Top White House staffers, including Meadows, are quickly alerted by the US Secret Service that the police lines are collapsing at the Capitol, according to Hutchinson’s testimony.".
 ex:rioters                 ex:attacked             ex:capitol                          {| ex:occurredAtEvent ex:E_CNN_10|}.
 ex:proudBoys               ex:attacked             ex:capitol                          {| ex:occurredAtEvent ex:E_CNN_10|}.
 ex:secretService           ex:communicatedWith     ex:staffMembers                     {| ex:occurredAtEvent ex:E_CNN_10|}.
@@ -218,7 +228,8 @@ CNN:CNN                    ex:described            ex:E_CNN_10.
 ex:E_CNN_11                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T13:10:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>,
-                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "As he ends his speech at the Ellipse, Trump calls for supporters to 'walk down Pennsylvania Avenue' and march to the Capitol. He also tells the crowd that he will be marching with them. Around the same time, House Minority Leader Kevin McCarthy, a California Republican and Trump ally, calls Hutchinson and angrily tells her not to let Trump go to the Capitol, according to Hutchinson’s testimony.".
 ex:donaldTrump             ex:communicatedWith        ex:rioters.
 ex:statementDT_4_CNN       a                       ex:Statement.
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_4_CNN                 {| ex:occurredAtEvent ex:E_CNN_11|}.
@@ -230,7 +241,8 @@ CNN:CNN                    ex:described            ex:E_CNN_11.
 #Event 12 
 ex:E_CNN_12                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T13:19:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/07/01/politics/secret-service-lunging-incident/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/07/01/politics/secret-service-lunging-incident/index.html>;
+                           rdfs:label               "Trump arrives back at the White House. During the short drive back from the Ellipse, Trump becomes irate and demands to be driven to the Capitol, but members of his security team refuse to take him there, according to Hutchinson, who testified that she was told about the exchange by Ornato and another member of Trump’s security detail.".
 ex:statementDT_5_CNN       a                       ex:Statement;
                            rdfs:label              "demands to be driven to the Capitol".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_5_CNN                 {| ex:occurredAtEvent ex:E_CNN_12|}.
@@ -241,13 +253,15 @@ CNN:CNN                    ex:described            ex:E_CNN_12.
 ex:E_CNN_13                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T13:25:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_c9f535b0bada89a01b3527ac70438025>,
-                                                   <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_434c66d4a46dc3ed3d1708f59928c76b>.
+                                                   <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_434c66d4a46dc3ed3d1708f59928c76b>;
+                           rdfs:label               "Trump goes into the private dining room near the Oval Office, where he stays until 4 p.m., according to the committee which cited testimony from White House aides. Witnesses told the committee that Trump spent the afternoon watching Fox News’ coverage of his supporters attacking the Capitol. The chief White House photographer was told not to take pictures of Trump during this period, according to the committee.".
 CNN:CNN                    ex:described            ex:E_CNN_13.
 
 
 #Event 14
 ex:E_CNN_14                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T13:39:00"^^xsd:datetime.
+                           ex:occurredAt            "2021-01-06T13:39:00"^^xsd:datetime;
+                           rdfs:label               "Trump calls Giuliani, according to phone records obtained by the January 6 committee. It is unclear what they discussed.".
 ex:donaldTrump             ex:communicatedWith     ex:rudyGiuliani                      {| ex:occurredAtEvent ex:E_CNN_14|}.
 CNN:CNN                    ex:described            ex:E_CNN_14.
 
@@ -255,7 +269,8 @@ CNN:CNN                    ex:described            ex:E_CNN_14.
 ex:E_CNN_15                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:00:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>,
-                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                                                   <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "The Capitol goes on lockdown as some of the first rioters breach the building. Back at the White House, the White House Counsel Cipollone tells Meadows that Trump needs to take action to stop the riot, and that 'something needs to be done or people are going to die,' according to Hutchinson’s testimony.".
 ex:statement_PC_1_CNN      a                       ex:statement.
 ex:patChipollone           ex:communicatedWith     ex:markMeadows                       {| ex:occurredAtEvent ex:E_CNN_15|};
                            ex:gaveStatement        "something needs to be done or people are going to die,"                 {| ex:occurredAtEvent ex:E_CNN_15|}.   
@@ -263,27 +278,31 @@ CNN:CNN                    ex:described            ex:E_CNN_15.
 
 #Event 16 
 ex:E_CNN_16                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T14:03:00"^^xsd:datetime.
+                           ex:occurredAt            "2021-01-06T14:03:00"^^xsd:datetime;
+                           rdfs:label               "Trump calls Giuliani again, and the call lasts for approximately eight minutes, according to phone records obtained by the January 6 committee. It is unclear what they discussed.".
 ex:rudyGiuliani            ex:communicatedWith     ex:donaldTrump                       {| ex:occurredAtEvent ex:E_CNN_16|}.
-CNN:CNN                     ex:described            ex:E_CNN_16.
+CNN:CNN                    ex:described            ex:E_CNN_16.
 
 #Event 17 
 ex:E_CNN_17                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:13:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.al.com/politics/2022/07/donald-trump-call-to-strongest-supporter-tommy-tuberville-makes-appearance-at-jan-6-committee-hearing.html>.
+                           rdfs:seeAlso            <https://www.al.com/politics/2022/07/donald-trump-call-to-strongest-supporter-tommy-tuberville-makes-appearance-at-jan-6-committee-hearing.html>;
+                           rdfs:label               "The Senate abruptly adjourns, amid a debate over a GOP objection to Biden’s electoral votes from Arizona. Senators are evacuated from the chamber. Around this time, Trump speaks on the phone with Sen. Tommy Tuberville, an Alabama Republican, who tells Trump about the frantic evacuation of senators.".
 ex:donaldTrump             ex:communicatedWith     ex:tommyTuberville                   {| ex:occurredAtEvent ex:E_CNN_17|}.
-CNN:CNN                     ex:described            ex:E_CNN_17.                          
+CNN:CNN                    ex:described            ex:E_CNN_17.                          
 
 #Event 18 
 ex:E_CNN_18                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:14:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://twitter.com/igorbobic/status/1348122699843981312?>.
+                           rdfs:seeAlso            <https://twitter.com/igorbobic/status/1348122699843981312?>;
+                           rdfs:label               "In one of the most infamous scenes of the insurrection, QAnon supporter Doug Jensen menaces US Capitol Police Officer Eugene Goodman, who shrewdly steers Jensen away from the nearby Senate floor.".
 ex:dougJensen              ex:attacked             ex:eugeneGoodman                     {| ex:occurredAtEvent ex:E_CNN_18|}.
-CNN:CNN                     ex:described            ex:E_CNN_18.                           
+CNN:CNN                    ex:described            ex:E_CNN_18.                           
 
 #Event 19 
 ex:E_CNN_19                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T14:15:00"^^xsd:datetime.
+                           ex:occurredAt            "2021-01-06T14:15:00"^^xsd:datetime;
+                           rdfs:label               "At the White House, Cipollone again tells Meadows that Trump should intervene. Meadows responds by saying Trump 'doesn’t want to do anything' about the riot and that Trump agrees with the rioters who were calling for Pence to be hanged, according to Hutchinson’s testimony.".
 ex:Statement_MM_3_CNN      a                       ex:statement;
                            rdfs:label              "Trump “doesn’t want to do anything” about the riot and that Trump agrees with the rioters who were calling for Pence to be hanged,".
 ex:patChipollone           ex:communicatedWith     ex:markMeadows                       {| ex:occurredAtEvent ex:E_CNN_19|}.
@@ -293,20 +312,23 @@ CNN:CNN                     ex:described            ex:E_CNN_19.
 #TODO: Check if you can add description of what happened.                           
 #Event 20
 ex:E_CNN_20                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T14:24:00"^^xsd:datetime.                        
-CNN:CNN                     ex:described            ex:E_CNN_20.
+                           ex:occurredAt            "2021-01-06T14:24:00"^^xsd:datetime;
+                           rdfs:label               "Trump criticizes Pence in a tweet, slamming Pence for refusing to implement his illegal scheme to overturn the election while presiding over the joint session of Congress.".                        
+CNN:CNN                    ex:described            ex:E_CNN_20.
 
 #Event 21 
 ex:E_CNN_21                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:26:00"^^xsd:datetime;
-                           rdf:seeAlso             <https://www.cnn.com/2022/03/21/politics/pence-capitol-loading-dock-january-6-riot-secret-service/index.html>.
+                           rdf:seeAlso             <https://www.cnn.com/2022/03/21/politics/pence-capitol-loading-dock-january-6-riot-secret-service/index.html>;
+                           rdfs:label               "The Secret Service evacuates Pence from his office across from the Senate chamber, and he was eventually whisked away to a loading dock under the Capitol. The January 6 committee has said Pence came within 40 feet of the approaching rioters.".
 ex:secretService           ex:evacuated            ex:mikePence.
-CNN:CNN                     ex:described            ex:E_CNN_21.
+CNN:CNN                    ex:described            ex:E_CNN_21.
 
 #Event 22 
 ex:E_CNN_22                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:28:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "".
 ex:marjorieGreene          ex:communicatedWith     ex:markMeadows                       {| ex:occurredAtEvent ex:E_CNN_22|}.
 ex:statement_MG_1_CNN      a                       ex:Statement;
                            rdfs:label              "tell the President to calm people,".
@@ -315,7 +337,8 @@ CNN:CNN                     ex:described            ex:E_CNN_22.
 #Event 23 
 ex:E_CNN_23                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:28:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Rep. Marjorie Taylor Greene, a Georgia Republican and pro-Trump conspiracy theorist, tells Meadows via text that he should 'tell the President to calm people,' according to messages obtained by CNN.".
 ex:marjorieGreene          ex:communicatedWith     ex:markMeadows                       {| ex:occurredAtEvent ex:E_CNN_23|}.
 ex:statement_MG_1_CNN      a                       ex:Statement;
                            rdfs:label              "tell the President to calm people,".
@@ -324,12 +347,14 @@ CNN:CNN                     ex:described            ex:E_CNN_23.
 #TODO check if evacuated can be edited
 #Event 24 
 ex:E_CNN_24                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T14:30:00"^^xsd:datetime.
-CNN:CNN                     ex:described            ex:E_CNN_24.
+                           ex:occurredAt            "2021-01-06T14:30:00"^^xsd:datetime;
+                           rdfs:label               "The House goes into recess. Lawmakers evacuate the area, and some take refuge inside the chamber, donning gas masks.".
+CNN:CNN                    ex:described            ex:E_CNN_24.
 
 #Event 25 
 ex:E_CNN_25                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T14:32:00"^^xsd:datetime.
+                           ex:occurredAt            "2021-01-06T14:32:00"^^xsd:datetime;
+                           rdfs:label               "Fox News host Laura Ingraham, who promoted many of Trump’s election lies, texts Meadows that 'the president needs to tell people in the Capitol to go home,' according to messages obtained by CNN.".
 ex:statement_LI_1_CNN      a                       ex:Statement.
 ex:statement_LI_1_CNN      rdfs:label              "the president needs to tell people in the Capitol to go home,".
 ex:LauraIngraham           ex:communicatedWith     ex:markMeadows                         {| ex:occurredAtEvent ex:E_CNN_25|};
@@ -339,7 +364,8 @@ CNN:CNN                     ex:described            ex:E_CNN_25.
 #Event 26 
 ex:E_CNN_26                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:35:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Trump’s former acting chief of staff Mick Mulvaney texts Meadows saying that Trump 'needs to stop this, now,' and offers to help, according to messages obtained by CNN.".
 ex:statement_MKY_1         a                       ex:Statement;
                            rdfs:label              "Trump needs to stop this, now,".
 ex:mickMulvaney            ex:gaveStatement        ex:statement_MKY_1                  {| ex:occurredAtEvent ex:E_CNN_26|};
@@ -349,7 +375,8 @@ CNN:CNN                    ex:described            ex:E_CNN_26.
 #Event 27
 ex:E_CNN_27                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:38:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://media-cdn.factba.se/realdonaldtrump-twitter/1346904110969315332.jpg>.
+                           rdfs:seeAlso            <https://media-cdn.factba.se/realdonaldtrump-twitter/1346904110969315332.jpg>;
+                           rdfs:label               "Trump tweets that the rioters should 'stay peaceful,' but doesn’t tell them to leave the Capitol.".
 ex:statementDT_6_CNN       a                       ex:Statement;
                            rdfs:label              "stay peaceful,".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_6_CNN                 {| ex:occurredAtEvent ex:E_CNN_27|}.
@@ -358,7 +385,8 @@ CNN:CNN                    ex:described            ex:E_CNN_27.
 #Event 28
 ex:E_CNN_28                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:39:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label               "Some of the first Capitol windows are smashed by Dominic Pezzola, an alleged Proud Boy who has been charged with seditious conspiracy. (He pleaded not guilty to charges related to the attack.) More pro-Trump rioters flood into the Capitol building after overrunning barricades, fighting past police officers, and climbing up the inauguration scaffolding.".
 ex:dominicPezzola          ex:attacked             ex:capitol                           {| ex:occurredAtEvent ex:E_CNN_28|}.
 ex:rioters                 ex:attacked             ex:capitol                           {| ex:occurredAtEvent ex:E_CNN_28|}.
 CNN:CNN                     ex:described            ex:E_CNN_28.
@@ -367,27 +395,31 @@ CNN:CNN                     ex:described            ex:E_CNN_28.
 #Event 29
 ex:E_CNN_29                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:40:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/01/13/politics/oathkeeper-rhodes-arrested-doj/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/01/13/politics/oathkeeper-rhodes-arrested-doj/index.html>;
+                           rdfs:label               "A group of Oath Keepers – a far-right extremist group – weave through throngs of rioters in a military-style formation and enter the Capitol building. Several members of the group have been charged with seditious conspiracy.".
 ex:oathkeepers             ex:attacked             ex:capitol                           {| ex:occurredAtEvent ex:E_CNN_29|}.
 CNN:CNN                     ex:described            ex:E_CNN_29.
 
 #Event 30
 ex:E_CNN_30                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:44:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label               "Pro-Trump rioter Ashli Babbitt is fatally shot by a police officer while trying to break into the Speaker’s Lobby, which is adjacent to the House floor, while lawmakers were evacuating. At the same time, Rep. Barry Loudermilk, a Georgia Republican who supported nullifying Biden’s victory in his state, texts Meadows that 'It’s really bad up here on the hill,' according to messages obtained by CNN.".
 ex:oathkeepers             ex:attacked             ex:capitol                           {| ex:occurredAtEvent ex:E_CNN_29|}.
 CNN:CNN                     ex:described            ex:E_CNN_30.
 
 #Event 31
 ex:E_CNN_31                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:45:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label              "Pro-Trump rioters invade the Senate floor and break into House Speaker Nancy Pelosi’s office.".
 CNN:CNN                     ex:described            ex:E_CNN_31.
 
 #Event 32
 ex:E_CNN_32               a                       ex:Event;
                            ex:occurredAt            "2021-01-06T14:53:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>. 
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Donald Trump Jr. texts Meadows, 'He’s got to condem (sic) this shit. Asap. The captiol (sic) police tweet is not enough,' according to messages obtained by CNN. Meadows replies, “I am pushing it hard. I agree.”". 
 ex:Statement_DTJ_1_CNN     a                       ex:Statement;
                            rdfs:label              "He’s got to condem (sic) this shit. Asap. The captiol (sic) police tweet is not enough,".
 ex:Satement_MM_4_CNN       a                       ex:Statement;
@@ -400,26 +432,24 @@ CNN:CNN                     ex:described            ex:E_CNN_32.
 #Event 33
 ex:E_CNN_33                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T15:00:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2021/02/12/politics/trump-mccarthy-shouting-match-details/index.html>. 
+                           rdfs:seeAlso            <https://www.cnn.com/2021/02/12/politics/trump-mccarthy-shouting-match-details/index.html>;
+                           rdfs:label               "Trump speaks on the phone with House Minority Leader Kevin McCarthy, who pleads with Trump to call off the mob, but Trump takes the side of the rioters, telling McCarthy that they seem to care more about the election results than he does, according to CNN reporting.". 
 ex:kevinMccarthy           ex:communicatedWith     ex:donaldTrump                        {| ex:occurredAtEvent ex:E_CNN_33|}.      
 CNN:CNN                     ex:described            ex:E_CNN_33.
 
 #Event 34
 ex:E_CNN_34                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T15:00:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>;
+                           rdfs:label               "White House aides draft a statement for Trump to release, which would’ve condemned the violence and the 'illegal' actions of the rioters, according to Hutchinson’s testimony. The statement was never released.".
 CNN:CNN                     ex:described            ex:E_CNN_34.
 
-#Event 35
-ex:E_CNN_35                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T15:00:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/28/politics/january-6-hearing-day-6-takeaways-hutchinson/index.html>.
-CNN:CNN                     ex:described            ex:E_CNN_35.
 
 #Event 36
 ex:E_CNN_36                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T15:00:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           ex:occurredAt            "2021-01-06T15:09:00"^^xsd:datetime;
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Former Trump chief of staff Reince Priebus texts Meadows, 'TELL THEM TO GO HOME !!!,' according to messages obtained by CNN.".
 ex:Statement_RP_1_CNN      a                       ex:statement;
                            rdfs:label              "TELL THEM TO GO HOME !!!,".
 ex:reincePriebus           ex:gaveStatement        ex:Statement_RP_1_CNN                  {| ex:occurredAtEvent ex:E_CNN_36|};
@@ -430,11 +460,12 @@ CNN:CNN                     ex:described            ex:E_CNN_36.
 ex:E_CNN_37                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T15:13:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>,
-                                                   <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.     
+                                                   <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Trump tweets that his supporters at the Capitol should 'remain peaceful,' but again doesn’t tell them to leave the premises. At the same time, Trump’s former Health Secretary Tom Price texts Meadows saying, 'POTUS should go on air and defuse this,' according to messages obtained by CNN.".     
 ex:statementDT_7_CNN       a                       ex:Statement;
                            rdfs:label              "remain peaceful,".
 ex:Statement_TP_1_CNN      a                       ex:Statement;
-                           rdfs:label              "OTUS should go on air and defuse this,".
+                           rdfs:label              "POTUS should go on air and defuse this,".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_7_CNN                   {| ex:occurredAtEvent ex:E_CNN_37|}.
 ex:tomPrice                ex:gaveStatement        ex:Statement_TP_1_CNN                  {| ex:occurredAtEvent ex:E_CNN_37|}.
 CNN:CNN                     ex:described            ex:E_CNN_37.
@@ -442,7 +473,8 @@ CNN:CNN                     ex:described            ex:E_CNN_37.
 #Event 38
 ex:E_CNN_38                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T15:15:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label               "Ivanka Trump, the President’s daughter and senior adviser, calls the rioters 'patriots' in a tweet, and tells them that 'the violence must stop,' but does not say that they should leave the Capitol.".
 ex:Statement_IT_1_CNN      a                       ex:Statement;
                            rdfs:label              "patriots".
 ex:ivanaTrump              ex:gaveStatement           ex:Statement_IT_1_CNN                  {| ex:occurredAtEvent ex:E_CNN_38|}.
@@ -451,7 +483,8 @@ CNN:CNN                     ex:described            ex:E_CNN_38.
 #Event 39
 ex:E_CNN_39                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T15:31:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Fox News host Sean Hannity, who promoted many of Trump’s election lies, texts Meadows, 'Can he make a statement. I saw the tweet. Ask people to peacefully leave the capital,' according to messages obtained by CNN. Meadows replies, 'on it.'".
 ex:Statement_SH_1_CNN      a                       ex:Statement;
                            rdfs:label              "Can he make a statement. I saw the tweet. Ask people to peacefully leave the capital".
 ex:Statement_MM_4_CNN      a                       ex:Statement;
@@ -464,19 +497,22 @@ CNN:CNN                     ex:described            ex:E_CNN_39.
 #Event 40
 ex:E_CNN_40                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:03:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://edition.cnn.com/politics/live-news/january-6-hearings-july-21/h_bf7c064d6da3fc1135f70c9858e975d5>.
+                           rdfs:seeAlso            <https://edition.cnn.com/politics/live-news/january-6-hearings-july-21/h_bf7c064d6da3fc1135f70c9858e975d5>;
+                           rdfs:label               "Trump heads to the Rose Garden to film a recorded message. His staff prepared a script for him to read, which said, 'no one should be using violence or threats. … Let’s respect our institutions, let’s all do better.' But Trump goes off-script and improvises most of his remarks, according to a witness, who later testified to the January 6 committee.".
 CNN:CNN                     ex:described            ex:E_CNN_40.
 
 #Event 41
 ex:E_CNN_41                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:03:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://edition.cnn.com/politics/live-news/january-6-hearings-july-21/h_bf7c064d6da3fc1135f70c9858e975d5>.
+                           rdfs:seeAlso            <https://edition.cnn.com/politics/live-news/january-6-hearings-july-21/h_bf7c064d6da3fc1135f70c9858e975d5>;
+                           rdfs:label               "".
 CNN:CNN                     ex:described            ex:E_CNN_41.
 
 #Event 42
 ex:E_CNN_42                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:05:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/06/02/politics/read-mark-meadows-texts-january-6-capitol-riot/index.html>;
+                           rdfs:label               "Trump Jr. texts Meadows, 'We need an oval address. He has to lead now. It’s gone too far and gotten out of hand,' according to messages obtained by CNN. A few minutes later, Trump Jr. sends another message saying, 'Now Biden beating us to the punch.'".
 ex:Statement_DTJ_2_CNN     a                       ex:Statement;
                            rdfs:label              "We need an oval address. He has to lead now. It’s gone too far and gotten out of hand,".
 ex:Statement_DTJ_3_CNN     a                       ex:Statement;
@@ -490,7 +526,8 @@ CNN:CNN                     ex:described            ex:E_CNN_42.
 #Event 43
 ex:E_CNN_43                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:15:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label               "Biden delivers a televised address, saying Capitol attack 'borders on sedition,' and calling on Trump to tell his supporters to put 'an end to this siege.'".
 ex:Statement_JB_1_CNN      a                       ex:Statement;
                            rdfs:label              "Capitol attack borders on sedition,".
 ex:Statement_JB_2_CNN      a                       ex:Statement;
@@ -502,7 +539,8 @@ CNN:CNN                     ex:described            ex:E_CNN_43.
 #Event 44
 ex:E_CNN_44                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:17:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>.
+                           rdfs:seeAlso            <https://www.cnn.com/interactive/2021/01/politics/us-capitol-siege/>;
+                           rdfs:label               "Trump tweets out a video, where he tells the rioters that 'you have to go home now,' but he also praises them and repeats the lie that fueled the attack itself – that the 2020 election was stolen.".
 ex:statementDT_8_CNN       a                       ex:Statement;
                            rdfs:label              "you have to go home now".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_8_CNN                   {| ex:occurredAtEvent ex:E_CNN_44|}.
@@ -511,7 +549,8 @@ CNN:CNN                     ex:described            ex:E_CNN_44.
 #Event 45
 ex:E_CNN_45                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T16:45:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/07/21/politics/january-6-hearing-day-8-takeaways/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/07/21/politics/january-6-hearing-day-8-takeaways/index.html>;
+                           rdfs:label               "A bipartisan group of congressional leaders – including then-Senate Majority Leader Mitch McConnell and House Speaker Nancy Pelosi – speak on the phone with then-acting Defense Secretary Christopher Miller, according to footage shown by the January 6 committee. The lawmakers sought assurances from Miller that the National Guard would restore order so they could resume the Electoral College proceedings.".
 ex:mitchMcconnell          ex:communicatedWith     ex:christopherMiller                   {| ex:occurredAtEvent ex:E_CNN_45|}.
 ex:NanciPelosi             ex:communicatedWith     ex:christopherMiller                   {| ex:occurredAtEvent ex:E_CNN_45|}.
 CNN:CNN                     ex:described            ex:E_CNN_45.
@@ -520,13 +559,15 @@ CNN:CNN                     ex:described            ex:E_CNN_45.
 ex:E_CNN_46                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T18:00:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_7ff3b72561de49820d2c736dff1c83b5>,
-                                                   <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_254abc0da0034b40db291c3cc6cb46f0>.
+                                                   <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_254abc0da0034b40db291c3cc6cb46f0>;
+                           rdfs:label               "A curfew goes into effect in Washington, DC, after an order from Mayor Muriel Bowser. Law enforcement continues clearing the rioters from Capitol grounds, with many rioters still milling around the complex after the curfew.".
 CNN:CNN                     ex:described            ex:E_CNN_46.
 
 #Event 47
 ex:E_CNN_47                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T18:01:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://media-cdn.factba.se/realdonaldtrump-twitter/1346954970910707712.jpg>.
+                           rdfs:seeAlso            <https://media-cdn.factba.se/realdonaldtrump-twitter/1346954970910707712.jpg>;
+                           rdfs:label               "Trump tweets that 'these are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots.'".
 ex:statementDT_9_CNN       a                       ex:Statement;
                            rdfs:label              "these are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots.".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_9_CNN                   {| ex:occurredAtEvent ex:E_CNN_47|}.
@@ -535,7 +576,8 @@ CNN:CNN                     ex:described            ex:E_CNN_47.
 #Event 48
 ex:E_CNN_48                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T18:27:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_461089ba9b00ad0e2e7f53e3c8dfdbf7>.
+                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/january-6-hearings-july-21/h_461089ba9b00ad0e2e7f53e3c8dfdbf7>;
+                           rdfs:label               "Trump retires for the night to the White House residence. As Trump gathered his things to relocate to his residence, he tells a White House employee that 'Mike Pence let me down,' according to the committee. (The panel did not identify the employee.)".
 ex:statementDT_10_CNN      a                       ex:Statement;
                            rdfs:label              "Mike Pence let me down,".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_10_CNN                   {| ex:occurredAtEvent ex:E_CNN_48|}.
@@ -544,7 +586,8 @@ CNN:CNN                     ex:described            ex:E_CNN_48.
 #Event 49
 ex:E_CNN_49                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T19:02:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2021/01/08/politics/mike-lee-tommy-tuberville-trump-misdialed-capitol-riot/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2021/01/08/politics/mike-lee-tommy-tuberville-trump-misdialed-capitol-riot/index.html>;
+                           rdfs:label               "Giuliani leaves a voicemail for Tuberville, the GOP senator. Giuliani asks him to 'slow it down,' referring to the Electoral College proceedings, that would be restarted soon. Giuliani says he wants the delay 'so we can get these legislators to get more information to you,' referring to the Trump-backed effort to have GOP state lawmakers appoint Republican electors who could potentially supplant Biden’s legitimate electors.".
 ex:statement_RG_2_CNN      a                       ex:Statement;
                            rdfs:label              "slow it down".
 ex:statement_RG_3_CNN      a                       ex:Statement;
@@ -556,7 +599,8 @@ CNN:CNN                     ex:described            ex:E_CNN_49.
 #Event 50
 ex:E_CNN_50                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T19:14:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/07/12/politics/january-6-hearing-day-7-takeaways/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/07/12/politics/january-6-hearing-day-7-takeaways/index.html>;
+                           rdfs:label               "Trump’s former campaign manager Brad Parscale texts campaign adviser Katrina Pierson, expressing his view that Trump was 'asking for civil war' and that 'I feel guilty for helping him win,' according to messages released by the committee. He tells Pierson that Trump’s rhetoric 'killed someone' that day, presumably referring to Babbitt. Pierson replies that 'it wasn’t the rhetoric,' and Parscale responds, 'Katrina. Yes it was.'".
 ex:Statement_BP_1_CNN      a                       ex:Statement;
                            rdfs:label              "asking for civil war".
 ex:Statement_BP_2_CNN      a                       ex:Statement;
@@ -578,7 +622,8 @@ CNN:CNN                     ex:described            ex:E_CNN_50.
 ex:E_CNN_51                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T20:00:00"^^xsd:datetime;
                            rdfs:seeAlso            <https://edition.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_3b26b0f463c15892fa21638a124640ea>,
-                                                   <https://edition.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_1e7d1889c46b89490a3c3ee4c4f493c7>.
+                                                   <https://edition.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_1e7d1889c46b89490a3c3ee4c4f493c7>;
+                           rdfs:label               "US Capitol Police announces that the Capitol building is secure. the Senate reconvenes, and Pence returns to the dais, saying, 'To those who wreaked havoc in our capitol today, you did not win.' Sen. Mitch McConnell, the chamber’s top Republican, calls the events of the day a 'failed insurrection.'".
 ex:Statement_MP_1_CNN      a                       ex:Statement;
                            rdfs:label              "to those who wreaked havoc in our capitol today, you did not win".
 ex:Statement_MC_1_CNN      a                       ex:Statement;
@@ -590,67 +635,51 @@ CNN:CNN                     ex:described            ex:E_CNN_51.
 #Event 52
 ex:E_CNN_52                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T20:39:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/04/01/politics/jan-6-white-house-call-logs-timeline/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/04/01/politics/jan-6-white-house-call-logs-timeline/index.html>;
+                           rdfs:label               "Trump speaks on the phone with Giuliani for nine minutes, according to White House call logs that were obtained by the Washington Post.".
 ex:donaldTrump             ex:communicatedWith     ex:rudyGiuliani                         {| ex:occurredAtEvent ex:E_CNN_52|}.
 CNN:CNN                     ex:described            ex:E_CNN_52.
 
 #Event 53
 ex:E_CNN_53                a                       ex:Event;
-                           ex:occurredAt            "2021-01-06T21:02:00"^^xsd:datetime.
+                           ex:occurredAt            "2021-01-06T21:02:00"^^xsd:datetime;
+                           rdfs:label               "The House reconvenes.".
 CNN:CNN                     ex:described            ex:E_CNN_53.
 
 #Event 54
 ex:E_CNN_54                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T21:23:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/07/21/politics/january-6-hearing-day-8-takeaways/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/07/21/politics/january-6-hearing-day-8-takeaways/index.html>;
+                           rdfs:label               "Miller, the Trump campaign spokesman, calls Trump to propose releasing a statement about the transfer of power once the joint session of Congress wraps up. Miller told the January 6 committee that, 'Trump wanted to say ‘peaceful transition,’ and I said, ‘that ship’s kind of already sailed, so we’re going to say ‘orderly transition.’".
 ex:stephenMiller           ex:communicatedWith     ex:donaldTrump                           {| ex:occurredAtEvent ex:E_CNN_53|}.
 CNN:CNN                     ex:described            ex:E_CNN_54.
 
 #Event 55
 ex:E_CNN_55                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T22:11:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_7075aaec7a5bc1133b62ff0cdeea5962>.
+                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_7075aaec7a5bc1133b62ff0cdeea5962>;
+                           rdfs:label               "The Senate votes to reject the objection raised by GOP lawmakers to counting Arizona’s electoral votes, which were awarded to Biden because he won the popular vote in that state.".
 CNN:CNN                    ex:described            ex:E_CNN_55.
 
 #Event 56
 ex:E_CNN_56                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T22:19:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_7075aaec7a5bc1133b62ff0cdeea5962>.
+                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_7075aaec7a5bc1133b62ff0cdeea5962>;
+                           rdfs:label               "Trump speaks with former White House strategist Steve Bannon for seven minutes, according to White House call logs that were obtained by the Washington Post.".
 ex:donaldTrump             ex:communicatedWith     ex:steveBannon                           {| ex:occurredAtEvent ex:E_CNN_56|}.
 CNN:CNN                    ex:described            ex:E_CNN_56.
 
 #Event 57
 ex:E_CNN_57                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T23:08:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/2022/04/01/politics/jan-6-white-house-call-logs-timeline/index.html>.
+                           rdfs:seeAlso            <https://www.cnn.com/2022/04/01/politics/jan-6-white-house-call-logs-timeline/index.html>;
+                           rdfs:label               "Trump talks to Hannity for eight minutes, according to White House call logs that were obtained by the Washington Post.".
 ex:donaldTrump             ex:communicatedWith     ex:seanHannity                           {| ex:occurredAtEvent ex:E_CNN_57|}.
 CNN:CNN                    ex:described            ex:E_CNN_57.
 
 #Event 58
 ex:E_CNN_58                a                       ex:Event;
                            ex:occurredAt            "2021-01-06T23:10:00"^^xsd:datetime;
-                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_4dcab738e3f76b38905bf0f5f005a8bd>.
+                           rdfs:seeAlso            <https://www.cnn.com/politics/live-news/congress-electoral-college-vote-count-2021/h_4dcab738e3f76b38905bf0f5f005a8bd>;
+                           rdfs:label               "The House votes to reject the objection raised by GOP lawmakers to counting Arizona’s electoral votes, which were awarded to Biden because he won the popular vote in that state.".
 CNN:CNN                    ex:described            ex:E_CNN_58.
-
-
-
-
-
-
-
-
-
-
-            
-
-                                
-
-
-
-
- 
-
-
-
-
-

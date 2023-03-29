@@ -171,7 +171,8 @@ ex:courtneyHolland          ex:tookPartIn          ex:stopTheSteal {|ex:occurred
 Wiki:wiki                   ex:described           ex:E_TextMessage_000.
 ex:E_TextMessage_000        a                      ex:Event;
                             ex:occurredOn          "2021-01-06T07:30:00"^^xsd:datetime;
-                            ex:occurredAt          ex:textMessage.
+                            ex:occurredAt          ex:textMessage;
+                            rdfs:seeAlso           ex:E_CNN_1.
 ex:Statement_Wiki_004       a                      ex:Statement;
                             rdfs:label             "White House chief of staff Mark Meadows texts Representative Jim Jordan 'I have pushed for this' but is 'not sure it is going to happen,' referring to Pence overturning the election results.".
 ex:markMeadows              ex:communicatedWith    ex:jimJordan           {|ex:occurredAtEvent ex:E_TextMessage_000|}.
@@ -193,7 +194,8 @@ ex:secretService            ex:gaveStatement       ex:Statement_Wiki_005  {|ex:o
 Wiki:wiki                   ex:described           ex:E_Tweet_004.
 ex:E_Tweet_004              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T08:17:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_1, ex:e_FOX_1.
 ex:Statement_Wiki_006       a                      ex:Statement;
                             rdfs:label             "President Trump tweets allegations of vote fraud, stating, States want to correct their votes, which they now know were based on irregularities and fraud, plus corrupt process never received legislative approval. All Mike Pence has to do is send them back to the States, AND WE WIN. Do it Mike, this is a time for extreme courage!".
 ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_006        {|ex:occurredAtEvent ex:E_Tweet_004|}.
@@ -215,7 +217,8 @@ ex:moBrooks                 ex:gaveStatement       ex:Statement_Wiki_007        
 Wiki:wiki                   ex:described           ex:E_PhoneCall_000.
 ex:E_PhoneCall_000          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T09:24:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_2.
 ex:donaldTrump              ex:communicatedWith    ex:jimJordan {|ex:occurredAtEvent ex:E_PhoneCall_000|}.
 
 
@@ -232,7 +235,8 @@ ex:E_Wiki_009               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_PhoneCall_001.
 ex:E_PhoneCall_001          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T09:52:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_3.
 ex:donaldTrump              ex:communicatedWith    ex:stephenMiller {|ex:occurredAtEvent ex:E_PhoneCall_001|}.
 
 
@@ -242,7 +246,8 @@ ex:donaldTrump              ex:communicatedWith    ex:stephenMiller {|ex:occurre
 Wiki:wiki                   ex:described           ex:E_Wiki_011.
 ex:E_Wiki_011               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_4.
 
 
 
@@ -251,7 +256,8 @@ ex:E_Wiki_011               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Wiki_012.
 ex:E_Wiki_012               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:15:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_5.
 
 
 
@@ -272,18 +278,20 @@ ex:E_Wiki_014               a                      ex:Event;
 
 
 # Event 015
-# 10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".[133][141]
+# 10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".
 Wiki:wiki                   ex:described           ex:E_Wiki_015.
 ex:E_Wiki_015               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:47:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_6.
 
 # Event 016
-# 10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building.[142] (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)[143]
+# 10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building. (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)
 Wiki:wiki                   ex:described           ex:E_Wiki_016.
 ex:E_Wiki_016               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T10:58:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_2.
 
 
 # Event 017
@@ -323,7 +331,7 @@ ex:E_Wiki_020               a                      ex:Event;
 
 
 # Event 021
-# 11:46 a.m.: Some Proud Boys, including Joe Biggs and Ethan Nordean, are gathered where Trump is about to speak.[147]
+# 11:46 a.m.: Some Proud Boys, including Joe Biggs and Ethan Nordean, are gathered where Trump is about to speak.
 Wiki:wiki                   ex:described           ex:E_Wiki_021.
 ex:E_Wiki_021               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:46:00"^^xsd:datetime;
@@ -332,11 +340,12 @@ ex:E_Wiki_021               a                      ex:Event;
 
 
 # Event 022
-# 11:57 a.m.: President Trump begins his over one-hour speech.[127][148] He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks),[149] accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.[150]
+# 11:57 a.m.: President Trump begins his over one-hour speech. He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks), accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.
 Wiki:wiki                   ex:described           ex:E_Wiki_022.
 ex:E_Wiki_022               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T11:57:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_3, ex:e_FOX_2, ex:E_CNN_9.
 
 
 
@@ -365,7 +374,8 @@ ex:paulGosar                ex:gaveStatement       ex:Statement_Wiki_024       {
 Wiki:wiki                   ex:described           ex:E_Wiki_025.
 ex:E_Wiki_025               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:16:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_3, ex:E_BBC_5, ex:e_FOX_2.
 
 # Event 026
 # 12:20 p.m.: A Federal Protective Service officer writes in an email, "POTUS is encouraging the protesters to march to capitol grounds and continue protesting there."[117]
@@ -393,15 +403,16 @@ ex:E_Wiki_028               a                      ex:Event;
 
 
 # Event 029
-# 12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.[155]
+# 12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.
 Wiki:wiki                   ex:described           ex:E_Wiki_029.
 ex:E_Wiki_029               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:30:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_4.
 
 
 # Event 030
-# 12:45 p.m.: FBI, Capitol Police, and ATF responded to the pipe bomb found outside RNC headquarters,[156] which had been planted the night before.[121]
+# 12:45 p.m.: FBI, Capitol Police, and ATF responded to the pipe bomb found outside RNC headquarters,[156] which had been planted the night before.
 Wiki:wiki                   ex:described           ex:E_Wiki_030.
 ex:E_Wiki_030               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime;
@@ -410,7 +421,7 @@ ex:E_Wiki_030               a                      ex:Event;
 
 
 # Event 031
-# 12:45 p.m.: Proud Boys arrive at the Peace Monument northwest of the Capitol.[127]
+# 12:45 p.m.: Proud Boys arrive at the Peace Monument northwest of the Capitol.
 Wiki:wiki                   ex:described           ex:E_Wiki_031.
 ex:E_Wiki_031               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:45:00"^^xsd:datetime;
@@ -419,11 +430,12 @@ ex:E_Wiki_031               a                      ex:Event;
 
 
 # Event 032
-# 12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb.[157][155] A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
+# 12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb. A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
 Wiki:wiki                   ex:described           ex:E_Wiki_032.
 ex:E_Wiki_032               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_10.
 
 
 
@@ -456,7 +468,8 @@ ex:E_Wiki_035               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Wiki_036.
 ex:E_Wiki_036               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:53:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6, ex:E_CNN_10.
 
 
 # Event 037
@@ -464,7 +477,8 @@ ex:E_Wiki_036               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Wiki_037.
 ex:E_Wiki_037               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T12:57:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
 
 
 # Event 038
@@ -509,7 +523,8 @@ ex:E_Wiki_019               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_PhoneCall_004.
 ex:E_PhoneCall_004          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_BBC_5.
 ex:Statement_Wiki_040       a                      ex:Statement;
                             rdfs:label             "US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.".
 ex:stevenSund               ex:communicatedWith    ex:robertContee              {|ex:occurredAtEvent ex:E_PhoneCall_004|}.
@@ -533,7 +548,8 @@ ex:E_Wiki_041               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Wiki_042.
 ex:E_Wiki_042               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_4, ex:E_BBC_6.
 
 
 
@@ -547,7 +563,7 @@ ex:E_Wiki_043               a                      ex:Event;
 
 
 # Event 044
-# 1:07 p.m.: Authorities respond to the headquarters of the Democratic National Committee, following discovery of the second pipe bomb.[121][158] When police arrive, Vice President-elect Kamala Harris was inside.[158]
+# 1:07 p.m.: Authorities respond to the headquarters of the Democratic National Committee, following discovery of the second pipe bomb. When police arrive, Vice President-elect Kamala Harris was inside.
 Wiki:wiki                   ex:described           ex:E_Wiki_044.
 ex:E_Wiki_044               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:07:00"^^xsd:datetime;
@@ -555,12 +571,13 @@ ex:E_Wiki_044               a                      ex:Event;
 
 
 # Event 045
-# 1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:[170][145][171][172]
+# 1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:
 # If you don't fight like hell, you're not going to have a country anymore....We're going to try and give them [Republicans] the kind of pride and boldness that they need to take back our country...The Democrats are hopeless — they never vote for anything. Not even one vote. But we're going to try and give our Republicans, the weak ones because the strong ones don't need any of our help. We're going to try and give them the kind of pride and boldness that they need to take back our country.
 Wiki:wiki                   ex:described           ex:E_Wiki_045.
 ex:E_Wiki_045               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:10:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_5, ex:e_FOX_2, ex:E_CNN_11.
 
 # Event 046
 # 1:11 p.m.: First MPD officers arrive at lower west plaza to confront rioters approaching the Capitol
@@ -575,7 +592,8 @@ ex:E_Wiki_046               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Wiki_047.
 ex:E_Wiki_047               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:12:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rfds:seeAlso           ex:e_FOX_3.
 
 
 # Event 048
@@ -587,18 +605,20 @@ ex:E_Wiki_048               a                      ex:Event;
 
 
 # Event 049
-# 1:17 p.m.: Trump's motorcade leaves the Ellipse.[173] The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
+# 1:17 p.m.: Trump's motorcade leaves the Ellipse. The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
 Wiki:wiki                   ex:described           ex:E_Wiki_049.
 ex:E_Wiki_049               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:17:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_12.
 
 # Event 050
 # 1:19 p.m.: Trump's motorcade arrives at the White House.[133]
 Wiki:wiki                   ex:described           ex:E_Wiki_050.
 ex:E_Wiki_050               a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:19:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_12.
 
 # Event 051
 # 1:21 p.m.: "The Presidential Daily Diary...contains no information for the period between 1:21 p.m. and 4:03 p.m.," Representative Elaine Luria stated at a public hearing a year later. "The chief White House photographer wanted to take pictures because it was, in her words, 'very important for his archives and for history.' But she was told, 'no photographs.'"[144]
@@ -612,7 +632,8 @@ ex:E_Wiki_051               a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:25:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_13.
 
 
 # Event 053
@@ -628,7 +649,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:26:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_5, ex:e_FOX_4.
 
 
 # Event 055
@@ -636,7 +658,9 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:30:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
+
 
 
 # Event 056
@@ -672,7 +696,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:39:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_14.
 
 
 # Event 060
@@ -699,7 +724,8 @@ ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_061       {
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T13:50:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
 
 
 # Event 063
@@ -750,7 +776,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_4,
 
 
 # Event 069
@@ -758,7 +785,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:03:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_16.
 
 
 # Event 070
@@ -774,7 +802,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:10:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_4, ex:E_CNN_15.
 
 
 # Event 072
@@ -794,15 +823,17 @@ ex:paulIrving               ex:gaveStatement       ex:Statement_Wiki_072 {|ex:oc
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:11:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_28.
 
 
 # Event 074
-# 2:12 p.m.: The first rioter enters the Capitol through the broken window in the Senate wing of the building,[196] opening a door for others.
+# 2:12 p.m.: The first rioter enters the Capitol through the broken window in the Senate wing of the building, opening a door for others.
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:12:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_15, ex:E_CNN_28.
 
 
 # Event 075
@@ -814,11 +845,12 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 076
-# 2:13 p.m.: Vice President Pence is removed from the Senate chamber by his lead Secret Service agent, Tim Giebels,[169] who brings him to a nearby office about 100 feet from the landing.
+# 2:13 p.m.: Vice President Pence is removed from the Senate chamber by his lead Secret Service agent, Tim Giebels, who brings him to a nearby office about 100 feet from the landing.
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:13:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
 
 
 # Event 077
@@ -826,7 +858,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:13:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_17.
 
 
 # Event 078
@@ -834,7 +867,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:14:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_18, ex:E_CNN_21.
 
 
 # Event 079
@@ -850,7 +884,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:14:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_17.
 
 
 # Event 081
@@ -866,7 +901,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:15:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
 
 
 # Event 083
@@ -886,11 +922,12 @@ ex:E_                       a                      ex:Event;
 
 
 # Event 085
-# 2:18 p.m.: Speaker of the House Nancy Pelosi (D–CA) is removed from the chamber by her protective detail.[114][202] Representative Gosar continues addressing the House, despite the confusion, while ranking member Jim McGovern (D-CA) steps in as Speaker.
+# 2:18 p.m.: Speaker of the House Nancy Pelosi (D–CA) is removed from the chamber by her protective detail. Representative Gosar continues addressing the House, despite the confusion, while ranking member Jim McGovern (D-CA) steps in as Speaker.
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:18:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
 
 
 # Event 086
@@ -898,7 +935,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:20:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8, ex:E_CNN_24.
 
 
 # Event 087
@@ -906,7 +944,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:30:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_31.
 
 
 # Event 088
@@ -961,7 +1000,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Tweet_008.
 ex:E_Tweet_008              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:24:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_8, ex:E_CNN_20.
 ex:Statement_Wiki_093       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'Mike Pence didn't have the courage to do what should have been done to protect our Country and our Constitution, giving States a chance to certify a corrected set of facts, not the fraudulent or inaccurate ones which they were asked to previously certify. USA demands the truth!'".
 ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_093       {|ex:occurredAtEvent ex:E_Tweet_008|}.
@@ -980,7 +1020,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:25:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_7, ex:E_CNN_21.
 
 
 # Event 096
@@ -1011,7 +1052,8 @@ ex:chrisRodriguez           ex:gaveStatement       ex:Statement_Wiki_096        
 Wiki:wiki                   ex:described           ex:E_PhoneCall_010.
 ex:E_PhoneCall_010          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_BBC_9, ex:E_CNN_17.
 ex:Statement_Wiki_097       a                      ex:Statement;
                             rdfs:label             "Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. 'I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go',' he recounted to reporters of his call.".
 ex:donaldTrump              ex:communicatedWith    ex:mikeLee, ex:tommyTuberville  {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
@@ -1040,7 +1082,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8.
 
 
 # Event 101
@@ -1064,7 +1107,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:29:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8.
 
 
 # Event 104
@@ -1088,7 +1132,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Tweet_009.
 ex:E_Tweet_009              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:32:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_25.
 ex:Statement_Wiki_106       a                      ex:Statement;
                             rdfs:label             "Fox News anchor Laura Ingraham tweets Chief of Staff Meadows: 'Hey Mark, The president needs to tell people in the Capitol to go home.'".
 ex:lauraIngraham            ex:gaveStatement       ex:Statement_Wiki_106       {|ex:occurredAtEvent ex:E_Tweet_009|}.
@@ -1100,7 +1145,8 @@ ex:lauraIngraham            ex:communicatedWith    ex:markMeadows              {
 Wiki:wiki                   ex:described           ex:E_Tweet_010.
 ex:E_Tweet_010              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:38:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_27.
 ex:Statement_Wiki_107       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'Please support our Capitol Police and Law Enforcement. They are truly on the side of our Country. Stay peaceful!'".
 ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_107       {|ex:occurredAtEvent ex:E_Tweet_010|}.
@@ -1111,7 +1157,9 @@ ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_107       {
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:42:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
+
 
 
 # Event 109
@@ -1151,7 +1199,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:44:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_10, ex:e_FOX_7, ex:E_CNN_30.
 
 
 # Event 114
@@ -1175,7 +1224,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:45:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_31.
 
 
 # Event 117
@@ -1207,7 +1257,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Tweet_011.
 ex:E_Tweet_011              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T14:53:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_32.
 ex:Statement_Wiki_120       a                      ex:Statement;
                             rdfs:label             "Donald Trump, Jr. tweets to Meadows: 'He's got to condem [sic] this shit. Asap.The captiol [sic] police tweet is not enough.'".
 ex:donaldTrumpJr            ex:gaveStatement       ex:Statement_Wiki_120       {|ex:occurredAtEvent ex:E_Tweet_011|}.
@@ -1265,7 +1316,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:05:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_33.
 
 
 # Event 125
@@ -1281,7 +1333,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:09:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
 
 
 # Event 127
@@ -1289,7 +1342,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:09:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_36.
 
 
 # Event 128
@@ -1313,7 +1367,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Tweet_012.
 ex:E_Tweet_012              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:13:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_11, ex:E_CNN_37.
 ex:Statement_Wiki_130       a                      ex:Statement;
                             rdfs:label             "President Trump tweets 'I am asking for everyone at the U.S. Capitol to remain peaceful. No violence! Remember, WE are the Party of Law & Order – respect the Law and our great men and women in Blue. Thank you!'".
 ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_130       {|ex:occurredAtEvent ex:E_Tweet_012|}.
@@ -1405,7 +1460,8 @@ ex:chuckSchumer             ex:gaveStatement       ex:Statement_Wiki_137b   {|ex
 Wiki:wiki                   ex:described           ex:E_PhoneCall_017.
 ex:E_PhoneCall_017          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:26:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:e_FOX_9.
 ex:Statement_Wiki_138       a                      ex:Statement;
                             rdfs:label             "their request was not denied and that Secretary Miller has approved full activation of the DCNG".
 ex:ryanMcCarthy             ex:communicatedWith    ex:murielBowser, ex:robertContee  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
@@ -1461,7 +1517,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_PhoneCall_018.
 ex:E_PhoneCall_018          a                      ex:Event;
                             ex:occurredOn          "2021-01-06T15:46:00"^^xsd:datetime;
-                            ex:occurredAt          ex:phoneCall.
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_45.
 ex:stenyHoyer               ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
 ex:mitchMcConnell           ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
 ex:steveScalise             ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
@@ -1509,7 +1566,8 @@ ex:timothyGowen             ex:gaveStatement       ex:Statement_Wiki_147        
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:03:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_40.
 
 
 # Event 149
@@ -1517,7 +1575,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:05:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_11, ex:E_CNN_43.
 
 
 # Event 150
@@ -1546,7 +1605,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T16:17:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_12, ex:e_FOX_13, ex:E_CNN_44.
 
 
 # Event 153
@@ -1692,7 +1752,8 @@ ex:mikePence                ex:gaveStatement       ex:Statement_Wiki_166b       
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T18:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_46.
 
 
 # Event 168
@@ -1702,7 +1763,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_Tweet_014.
 ex:E_Tweet_014              a                      ex:Event;
                             ex:occurredOn          "2021-01-06T18:01:00"^^xsd:datetime;
-                            ex:occurredAt          ex:twitter.
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_13, ex:e_FOX_15, ex:E_CNN_47.
 ex:Statement_Wiki_168       a                      ex:Statement;
                             rdfs:label             "These are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long. Go home with love & in peace. Remember this day forever!".
 ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_168       {|ex:occurredAtEvent ex:E_Tweet_014|}.
@@ -1745,7 +1807,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T19:02:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_13.
 
 
 # Event 174
@@ -1772,7 +1835,8 @@ ex:stephanieGrisham         ex:gaveStatement       ex:Statement_Wiki_175       {
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T20:00:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_51.
 
 
 # Event 177
@@ -1780,7 +1844,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T20:06:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_51.
 
 
 # Event 178
@@ -1796,7 +1861,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T20:36:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_13.
 
 
 # Event 180
@@ -1820,7 +1886,8 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T22:15:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_55.
 
 
 # Event 183
@@ -1828,4 +1895,5 @@ ex:E_                       a                      ex:Event;
 Wiki:wiki                   ex:described           ex:E_.
 ex:E_                       a                      ex:Event;
                             ex:occurredOn          "2021-01-06T23:30:00"^^xsd:datetime;
-                            ex:occurredAt          ex:.
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_58.

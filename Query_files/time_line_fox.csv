@@ -1,0 +1,17 @@
+event,datetime,location,description
+http://example.com/e_FOX_1,2021-01-06T10:02:00,,
+http://example.com/e_FOX_2,2021-01-06T11:00:00,,
+http://example.com/e_FOX_3,2021-01-06T13:10:00,,
+http://example.com/e_FOX_4,2021-01-06T13:47:00,,
+http://example.com/e_FOX_5,2021-01-06T14:00:00,,
+http://example.com/e_FOX_6,2021-01-06T14:20:00,,
+http://example.com/e_FOX_7,2021-01-06T14:40:00,http://example.com/CapitolRotunda,
+http://example.com/e_FOX_8,2021-01-06T15:30:00,,
+http://example.com/e_FOX_9,2021-01-06T15:36:00,,
+http://example.com/e_FOX_10,2021-01-06T16:00:00,,
+http://example.com/e_FOX_11,2021-01-06T16:10:00,,
+http://example.com/e_FOX_12,2021-01-06T16:25:00,,
+http://example.com/e_FOX_13,2021-01-06T17:00:00,,Social media deleted video from Trump
+http://example.com/e_FOX_14,2021-01-06T17:15:00,http://example.com/CapitolGrounds,
+http://example.com/e_FOX_15,2021-01-06T17:30:00,,
+http://example.com/e_FOX_16,2021-01-06T18:00:00,,
