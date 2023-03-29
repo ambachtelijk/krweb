@@ -104,7 +104,8 @@ FOX:fox29                       a                   ex:News_Outlet.
 
 # Event 1
 ex:e_FOX_1                      a                   ex:Event;            
-                                ex:occurredOn           "2021-01-06T10:02:00"^^xsd:datetime.
+                                ex:occurredOn           "2021-01-06T10:02:00"^^xsd:datetime;
+                                rdfs:label          "Pence makes a statement in which he says to think that it is up to him to issue a recount of the votes".
 FOX:fox29                       ex:described        ex:e_FOX_1.
 ex:StatementPence_FOX_1         a                   ex:Statement;         
                                 rdfs:label          "It is my considered judgment that my oath to support and defend the Constitution constrains me from claiming unilateral authority to determine which electoral votes should be counted and which should not.".
@@ -113,30 +114,33 @@ ex:mikePence                    ex:memberOfParty    ex:republicanParty;
                                 
 # Event 2
 ex:e_FOX_2                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T11:00:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T11:00:00"^^xsd:datetime;
+                                rdfs:label          "President Trump spoke to a group of supporters at an organized rally outside of the White House on the ellipse, where several thousand protestors cheered Trump and his false claims of widespread election fraud.".
 FOX:fox29                       ex:described        ex:e_FOX_2.            
 ex:StatementTrump_FOX_1         a                   ex:Statement;
                                 rdfs:label          "We will not let them silence your voices, we will stop the steal".
 ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_1             {|ex:occurredAtEvent ex:E_FOX_2|}.
 
-
 # Event 3
 ex:e_FOX_3                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T13:10:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T13:10:00"^^xsd:datetime;
+                                rdfs:label          "Lawmakers began to debate Republican challenges to the counting of Arizona’s electoral votes.".
 ex:lawmakers                    ex:communicatedWith ex:lawmakers {|ex:occurredAtEvent ex:E_FOX_3|};
                                 rdfs:label          "debate on the counting of the votes in Arizona".   
 FOX:fox29                       ex:described        ex:e_FOX_3.
 
 # Event 4
 ex:e_FOX_4                      a                   ex:Event;
-                                ex:occurredOn           "2021-01-06T13:47:00"^^xsd:datetime.            
+                                ex:occurredOn           "2021-01-06T13:47:00"^^xsd:datetime;
+                                rdfs:label          "FOX 5 DC reported that protestors started approaching the U.S. Capitol building and began their attempt to storm the premises just hours after the Trump rally near the White House.".           
 ex:protestors                   ex:attacked         ex:police                  {|ex:occurredAtEvent ex:E_FOX_4|}.
 ex:capitolPolice                ex:evacuates        ex:congress                {|ex:occurredAtEvent ex:E_FOX_4|}.
 FOX:fox29                       ex:described        ex:e_FOX_4.
 
 # Event 5
 ex:e_FOX_5                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T14:00:00"^^xsd:datetime.    
+                                ex:occurredOn        "2021-01-06T14:00:00"^^xsd:datetime;
+                                rdfs:label          "FOX 5 DC reported that rioters had gotten into the U.S. Capitol building by 2 p.m.".    
 ex:StatementFOX_reporter_1      a                   ex:Statement;
                                 rdfs:label          "rioters have gotten into the U.S. Capitol building".
 FOX:FOXreporter                 ex:gaveStatement    ex:StatementFOX_reporter_1         {|ex:occurredAtEvent ex:E_FOX_5|}.
@@ -145,7 +149,8 @@ FOX:fox29                       ex:described        ex:e_FOX_5.
 
 # Event 6
 ex:e_FOX_6                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T14:20:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T14:20:00"^^xsd:datetime;
+                                rdfs:label          "Both chambers of Congress abruptly recessed as they were debating the count of the Electoral College votes that gave Joe Biden the presidency.".
 ex:capitolPolice                ex:communicatedWith ex:lawmakers;
                                 rdfs:label          "Due to an external security threat, no one could enter or exit the Capitol complex."        {|ex:occurredAtEvent ex:E_FOX_6|}.
 FOX:fox29                       ex:described        ex:e_FOX_6.
@@ -153,21 +158,24 @@ FOX:fox29                       ex:described        ex:e_FOX_6.
 # Event 7
 ex:e_FOX_7                      a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T14:40:00"^^xsd:datetime;
-                                ex:occurredAt       ex:CapitolRotunda.
+                                ex:occurredAt       ex:CapitolRotunda;
+                                rdfs:label          "Stunning photos and videos captured the chaos inside the nation’s Capitol: security officials with guns drawn on the floor of the U.S. House of Representatives, pro-Trump rioters fighting with police in the Capitol Rotunda, a mob of the president’s supporters smashing windows and streaming into the building where the nation's leaders had gathered to count votes sealing Biden's victory.".
 ex:rioters                      ex:attacked         ex:police                      {|ex:occurredAtEvent ex:E_FOX_7|}.
 ex:police                       ex:attacked         ex:rioters                     {|ex:occurredAtEvent ex:E_FOX_7|}.
 FOX:fox29                       ex:described        ex:e_FOX_7.
 
 # Event 8
 ex:e_FOX_8                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T15:30:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T15:30:00"^^xsd:datetime;
+                                rdfs:label          "It was reported that one person was shot by U.S. Capitol Police. The condition of the person was unclear.".
 ex:capitolPolice                ex:attacked         ex:attendees;
                                 rdfs:label          "One person was shot. The condition of the person is unclear."         {|ex:occurredAtEven ex:E_FOX_8|}.
 FOX:fox29                       ex:described        ex:e_FOX_8.
 
 # Event 9
 ex:e_FOX_9                      a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T15:36:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T15:36:00"^^xsd:datetime;
+                                rdfs:label          "White House Press Secretary Kayleigh McEnany stated on Twitter that the National Guard was on the way along with other federal protective services under Trump's direction, but it was not clear that Trump himself gave the order.".
 ex:StatementchrisMiller_FOX_1   a                   ex:Statement;
                                 rdfs:label          "We have fully activated the D.C. National Guard to assist federal and local law enforcement as they work to peacefully address the situation. We are prepared to provide additional support as necessary and appropriate as requested by local authorities. Our people are sworn to defend the constitution and our democratic form of government and they will act accordingly.".
 ex:chrisMiller                  ex:gaveStatement    ex:StatementchrisMiller_FOX_1         {|ex:occurredAtEvent ex:E_FOX_9|}.
@@ -175,7 +183,8 @@ FOX:fox29                       ex:described        ex:e_FOX_9.
 
 # Event 10
 ex:e_FOX_10                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T16:00:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T16:00:00"^^xsd:datetime;
+                                rdfs:label          "It was reported that at least one explosive device had been found near the U.S. Capitol. Law enforcement officials said the device was no longer a threat Wednesday afternoon.".
 ex:StatementPolice_FOX_1        a                   ex:Statement;
                                 rdfs:label          "At least one explosive device had been found near the U.S. Capitol.".
 ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|ex:occurredAtEvent ex:E_FOX_10|}.    
@@ -183,7 +192,8 @@ FOX:fox29                       ex:described        ex:e_FOX_10.
 
 # Event 11
 ex:e_FOX_11                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T16:10:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T16:10:00"^^xsd:datetime;
+                                rdfs:label          "President-elect Joe Biden addressed the nation to demand an end to the "siege" underway at the U.S. Capitol building, where the mob of Trump supporters clashed with police and marched through the building.".
 ex:StatementBiden_FOX_1         a                   ex:Statement;
                                 rdfs:label          "President-elect Joe Biden addressed the nation to demand an end to the siege underway at the U.S. Capitol building.".
 ex:joeBiden                     ex:gaveStatement    ex:StatementBiden_FOX_1                     {|ex:occurredAtEvent ex:E_FOX_11|}.    
@@ -191,7 +201,8 @@ FOX:fox29                       ex:described        ex:e_FOX_11.
 
 # Event 12
 ex:e_FOX_12                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T16:25:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T16:25:00"^^xsd:datetime;
+                                rdfs:label          "The Washington, D.C. police chief said that at least five weapons had been recovered and at least 13 people had been arrested amid the pro-Trump riot.".
 ex:StatementPolice_FOX_1        a                   ex:Statement;
                                 rdfs:label          "At least five weapons had been recovered and at least 13 people had been arrested".
 ex:police                       ex:gaveStatement    ex:StatementPolice_FOX_1                    {|ex:occurredAtEvent ex:E_FOX_12|}.
@@ -200,7 +211,7 @@ FOX:fox29                       ex:described        ex:e_FOX_12.
 # Event 13
 ex:e_FOX_13                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T17:00:00"^^xsd:datetime;
-                                rdfs:label          "Social media deleted video from Trump".
+                                rdfs:label          "Trump’s earlier video was deleted from social media platforms for violating their policies.".
 ex:StatementguyRosen_FOX_1      a                   ex:Statement;
                                 rdfs:label          "This is an emergency situation and we are taking appropriate emergency measures, including removing President Trump’s video. We removed it because on balance we believe it contributes to rather than diminishes the risk of ongoing violence".
 ex:guyRosen                     ex:gaveStatement    ex:StatementguyRosen_FOX_1                  {|ex:occurredAtEvent ex:E_FOX_13|}.  
@@ -209,14 +220,16 @@ FOX:fox29                       ex:described        ex:e_FOX_13.
 # Event 14
 ex:e_FOX_14                     a                   ex:Event;
                                 ex:occurredOn        "2021-01-06T17:15:00"^^xsd:datetime;
-                                ex:occurredAt        ex:CapitolGrounds.
+                                ex:occurredAt        ex:CapitolGrounds;
+                                rdfs:label          "Police used tear gas and percussion grenades to begin clearing pro-Trump rioters from the grounds of the U.S. Capitol ahead of a 6 p.m. curfew in Washington D.C.".
 ex:police                       ex:attacked         ex:rioters;
                                 rdfs:label          "used tear gas and percussian grenades to begin clearing pro-Trump rioters"       {|ex:occurredAtEvent ex:E_FOX_14|}.  
 FOX:fox29                       ex:described         ex:e_FOX_14.
                                 
 # Event 15
 ex:e_FOX_15                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T17:30:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T17:30:00"^^xsd:datetime;
+                                rdfs:label          "District officials declared the Capitol "secure" nearly four hours after the pro-Trump mob disrupted the electoral count and stormed the building.".
 ex:StatementcapitolPolice_FOX_1    a                   ex:Statement;
                                 rdfs:label          "The Capitol is secure".
 ex:capitolPolice                ex:gaveStatement    ex:StatementcapitolPolice_FOX_1             {|ex:occurredAtEvent ex:E_FOX_15|}.
@@ -224,7 +237,8 @@ FOX:fox29                       ex:described         ex:e_FOX_15.
 
 # Event 16
 ex:e_FOX_16                     a                   ex:Event;
-                                ex:occurredOn        "2021-01-06T18:00:00"^^xsd:datetime.
+                                ex:occurredOn        "2021-01-06T18:00:00"^^xsd:datetime;
+                                rdfs:label          "A curfew went into effect in D.C. at 6 p.m. ET. Groups of Trump supporters remained on the streets in defiance.".
 ex:StatementTrump_FOX_2         a                   ex:Statement;
                                 rdfs:label          "sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long.Go home with love & in peace. Remember this day forever!".
 ex:donaldTrump                  ex:gaveStatement    ex:StatementTrump_FOX_2                     {|ex:occurredAtEvent ex:E_FOX_16|}.       
