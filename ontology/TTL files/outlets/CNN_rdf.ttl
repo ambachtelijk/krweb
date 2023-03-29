@@ -465,7 +465,7 @@ ex:E_CNN_37                a                       ex:Event;
 ex:statementDT_7_CNN       a                       ex:Statement;
                            rdfs:label              "remain peaceful,".
 ex:Statement_TP_1_CNN      a                       ex:Statement;
-                           rdfs:label              "OTUS should go on air and defuse this,".
+                           rdfs:label              "POTUS should go on air and defuse this,".
 ex:donaldTrump             ex:gaveStatement        ex:statementDT_7_CNN                   {| ex:occurredAtEvent ex:E_CNN_37|}.
 ex:tomPrice                ex:gaveStatement        ex:Statement_TP_1_CNN                  {| ex:occurredAtEvent ex:E_CNN_37|}.
 CNN:CNN                     ex:described            ex:E_CNN_37.

@@ -1,0 +1,758 @@
+@prefix Wiki: <https://www.wikidata.org/wiki/Q104705419>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+
+
+#### Instantiating classes and subclass relations ####
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+
+#### Instantiating classes and subclass relations ####
+foaf:Individual            rdfs:subClassOf foaf:Participant .
+foaf:Group                 rdfs:subClassOf foaf:Participant .
+ex:News_Outlet             a rdfs:Class.
+
+### RDF * predicate ###
+ex:described            rdfs:domain         ex:News_Outlet;
+                        rdfs:range          ex:Event .
+
+### Predicates in relation to participant actions ###
+ex:attacked             rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant.
+
+
+ex:evacuated            rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant,
+                                            ex:Location.
+
+ex:communicatedWith     rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Participant .
+
+ex:vandalized           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Location.
+
+ex:gaveStatement        rdfs:domain         foaf:Participant;
+                        rdfs:range          foaf:Statement.
+
+
+#### Instantiating other predicates ####
+ex:memberOf             rdfs:domain         foaf:Individual;
+                        rdfs:range          foaf:Group .
+
+ex:memberOfParty        rdfs:subPropertyOf  ex:memberOf;
+                        rdfs:domain         foaf:PoliticalParty;
+                        rdfs:range          foaf:Group .
+
+ex:tookPartIn           rdfs:domain         foaf:Participant;
+                        rdfs:range          ex:Event .
+
+ex:occurredAt           rdfs:domain         ex:Event;
+                        rdfs:range          ex:Location .
+
+ex:occurredOn           rdfs:domain         ex:Event;
+                        rdfs:range          ex:DateTime.
+
+
+####################### Populating ontology ##############################
+
+Wiki:wiki                     a                       ex:News_Outlet.
+
+# Individuals
+ex:donaldTrump                 a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:aliAlexander                a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:ronWatkins                  a                       foaf:Individual;
+                               ex:memberOf             ex:qanon.
+
+ex:courtneyHolland             a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:scottPresler                a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:meganBarth                  a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:roseTennent                 a                       foaf:Individual;
+                               ex:memberOf             ex:stopTheSteal.
+
+ex:jimJordan                   a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:markMeadows                 a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:mikePence                   a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+ex:moBrooks                    a                       foaf:Individual;
+                               ex:memberOfParty        ex:republicanParty.
+
+# Groups
+ex:stopTheSteal                a                       foaf:Group.
+ex:qanon                       a                       foaf:Group.
+ex:secretService               a                       foaf:Group.
+
+
+# PoliticalParty
+ex:republicanParty             a                       foaf:PoliticalParty.
+ex:democraticParty             a                       foaf:PoliticalParty.
+
+
+# Events
+ex:stopTheStealRally           a                       ex:Event.
+ex:saveAmericaMarch            a                       ex:Event.
+
+
+# Locations
+ex:twitter                     a                       ex:Location.
+ex:textMessage                 a                       ex:Location.
+ex:phoneCall                   a                       ex:Location.
+ex:unspecifiedLocation         a                       ex:Location.
+ex:ellipse                     a                       ex:Location.
+
+
+# Event 006
+# 8:17 a.m.: President Trump tweets allegations of vote fraud, stating, States want to correct their votes, which they now know were based on irregularities and fraud, plus corrupt process never received legislative approval. All Mike Pence has to do is send them back to the States, AND WE WIN. Do it Mike, this is a time for extreme courage!
+Wiki:wiki                   ex:described           ex:E_Tweet_004.
+ex:E_Tweet_004              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T08:17:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_1, ex:e_FOX_1.
+ex:Statement_Wiki_006       a                      ex:Statement;
+                            rdfs:label             "President Trump tweets allegations of vote fraud, stating, States want to correct their votes, which they now know were based on irregularities and fraud, plus corrupt process never received legislative approval. All Mike Pence has to do is send them back to the States, AND WE WIN. Do it Mike, this is a time for extreme courage!".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_006        {|ex:occurredAtEvent ex:E_Tweet_004|}.
+
+
+# Event 008
+# 9:24 a.m.: Trump has an approximately 10-minute phone call with Representative Jim Jordan.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_000.
+ex:E_PhoneCall_000          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:24:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_2.
+ex:donaldTrump              ex:communicatedWith    ex:jimJordan {|ex:occurredAtEvent ex:E_PhoneCall_000|}.
+
+
+# Event 009
+# 9:45 a.m.: A Federal Protective Service liaison officer informs the Capitol Police that more than the permitted 30,000 protesters are expected at the Ellipse, the Freedom Plaza permit was increased from 5,000 to 30,000, and the protest outside the Sylven Theater is permitted for 15,000.[117] According to Newsweek, "Six times as many protestors—as many as 120,000—would show up on the Mall on January 6, according to classified numbers still not released by the Secret Service and the FBI but seen by Newsweek."[139]
+Wiki:wiki                   ex:described           ex:E_Wiki_009.
+ex:E_Wiki_009               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:45:00"^^xsd:datetime;
+                            ex:occurredAt          ex:.
+
+
+# Event 010
+# 9:52 a.m.: Trump has a 26-minute phone call with adviser Stephen Miller.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_001.
+ex:E_PhoneCall_001          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T09:52:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_3.
+ex:donaldTrump              ex:communicatedWith    ex:stephenMiller {|ex:occurredAtEvent ex:E_PhoneCall_001|}.
+
+
+
+# Event 011
+# 10:00 a.m.: Before this time, White House deputy chief of staff Tony Ornato informs Trump that authorities have spotted armed individuals at the crowd gathering at the Ellipse.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_011.
+ex:E_Wiki_011               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:00:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_4.
+
+
+
+# Event 012
+# 10:15 a.m.: Around this time, Tony Ornato, along with Cassidy Hutchinson, who was an aide to Mark Meadows, inform Meadows about the armed Trump supporters.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_012.
+ex:E_Wiki_012               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:15:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_5.
+
+
+
+# Event 015
+# 10:47 a.m.: Rudy Giuliani begins a speech in which he calls for "trial by combat".
+Wiki:wiki                   ex:described           ex:E_Wiki_015.
+ex:E_Wiki_015               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:47:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_6.
+
+# Event 016
+# 10:58 a.m.: A Proud Boys contingent leaves the rally and marches toward the Capitol Building. (According to later testimony. a "couple of hundred" Proud Boys began walking east, "down the Mall...towards the Capitol" at approximately 10:30 a.m.)
+Wiki:wiki                   ex:described           ex:E_Wiki_016.
+ex:E_Wiki_016               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T10:58:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_2.
+
+
+# Event 022
+# 11:57 a.m.: President Trump begins his over one-hour speech. He repeats allegations that the election was stolen, criticizes Vice President Mike Pence by name a half-dozen times (though this wasn't part of his prepared remarks), accuses fellow Republicans of not doing enough to back up his allegations, and states that he will walk with the crowd to the Capitol.
+Wiki:wiki                   ex:described           ex:E_Wiki_022.
+ex:E_Wiki_022               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T11:57:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_3, ex:e_FOX_2, ex:E_CNN_9.
+
+
+# Event 025
+# 12:16 p.m. Trump tells the crowd: "I know that everyone here will soon be marching over to the Capitol building to peacefully and patriotically make your voices heard." Finishing his speech with "We fight. We fight like hell and if you don't fight like hell, you're not going to have a country anymore. So let's walk down Pennsylvania Avenue."[153][154]
+Wiki:wiki                   ex:described           ex:E_Wiki_025.
+ex:E_Wiki_025               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:16:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_3, ex:E_BBC_5, ex:e_FOX_2.
+
+
+# Event 029
+# 12:30 p.m.: Crowds of pro-Trump supporters gather outside the U.S. Capitol building.
+Wiki:wiki                   ex:described           ex:E_Wiki_029.
+ex:E_Wiki_029               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:30:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_4.
+
+
+# Event 032
+# 12:49 p.m.: Capitol Police respond to a report of a possible explosive device at the Republican National Committee Headquarters, which is later identified as a pipe bomb. A second pipe bomb at the headquarters of the Democratic National Committee would be found at 1:07 pm.[158] Buildings next to these headquarters are evacuated.[159]
+Wiki:wiki                   ex:described           ex:E_Wiki_032.
+ex:E_Wiki_032               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:49:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_10.
+
+
+# Event 036
+# 12:53 p.m.: Rioters overwhelm police along the outer perimeter west of the Capitol building, pushing aside temporary fencing. Some protesters immediately follow, while others, at least initially, remain behind and admonish the others: "Don't do it. You're breaking the law."[163][164] By 1:03 p.m., a vanguard of rioters have overrun three layers of barricades and have forced police officers to the base of the west Capitol steps.[157]
+Wiki:wiki                   ex:described           ex:E_Wiki_036.
+ex:E_Wiki_036               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:53:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6, ex:E_CNN_10.
+
+
+# Event 037
+# 12:57 p.m.: Federal Protective Service officers report that the Capitol Police barricade on the west side of the Capitol building has been breached by a large group.[117]
+Wiki:wiki                   ex:described           ex:E_Wiki_037.
+ex:E_Wiki_037               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T12:57:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
+
+
+
+# Event 040
+# 1:00 p.m.: US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_004.
+ex:E_PhoneCall_004          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:00:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_BBC_5.
+ex:Statement_Wiki_040       a                      ex:Statement;
+                            rdfs:label             "US Capitol Police Chief Steven Sund calls D.C. Metropolitan Police Chief Contee, who deploys 100 officers to the Capitol complex, the earliest arriving within 10 minutes.".
+ex:stevenSund               ex:communicatedWith    ex:robertContee              {|ex:occurredAtEvent ex:E_PhoneCall_004|}.
+ex:stevenSund               ex:gaveStatement       ex:Statement_Wiki_040        {|ex:occurredAtEvent ex:E_PhoneCall_004|}.
+
+
+
+# Event 042
+# 1:05 p.m.: Congress meets in joint session to confirm Joe Biden's electoral victory.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_042.
+ex:E_Wiki_042               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:05:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_4, ex:E_BBC_6.
+
+
+# Event 045
+# 1:10 p.m.: Trump ends his speech by urging his supporters to march upon the Capitol Building:
+# If you don't fight like hell, you're not going to have a country anymore....We're going to try and give them [Republicans] the kind of pride and boldness that they need to take back our country...The Democrats are hopeless — they never vote for anything. Not even one vote. But we're going to try and give our Republicans, the weak ones because the strong ones don't need any of our help. We're going to try and give them the kind of pride and boldness that they need to take back our country.
+Wiki:wiki                   ex:described           ex:E_Wiki_045.
+ex:E_Wiki_045               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:10:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_5, ex:e_FOX_2, ex:E_CNN_11.
+
+
+# Event 047
+# 1:12 p.m.: Rep. Paul Gosar (R–AZ) and Sen. Ted Cruz (R–TX) object to certifying the votes made in the 2020 United States presidential election in Arizona. The joint session separates into House and Senate chambers to debate the objection.[134]
+Wiki:wiki                   ex:described           ex:E_Wiki_047.
+ex:E_Wiki_047               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:12:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rfds:seeAlso           ex:e_FOX_3.
+
+
+# Event 049
+# 1:17 p.m.: Trump's motorcade leaves the Ellipse. The Secret Service does not allow Trump to go to the Capitol and drives him back to the White House against his wishes. Trump behaved angrily, according to multiple witnesses who testified for the House committee.[174][175][176][177][178][179][180]
+Wiki:wiki                   ex:described           ex:E_Wiki_049.
+ex:E_Wiki_049               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:17:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_12.
+
+# Event 050
+# 1:19 p.m.: Trump's motorcade arrives at the White House.[133]
+Wiki:wiki                   ex:described           ex:E_Wiki_050.
+ex:E_Wiki_050               a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:19:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_12.
+
+
+# Event 052
+# 1:25 p.m.: Trump enters the Oval Office private dining room and stays there, watching Fox News, until after 4 p.m.[182] (Three months later, Trump acknowledged to a journalist that the Capitol police "did lose control" of the mob, but he claimed he did not hear of the attack while in meetings with his chief of staff and instead learned of it "afterwards, and ... on the late side" upon turning on the television.)
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:25:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_13.
+
+
+# Event 054
+# 1:26 p.m.: U.S. Capitol Police order evacuation of at least two buildings in the Capitol complex, including the Cannon House Office Building and the Madison Building of the Library of Congress.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:26:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_5, ex:e_FOX_4.
+
+
+# Event 055
+# 1:30 p.m.: Capitol Police are overwhelmed and retreat up the steps of the Capitol.[134] Lawmakers see the police in the halls.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:30:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
+
+
+# Event 059
+# 1:39 p.m.: The White House switchboard connects with Rudy Giuliani for 3 minutes and 53 seconds.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:39:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_14.
+
+
+# Event 062
+# 1:50 p.m.: D.C. Metropolitan Police on-scene incident commander Robert Glover declares a riot.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T13:50:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_6.
+
+
+# Event 068
+# 2:00 p.m.: The mob removes the last barrier protecting the east side of the Capitol.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:00:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_4,
+
+
+# Event 069
+# 2:03 p.m.: The White House switchboard connects with Rudy Giuliani for 8 minutes.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:03:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_16.
+
+
+# Event 071
+# 2:10 p.m.: The mob west of the Capitol chase police up the steps, breaching the final barricade and approach an entrance directly below the Senate chamber.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:10:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_4, ex:E_CNN_15.
+
+
+# Event 073
+# 2:11 p.m.: Rioter Dominic Pezzola breaks a window on the northwest side of the Capitol with a plastic shield.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:11:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_28.
+
+
+# Event 074
+# 2:12 p.m.: The first rioter enters the Capitol through the broken window in the Senate wing of the building, opening a door for others.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:12:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_15, ex:E_CNN_28.
+
+
+# Event 076
+# 2:13 p.m.: Vice President Pence is removed from the Senate chamber by his lead Secret Service agent, Tim Giebels, who brings him to a nearby office about 100 feet from the landing.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:13:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
+
+
+# Event 077
+# 2:13 p.m.: The Senate is gaveled into recess.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:13:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_17.
+
+
+# Event 078
+# 2:14 p.m.: Rioters chase a lone Capitol Police officer up northwest stairs, where there are doors to the Senate chamber in both directions, as police inside the chamber attempt to lock doors.[157] The mob gets within 40 feet of Vice President Pence,[199] but does not catch sight of him because he has already been moved to safety one minute earlier.[196] Officer Eugene Goodman leads the mob to backup in front of a set of Senate doors while senators inside attempt to evacuate.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:14:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7, ex:E_CNN_18, ex:E_CNN_21.
+
+
+# Event 080
+# 2:14 p.m.: Representative Gosar speaks to the House against certifying Arizona's electoral votes.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:14:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_17.
+
+
+# Event 082
+# 2:15 p.m.: Rioters use a hammer to break and open a door.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:15:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
+
+
+# Event 085
+# 2:18 p.m.: Speaker of the House Nancy Pelosi (D–CA) is removed from the chamber by her protective detail. Representative Gosar continues addressing the House, despite the confusion, while ranking member Jim McGovern (D-CA) steps in as Speaker.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:18:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
+
+
+# Event 086
+# 2:20 p.m.: The House is gaveled into recess and starts to evacuate.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:20:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8, ex:E_CNN_24.
+
+
+# Event 087
+# 2:20 p.m.: The National Security Council chat reports the breach of "Second Floor" and "Senate Door".
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:30:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_31.
+
+
+# Event 093
+# 2:24 p.m.: President Trump tweets "Mike Pence didn't have the courage to do what should have been done to protect our Country and our Constitution, giving States a chance to certify a corrected set of facts, not the fraudulent or inaccurate ones which they were asked to previously certify. USA demands the truth!"[134] When Twitter reinstated Trump's account in November 2022, this tweet was gone.[208] The U.S. House select committee investigating January 6 wrote that this tweet "inflamed and exacerbated the mob violence"; this assessment was part of the committee's criminal referral of Trump for insurrection.
+Wiki:wiki                   ex:described           ex:E_Tweet_008.
+ex:E_Tweet_008              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:24:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_8, ex:E_CNN_20.
+ex:Statement_Wiki_093       a                      ex:Statement;
+                            rdfs:label             "President Trump tweets 'Mike Pence didn't have the courage to do what should have been done to protect our Country and our Constitution, giving States a chance to certify a corrected set of facts, not the fraudulent or inaccurate ones which they were asked to previously certify. USA demands the truth!'".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_093       {|ex:occurredAtEvent ex:E_Tweet_008}.
+
+
+# Event 095
+# 2:25 p.m.: Over the next three minutes, "rioters breached the East Rotunda doors, other rioters breached the police line in the Capitol Crypt, Vice President Pence had to be evacuated from his Senate office, and Rep. McCarthy was evacuated from his Capitol office", according to the U.S. House select committee on January 6 in the introduction to its final report.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:25:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_7, ex:E_CNN_21.
+
+
+# Event 097
+# 2:26 p.m.: Trump calls Senator Mike Lee (R–UT), having misdialed Senator Tommy Tuberville (R–AL). Lee passes his phone to Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. "I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go'," he recounted to reporters of his call.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_010.
+ex:E_PhoneCall_010          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_BBC_9, ex:E_CNN_17.
+ex:Statement_Wiki_097       a                      ex:Statement;
+                            rdfs:label             "Tuberville, who informs Trump that Pence had just been evacuated from the Senate chamber. 'I said 'Mr President, they've taken the Vice President out. They want me to get off the phone, I gotta go',' he recounted to reporters of his call.".
+ex:donaldTrump              ex:communicatedWith    [ ex:mikeLee; ex:tommyTuberville; ]  {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
+ex:tommyTuberville          ex:gaveStatement       ex:Statement_Wiki_097                {|ex:occurredAtEvent ex:E_PhoneCall_010|}.
+
+
+
+# Event 100
+# 2:26 p.m.: The House is briefly called back into session.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:26:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8.
+
+
+# Event 103
+# 2:29 p.m.: The House goes into recess again.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:29:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_8.
+
+
+# Event 106
+# 2:32 p.m. Fox News anchor Laura Ingraham tweets Chief of Staff Meadows: "Hey Mark, The president needs to tell people in the Capitol to go home."
+Wiki:wiki                   ex:described           ex:E_Tweet_009.
+ex:E_Tweet_009              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:32:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_25.
+ex:Statement_Wiki_106       a                      ex:Statement;
+                            rdfs:label             "Fox News anchor Laura Ingraham tweets Chief of Staff Meadows: 'Hey Mark, The president needs to tell people in the Capitol to go home.'".
+ex:lauraIngraham            ex:gaveStatement       ex:Statement_Wiki_106       {|ex:occurredAtEvent ex:E_Tweet_009}.
+ex:lauraIngraham            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_009}.
+
+
+# Event 107
+# 2:38 p.m.: President Trump tweets "Please support our Capitol Police and Law Enforcement. They are truly on the side of our Country. Stay peaceful!"
+Wiki:wiki                   ex:described           ex:E_Tweet_010.
+ex:E_Tweet_010              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:38:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_27.
+ex:Statement_Wiki_107       a                      ex:Statement;
+                            rdfs:label             "President Trump tweets 'Please support our Capitol Police and Law Enforcement. They are truly on the side of our Country. Stay peaceful!'".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_107       {|ex:occurredAtEvent ex:E_Tweet_010}.
+
+
+# Event 108
+# 2:42 p.m.: Rioters carrying flags walk down the hallways, kicking at office doors, chanting "Defend the Constitution! Defend your liberty!" and "1776!"
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:42:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_7.
+
+
+
+# Event 113
+# 2:44 p.m.: Rioter Ashli Babbitt is shot by Capitol Police while attempting to force entry into the Speaker's Lobby adjacent to the House chambers by climbing through a window that led to the House floor.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:44:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_10, ex:e_FOX_7, ex:E_CNN_30.
+
+
+# Event 116
+# 2:45 p.m.: Shortly after this time, some people break into Nancy Pelosi's office and scrawl a message for her: "WE WILL NOT BACK DOWN".
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:45:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_31.
+
+
+# Event 120
+# 2:53 p.m. Donald Trump, Jr. tweets to Meadows: "He's got to condem [sic] this shit. Asap.The captiol [sic] police tweet is not enough. "
+Wiki:wiki                   ex:described           ex:E_Tweet_011.
+ex:E_Tweet_011              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T14:53:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_CNN_32.
+ex:Statement_Wiki_120       a                      ex:Statement;
+                            rdfs:label             "Donald Trump, Jr. tweets to Meadows: 'He's got to condem [sic] this shit. Asap.The captiol [sic] police tweet is not enough.'".
+ex:donaldTrumpJr            ex:gaveStatement       ex:Statement_Wiki_120       {|ex:occurredAtEvent ex:E_Tweet_011}.
+ex:donaldTrumpJr            ex:communicatedWith    ex:markMeadows              {|ex:occurredAtEvent ex:E_Tweet_011}.
+
+
+# Event 124
+# 3:05 p.m.: House Minority Leader Kevin McCarthy (R–CA) started a phone-in interview on live TV with WUSA.
+# McCarthy said he had called the president to urge him to "calm people down" and in reply the president had sent out a tweet.
+# Months later, McCarthy would claim to police that, based on his phone call with Trump, it wasn't obvious to him that Trump was aware of the violence inside the Capitol at the time.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:05:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_33.
+
+
+# Event 127
+# 3:09 p.m. former White House Chief of Staff Reince Priebus to current CoS Meadows: "TELL THEM TO GO HOME !!!"
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:09:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_36.
+
+
+# Event 130
+# 3:13 p.m.: President Trump tweets "I am asking for everyone at the U.S. Capitol to remain peaceful. No violence! Remember, WE are the Party of Law & Order – respect the Law and our great men and women in Blue. Thank you!"
+Wiki:wiki                   ex:described           ex:E_Tweet_012.
+ex:E_Tweet_012              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:13:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_11, ex:E_CNN_37.
+ex:Statement_Wiki_130       a                      ex:Statement;
+                            rdfs:label             "President Trump tweets 'I am asking for everyone at the U.S. Capitol to remain peaceful. No violence! Remember, WE are the Party of Law & Order – respect the Law and our great men and women in Blue. Thank you!'".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_130       {|ex:occurredAtEvent ex:E_Tweet_012}.
+
+
+# Event 138
+# 3:26 p.m.: McCarthy has a phone call with Mayor Bowser and Metro Police Chief Contee conveying that their request was not denied and that Secretary Miller has approved full activation of the DCNG.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_017.
+ex:E_PhoneCall_017          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:26:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:e_FOX_9.
+ex:Statement_Wiki_138       a                      ex:Statement;
+                            rdfs:label             "their request was not denied and that Secretary Miller has approved full activation of the DCNG".
+ex:ryanMcCarthy             ex:communicatedWith    [ ex:murielBowser; ex:robertContee; ]  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
+ex:ryanMcCarthy             ex:gaveStatement       ex:Statement_Wiki_138                  {|ex:occurredAtEvent ex:E_PhoneCall_017|}.
+
+
+# Event 144
+# 3:46 p.m.: Leaders from both parties, including Steny Hoyer and Republican leaders Mitch McConnell, Steve Scalise, and John Thune, huddle around a single phone, appealing to the Department of Defense to send troops with a sense of urgency.
+# The person on the other end says they cannot give a timeline for when the Capitol will be secured.
+Wiki:wiki                   ex:described           ex:E_PhoneCall_018.
+ex:E_PhoneCall_018          a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T15:46:00"^^xsd:datetime;
+                            ex:occurredAt          ex:phoneCall;
+                            rdfs:seeAlso           ex:E_CNN_45.
+ex:stenyHoyer               ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:mitchMcConnell           ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:steveScalise             ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:johnThune                ex:communicatedWith    ex:departmentOfDefense          {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+ex:Statement_Wiki_144       a                      ex:Statement;
+                            rdfs:label             "The person on the other end says they cannot give a timeline for when the Capitol will be secured.".
+ex:departmentOfDefense      ex:gaveStatement       ex:Statement_Wiki_144           {|ex:occurredAtEvent ex:E_PhoneCall_018|}.
+
+
+# Event 148
+# 4:03 p.m.: Trump goes outside to the Rose Garden so his staff can make a video of him calling for an end to the violence. He refuses the script they give him.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T16:03:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_40.
+
+
+# Event 149
+# 4:05 p.m.: President-elect Biden holds a press conference calling on President Trump to "demand an end to this siege".
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T16:05:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_11, ex:E_CNN_43.
+
+
+# Event 152
+# 4:17 p.m.: Trump uploads an unscripted video to his Twitter denouncing the riot but maintaining the false claim that the election was stolen.[134] This was one of three takes, with the "most palatable option" chosen by White House aides for distribution.[247] In the video he says:
+# I know your pain, I know you're hurt. We had an election that was stolen from us. It was a landslide election and everyone knows it, especially the other side. But you have to go home now. We have to have peace. We have to have law and order. We have to respect our great people in law and order. We don't want anybody hurt. It's a very tough period of time. There's never been a time like this where such a thing happened where they could take it away from all of us — from me, from you, from our country. This was a fraudulent election, but we can't play into the hands of these people. We have to have peace. So go home. We love you. You're very special. You've seen what happens. You see the way others are treated that are so bad and so evil. I know how you feel, but go home, and go home in peace.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T16:17:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_BBC_12, ex:e_FOX_13, ex:E_CNN_44.
+
+
+# Event 167
+# 6:00 p.m.: D.C. curfew comes into effect.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T18:00:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_46.
+
+
+# Event 168
+# 6:01 p.m.: President Trump tweets
+# These are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long. Go home with love & in peace. Remember this day forever!
+# When Twitter reinstated Trump's account in November 2022, this tweet was gone.[208] Trump "knew exactly what he was doing" in making this tweet—the U.S. House select committee on January 6 alleged when criminally referring him for insurrection—especially as a White House staffer had warned him not to tweet it since it would imply his complicity in the Capitol riot, yet "he tweeted it anyway."
+Wiki:wiki                   ex:described           ex:E_Tweet_014.
+ex:E_Tweet_014              a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T18:01:00"^^xsd:datetime;
+                            ex:occurredAt          ex:twitter;
+                            rdfs:seeAlso           ex:E_BBC_13, ex:e_FOX_15, ex:E_CNN_47.
+ex:Statement_Wiki_168       a                      ex:Statement;
+                            rdfs:label             "These are the things and events that happen when a sacred landslide election victory is so unceremoniously & viciously stripped away from great patriots who have been badly & unfairly treated for so long. Go home with love & in peace. Remember this day forever!".
+ex:donaldTrump              ex:gaveStatement       ex:Statement_Wiki_168       {|ex:occurredAtEvent ex:E_Tweet_014}.
+
+
+# Event 173
+# 7:02 p.m.: Twitter removes Trump's tweets and suspends his account for twelve hours for "repeated and severe violations of [its] Civic Integrity policy".
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T19:02:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_13.
+
+
+# Event 176
+# 8:00 p.m.: U.S. Capitol Police declare the Capitol building to be secure.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T20:00:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_51.
+
+
+# Event 177
+# 8:06 p.m.: The Senate reconvenes, with Vice President Pence presiding, to continue debating the objection to the Arizona electoral count.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T20:06:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_51.
+
+
+# Event 179
+# 8:36 p.m.: Facebook blocks Trump's page for 24 hours.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T20:36:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:e_FOX_13.
+
+
+# Event 182
+# 10:15 p.m.: The Senate votes 93–6 against the objection raised by a handful of Republican senators against the counting of Arizona's electoral votes.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T22:15:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_55.
+
+
+# Event 183
+# 11:30 p.m.: The House votes 303–121 to reject the Republican objection to the counting of Arizona's electoral votes.
+Wiki:wiki                   ex:described           ex:E_.
+ex:E_                       a                      ex:Event;
+                            ex:occurredOn          "2021-01-06T23:30:00"^^xsd:datetime;
+                            ex:occurredAt          ex:;
+                            rdfs:seeAlso           ex:E_CNN_58.
