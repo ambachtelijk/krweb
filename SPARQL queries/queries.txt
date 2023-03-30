@@ -70,3 +70,78 @@ select ?individual (COUNT(?individual) AS ?N)
     ?individual rdf:type foaf:Individual.
     
 }GROUP BY (?individual) order by desc (?N)
+
+#Count classes
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+SELECT (COUNT(DISTINCT ?subject) AS ?countClasses)
+WHERE {
+  ?subject a rdfs:Class.
+}
+
+#count nodes
+SELECT (COUNT(?node) AS ?countNodes)
+WHERE {
+  ?node ?predicate ?object .
+}
+
+#count Predicates
+SELECT (COUNT(DISTINCT ?predicate) AS ?countPredicates)
+WHERE {
+  ?subject ?predicate ?object .
+}
+
+
+#count num statements
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+
+SELECT (COUNT(DISTINCT ?Statement) as ?numSatement)
+WHERE {
+  ?s ex:gaveStatement ?Statement.
+} 
+
+count groups mentioned
+PREFIX ex: <http://example.com/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX Statement: <http://example.com/Statement>
+PREFIX Location: <http://example.com/Location>
+
+SELECT ?group (COUNT(?group) AS ?CountGroup)
+WHERE {
+	?group ?p ?o;
+            a foaf:Group.
+} GROUP BY (?group) order by desc (?CountGroup)
+
+
+#make timeline
+PREFIX ex: <http://example.com/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?event ?datetime ?location ?description
+WHERE {
+  ?event a ex:Event ;
+         ex:occurredAt ?datetime.
+  OPTIONAL{ ?event ex:occurredOn ?location .}
+  OPTIONAL {
+    ?event rdfs:label ?description.
+  }
+} ORDER BY ASC(?datetime)
+
+
+
+
+#describe trump
+ PREFIX ex: <http://example.com/>
+DESCRIBE ex:donaldTrump
+WHERE {
+  ex:donaldTrump ?p ?instance .
+  ex:donaldTrump a ?instance .
+  FILTER(isIRI(?instance))
+}
