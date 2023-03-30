@@ -3,6 +3,6 @@ The goal of this research project is to extract multiple narrations of news even
 
 # How the repo is built
 The repository contains various resources that were utilized during the research project. The repository consists of four primary folders: The ontology file, SPARQL queries, Python files, and a README file. The folders contain the following information:
--The ontology file is presented in TTL format and includes the main ontology, news outlets, and Wikidata KG in turtle format. These files can be uploaded to GraphDB to visualize the corresponding KGs.
+- The ontology file is presented in TTL format and includes the main ontology, news outlets, and Wikidata KG in turtle format. These files can be uploaded to GraphDB to visualize the corresponding KGs.
 - The SPARQL queries file includes the primary SPARQL queries used to retrieve the main research results. These queries can be copied and pasted into the GraphDB SPARQL interface to obtain the same outcomes.
--The Python files are used to create visualizations based on the results from the aforementioned SPARQL queries.
+- The Python files are used to create visualizations based on the results from the aforementioned SPARQL queries.
